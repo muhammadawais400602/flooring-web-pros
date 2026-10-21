@@ -1,1 +1,36 @@
-# flooring-web-pros
+# Flooring WebPros
+
+Marketing site for Flooring WebPros: websites and lead generation built only for flooring businesses.
+
+Static site (HTML/CSS/JS). No build step.
+
+## Files
+- `index.html`, `styles.css`, `main.js`: the homepage
+- `frames/`: 132 WebP frames (1280w), scrubbed on scroll in the hero
+- `frames-m/`: portrait 600w frames for phones and tall screens
+- `favicon.svg`: site icon
+- `vercel.json`: cache headers for frames, basic security headers
+- `source/`: hero source video and homepage copy doc (not deployed, see `.vercelignore`)
+
+## Preview locally
+```bash
+python3 -m http.server 8080   # http://localhost:8080
+```
+
+## Deploy
+Vercel deploys on every push. Project settings: Framework Preset **Other**, Root Directory `./`, no build command, no output directory.
+
+## Before launch
+- Replace `(XXX) XXX-XXXX`, `tel:+10000000000` and `mailto:hello@example.com` in `index.html`.
+- Lead form: set `data-endpoint` on `<form class="lead-form">` (Formspree, CRM webhook, etc.). Empty = success message only, nothing sent.
+- Set `og:image` to an absolute URL once the domain is live.
+- Verify stats (150+, 8+ years, 40+ countries), prices and competitor ranges.
+- Portfolio cards are labeled "Demo Design"; swap for real builds. Swap "Our Promise" for real testimonials later.
+- Footer links About, Blog, Privacy Policy, Terms point to `#` (pages not built yet).
+
+## Regenerate frames
+```bash
+ffmpeg -i source/oak-walkthrough.mp4 -vf "select='not(mod(n\,2))',scale=1280:-2" -vsync vfr -c:v libwebp -quality 62 frames/f%03d.webp
+ffmpeg -i source/oak-walkthrough.mp4 -vf "select='not(mod(n\,2))',crop=ih*0.75:ih,scale=600:-2" -vsync vfr -c:v libwebp -quality 60 frames-m/f%03d.webp
+```
+Keep 132 frames or update `FRAMES` in `main.js`.
