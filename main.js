@@ -126,6 +126,41 @@
     requestAnimationFrame(tick);
   }
 
+  /* ---------- Who we serve: card photo fills section background on hover ---------- */
+  const tradeSection = document.querySelector('.trade-section');
+  if (tradeSection) {
+    const bgWrap = tradeSection.querySelector('.trade-bg');
+    const cards = [...tradeSection.querySelectorAll('.trade[data-bg]')];
+    const layers = new Map();
+    cards.forEach((card) => {
+      const url = card.dataset.bg;
+      card.style.setProperty('--bg', `url('${url}')`);
+      const layer = document.createElement('div');
+      layer.className = 'trade-bg-layer';
+      layer.style.backgroundImage = `url('${url}')`;
+      bgWrap.appendChild(layer);
+      layers.set(card, layer);
+    });
+    let hideTimer;
+    const show = (card) => {
+      clearTimeout(hideTimer);
+      layers.forEach((l, c) => { l.classList.toggle('on', c === card); c.classList.toggle('active', c === card); });
+      tradeSection.classList.add('has-bg');
+    };
+    const hide = () => {
+      hideTimer = setTimeout(() => {
+        layers.forEach((l, c) => { l.classList.remove('on'); c.classList.remove('active'); });
+        tradeSection.classList.remove('has-bg');
+      }, 80);
+    };
+    cards.forEach((card) => {
+      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(card); });
+      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hide(); });
+      card.addEventListener('focus', () => show(card));
+      card.addEventListener('blur', hide);
+    });
+  }
+
   /* ---------- Header colour + sticky mobile CTA ---------- */
   const mobileCta = document.querySelector('.mobile-cta');
   const finalSection = document.getElementById('mockup');
