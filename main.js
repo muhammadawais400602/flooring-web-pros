@@ -142,6 +142,7 @@
       layers.set(card, layer);
     });
     let hideTimer;
+    const stackMq = matchMedia('(max-width: 559px)');
     const show = (card) => {
       clearTimeout(hideTimer);
       layers.forEach((l, c) => { l.classList.toggle('on', c === card); c.classList.toggle('active', c === card); });
@@ -154,11 +155,44 @@
       }, 80);
     };
     cards.forEach((card) => {
-      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(card); });
-      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hide(); });
-      card.addEventListener('focus', () => show(card));
-      card.addEventListener('blur', hide);
+      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && !stackMq.matches) show(card); });
+      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !stackMq.matches) hide(); });
+      card.addEventListener('focus', () => { if (!stackMq.matches) show(card); });
+      card.addEventListener('blur', () => { if (!stackMq.matches) hide(); });
     });
+
+    /* Phones: stacked cards. Background follows the card on top; covered cards shrink and darken. */
+    const allCards = [...tradeSection.querySelectorAll('.trade')];
+    allCards.forEach((c, i) => c.style.setProperty('--i', i));
+    let stackQueued = false, stackActive = null;
+    const updateStack = () => {
+      stackQueued = false;
+      if (!stackMq.matches) {
+        allCards.forEach((c) => { c.style.removeProperty('--s'); c.style.removeProperty('--b'); });
+        return;
+      }
+      const sr = tradeSection.getBoundingClientRect();
+      if (sr.bottom < 0 || sr.top > innerHeight) return;
+      const rects = allCards.map((c) => c.getBoundingClientRect());
+      const stick = allCards.map((c) => parseFloat(getComputedStyle(c).top) || 0);
+      allCards.forEach((c, i) => {
+        let depth = 0;
+        for (let j = i + 1; j < allCards.length; j++) depth += clamp(1 - (rects[j].top - stick[j]) / rects[i].height);
+        c.style.setProperty('--s', Math.max(0.82, 1 - depth * 0.05).toFixed(4));
+        c.style.setProperty('--b', Math.max(0.55, 1 - depth * 0.15).toFixed(4));
+      });
+      let top = null;
+      allCards.forEach((c, i) => { if (rects[i].top < innerHeight * 0.45) top = c; });
+      const next = top && layers.has(top) ? top : null;
+      if (next === stackActive) return;
+      stackActive = next;
+      if (next) show(next); else hide();
+    };
+    const queueStack = () => { if (!stackQueued) { stackQueued = true; requestAnimationFrame(updateStack); } };
+    addEventListener('scroll', queueStack, { passive: true });
+    addEventListener('resize', queueStack);
+    stackMq.addEventListener('change', () => { stackActive = null; hide(); queueStack(); });
+    queueStack();
   }
 
   /* ---------- Header colour + sticky mobile CTA ---------- */

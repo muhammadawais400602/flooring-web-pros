@@ -211,8 +211,9 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
     linear-gradient(90deg, #a8703c, #c48a50 25%, #9c6534 50%, #b9814a 75%, #a06a38);
 }
 /* Hover a trade card: its photo fills the section background */
-.trade-section { position: relative; isolation: isolate; overflow: hidden; }
-.trade-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.trade-section { position: relative; isolation: isolate; clip-path: inset(0); }
+/* Fixed to the viewport (clipped to the section) so the photo is screen-sized, not stretched over the whole tall section */
+.trade-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
 .trade-bg-layer { position: absolute; inset: -20px; background: center/cover no-repeat; opacity: 0; transform: scale(1.06); filter: blur(1px); transition: opacity .6s ease, transform 1.4s ease; }
 .trade-bg-layer.on { opacity: 1; transform: scale(1); }
 .trade-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,24,20,.72), rgba(28,24,20,.45) 45%, rgba(28,24,20,.7)); opacity: 0; transition: opacity .6s ease; }
@@ -225,6 +226,12 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 .trade { transition: transform .25s, box-shadow .25s, opacity .3s; }
 .trade.active { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(0,0,0,.35); }
 .trade[data-bg] .swatch { background: var(--bg) center/cover no-repeat; }
+/* Phones: cards stack on scroll; covered cards shrink and darken (driven by main.js) */
+@media (max-width: 559px) {
+  .trade-grid > .trade { position: sticky; top: calc(var(--header-h) + 14px + var(--i, 0) * 10px); transform-origin: 50% 0; box-shadow: 0 -8px 30px rgba(0,0,0,.18); transition: box-shadow .25s, opacity .7s ease; }
+  .trade-grid > .trade.reveal.in, .trade-grid > .trade.active, .trade-grid > .trade:hover { transform: scale(var(--s, 1)); filter: brightness(var(--b, 1)); }
+  .trade-section.has-bg .trade:not(.active) { opacity: 1; }
+}
 @media (prefers-reduced-motion: reduce) { .trade-bg-layer, .trade-bg-layer.on { transform: none; transition: opacity .2s; } }
 .sw-carpet { background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18) 1px, transparent 1.5px) 0 0/5px 5px, radial-gradient(circle at 70% 60%, rgba(0,0,0,.15) 1px, transparent 1.5px) 0 0/4px 4px, #8d8f84; }
 .sw-tile { background: repeating-linear-gradient(0deg, #bdb5a8 0 3px, transparent 3px 40px), repeating-linear-gradient(90deg, #bdb5a8 0 3px, transparent 3px 40px), linear-gradient(135deg, #ece7de, #d9d2c6); }
