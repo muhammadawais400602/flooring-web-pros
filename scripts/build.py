@@ -30,7 +30,7 @@ for page in sorted((ROOT / "src/pages").glob("*.html")):
         schema = '  <script type="application/ld+json">\n' + json.dumps(meta["schema"], indent=2, ensure_ascii=False) + "\n  </script>"
     out = layout
     for key, val in {"title": meta["title"], "description": meta["description"], "path": meta["path"],
-                     "site": SITE, "nav": nav, "schema": schema, "body": body.rstrip()}.items():
+                     "site": SITE, "nav": nav, "scripts": "".join(f'\n  <script src="{u}" defer></script>' for u in meta.get("scripts", [])), "schema": schema, "body": body.rstrip()}.items():
         out = out.replace("{{" + key + "}}", val)
     # Links to pages not built yet fall back to their homepage section
     for path, anchor in FALLBACK.items():

@@ -110,18 +110,42 @@
   </header>
 
   <main id="main">
-    <section class="page-hero">
-      <div class="wrap">
+    <!-- Hero: oak walkthrough plays on canvas, headline words rise in -->
+    <section class="svc-hero">
+      <canvas class="svc-hero-canvas" aria-hidden="true"></canvas>
+      <div class="svc-hero-shade" aria-hidden="true"></div>
+      <div class="wrap svc-hero-inner">
         <p class="crumbs"><a href="/">Home</a> / Services</p>
         <p class="eyebrow eyebrow-light">Services</p>
-        <h1>Everything Your Flooring Business Needs Online</h1>
-        <p class="lede">One team that only works with flooring businesses. We build the site, get it found on Google, capture the leads and keep it all running — so you can stay on the job site.</p>
-        <div class="btn-row">
+        <h1 class="split-words">Everything Your Flooring Business Needs <em>Online</em></h1>
+        <p class="lede fade-up">One team that only works with flooring businesses. We build the site, get it found on Google, capture the leads and keep it all running — so you can stay on the job site.</p>
+        <div class="btn-row fade-up">
           <a class="btn btn-accent btn-lg" href="/#mockup">Get My Free Website Mockup</a>
-          <a class="btn btn-ghost-light btn-lg" href="/#pricing">See Pricing</a>
+          <a class="btn btn-ghost-light btn-lg" href="#websites">Explore Services ↓</a>
         </div>
       </div>
+      <ul class="float-chips" aria-hidden="true">
+        <li style="--x:72%;--y:22%;--d:0s"><span class="material-symbols-outlined">devices</span>Websites</li>
+        <li style="--x:84%;--y:40%;--d:.6s"><span class="material-symbols-outlined">travel_explore</span>Local SEO</li>
+        <li style="--x:68%;--y:56%;--d:1.2s"><span class="material-symbols-outlined">location_on</span>Map Pack</li>
+        <li style="--x:86%;--y:70%;--d:1.8s"><span class="material-symbols-outlined">notifications_active</span>Lead alerts</li>
+        <li style="--x:74%;--y:84%;--d:2.4s"><span class="material-symbols-outlined">star</span>5-star reviews</li>
+      </ul>
     </section>
+
+    <!-- Trade photo marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <figure><img src="/images/trades/hardwood.webp" alt="" /><figcaption>Hardwood</figcaption></figure>
+        <figure><img src="/images/trades/carpet.webp" alt="" /><figcaption>Carpet</figcaption></figure>
+        <figure><img src="/images/trades/tile.webp" alt="" /><figcaption>Tile &amp; Stone</figcaption></figure>
+        <figure><img src="/images/trades/lvp.webp" alt="" /><figcaption>LVP &amp; Laminate</figcaption></figure>
+        <figure><img src="/images/trades/epoxy.webp" alt="" /><figcaption>Epoxy</figcaption></figure>
+        <figure><img src="/images/trades/refinish.webp" alt="" /><figcaption>Refinishing</figcaption></figure>
+        <figure><img src="/images/trades/showroom.webp" alt="" /><figcaption>Showrooms</figcaption></figure>
+        <figure><img src="/images/trades/commercial.webp" alt="" /><figcaption>Commercial</figcaption></figure>
+      </div>
+    </div>
 
     <nav class="jump" aria-label="Jump to a service">
       <div class="wrap">
@@ -134,197 +158,273 @@
         <a href="#google-ads">Google Ads</a>
         <a href="#care">Hosting &amp; Care</a>
       </div>
+      <span class="jump-progress" aria-hidden="true"></span>
     </nav>
 
-    <section class="section" style="padding-top: 0">
-      <div class="wrap">
+    <div class="svc-list">
 
-        <article class="detail" id="websites">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">devices</span></div>
+      <!-- 1. Websites -->
+      <section class="svc" id="websites">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">01</p>
             <h2>Custom Flooring Websites</h2>
-            <p class="lede">A fast, mobile-first site designed around your services, your service area and your best work — not a recycled template made for plumbers.</p>
-            <span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span>
+            <p class="lede">A fast, mobile-first site designed around your services, your area and your best work — not a recycled template made for plumbers.</p>
+            <ul class="checks two">
+              <li>Custom homepage for your trade</li>
+              <li>A page for every service</li>
+              <li>Mobile-first, built to load fast</li>
+              <li>Click-to-call on every page</li>
+              <li>All page copy written for you</li>
+              <li>On-page SEO built in</li>
+            </ul>
+            <p class="plan-tags"><span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Custom homepage designed for your trade</li>
-                <li>A page for every service you offer</li>
-                <li>Mobile-first layout (most visitors are on phones)</li>
-                <li>Built to load fast</li>
-                <li>Click-to-call and estimate buttons on every page</li>
-                <li>All page copy written for you</li>
-                <li>On-page SEO: titles, headings, schema</li>
-                <li>Connected to Google Analytics &amp; Search Console</li>
-              </ul>
+          <div class="svc-visual">
+            <div class="mk-laptop">
+              <div class="mk-bar"><i></i><i></i><i></i><span>yourfloors.com</span></div>
+              <div class="mk-screen">
+                <div class="mk-page">
+                  <div class="mk-hero" style="--img:url('/images/trades/hardwood.webp')"><b>Floors you'll love for decades.</b><span>Free in-home estimate</span></div>
+                  <div class="mk-row"><i></i><i></i><i></i></div>
+                  <div class="mk-gal"><img src="/images/trades/lvp.webp" alt="" /><img src="/images/trades/tile.webp" alt="" /><img src="/images/trades/refinish.webp" alt="" /></div>
+                  <div class="mk-row"><i></i><i></i></div>
+                  <div class="mk-hero small" style="--img:url('/images/services/after.webp')"><b>Book your estimate</b><span>Call now</span></div>
+                </div>
+              </div>
             </div>
-            <div class="note"><b>Already have a site?</b> We rebuild it and set up proper redirects so you keep the Google rankings you've earned.</div>
+            <div class="mk-phone mk-phone-float">
+              <div class="mk-phone-screen">
+                <div class="mk-page">
+                  <div class="mk-hero" style="--img:url('/images/trades/hardwood.webp')"><b>Floors you'll love.</b><span>Call now</span></div>
+                  <div class="mk-gal one"><img src="/images/trades/lvp.webp" alt="" /></div>
+                  <div class="mk-row"><i></i><i></i></div>
+                  <div class="mk-gal one"><img src="/images/trades/tile.webp" alt="" /></div>
+                </div>
+              </div>
+            </div>
+            <div class="mk-badge" style="--bx:-6%;--by:12%"><span class="material-symbols-outlined">speed</span><b data-count="98">98</b> speed score</div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="detail" id="local-seo">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span></div>
+      <!-- 2. Local SEO -->
+      <section class="svc alt" id="local-seo">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">02</p>
             <h2>Local SEO</h2>
             <p class="lede">Show up when homeowners in your area search for the floors you install. Organic leads you don't pay for per click.</p>
-            <span class="tag hot">Growth</span><span class="tag">Dominate</span>
+            <ul class="checks two">
+              <li>Keyword research by trade and city</li>
+              <li>A page for every city you serve</li>
+              <li>Local citations and listings</li>
+              <li>Technical SEO and speed tuning</li>
+              <li>Internal linking strategy</li>
+              <li>Monthly ranking report</li>
+            </ul>
+            <p class="plan-tags"><span class="tag hot">Growth</span><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Keyword research for your trade and cities</li>
-                <li>Service-area pages for each city you serve</li>
-                <li>Local citations and directory listings</li>
-                <li>Technical SEO fixes and speed tuning</li>
-                <li>Internal linking between services and areas</li>
-                <li>Monthly ranking report in plain English</li>
-              </ul>
+          <div class="svc-visual">
+            <div class="mk-search">
+              <div class="mk-search-bar"><span class="material-symbols-outlined">search</span><span class="type-target" data-type="hardwood floor installation dallas"></span><i class="caret"></i></div>
+              <ol class="mk-results">
+                <li><b>Lone Star Floors</b><span>lonestarfloors.com</span></li>
+                <li><b>Dallas Floor Depot</b><span>dallasfloordepot.com</span></li>
+                <li><b>Metro Hardwood Co.</b><span>metrohardwood.com</span></li>
+                <li><b>Big Box Flooring</b><span>bigboxflooring.com</span></li>
+                <li class="you"><b>Your Flooring Co. <em class="rank">#1</em></b><span>yourfloors.com › hardwood-installation-dallas</span></li>
+              </ol>
             </div>
-            <div>
-              <h3>Searches we target</h3>
-              <div class="chips-list">
-                <span>hardwood floor installation [City]</span><span>flooring contractors near me</span><span>LVP installers [City]</span><span>floor refinishing near me</span><span>carpet store [City]</span><span>epoxy garage floor [City]</span>
+            <div class="mk-badge" style="--bx:62%;--by:-6%"><span class="material-symbols-outlined">trending_up</span>Page 3 → <b>#1</b></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Google Business Profile -->
+      <section class="svc" id="google-business">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">03</p>
+            <h2>Google Business Profile</h2>
+            <p class="lede">The Map Pack — the three businesses under the map — gets most local clicks. We set your profile up to compete for it.</p>
+            <ul class="checks two">
+              <li>Full profile audit and cleanup</li>
+              <li>Right categories and services</li>
+              <li>Service areas set correctly</li>
+              <li>Job photos uploaded weekly</li>
+              <li>Regular Google posts</li>
+              <li>Name, address, phone matched everywhere</li>
+            </ul>
+            <p class="plan-tags"><span class="tag hot">Growth</span><span class="tag">Dominate</span></p>
+          </div>
+          <div class="svc-visual">
+            <div class="mk-map">
+              <span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span><span class="pin you"><span class="material-symbols-outlined">location_on</span></span>
+              <div class="mk-place">
+                <img src="/images/trades/showroom.webp" alt="" />
+                <div>
+                  <b>Your Flooring Co.</b>
+                  <p class="stars-row"><span class="stars-fill">★★★★★</span> <span class="muted">Flooring contractor · Open now</span></p>
+                  <div class="mk-place-btns"><span><i class="material-symbols-outlined">call</i>Call</span><span><i class="material-symbols-outlined">directions</i>Directions</span><span><i class="material-symbols-outlined">language</i>Website</span></div>
+                </div>
               </div>
             </div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="detail" id="google-business">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">location_on</span></div>
-            <h2>Google Business Profile Optimization</h2>
-            <p class="lede">The Map Pack — the three businesses under the map — gets most local clicks. We set your profile up to compete for it.</p>
-            <span class="tag hot">Growth</span><span class="tag">Dominate</span>
-          </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Full profile audit and cleanup</li>
-                <li>Correct categories and service list</li>
-                <li>Service areas set up properly</li>
-                <li>Job photos uploaded and labeled</li>
-                <li>Regular Google posts</li>
-                <li>Q&amp;A section filled in</li>
-                <li>Review response templates</li>
-                <li>Name, address and phone matched everywhere</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="detail" id="lead-capture">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">request_quote</span></div>
+      <!-- 4. Lead capture -->
+      <section class="svc alt" id="lead-capture">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">04</p>
             <h2>Estimate &amp; Lead Capture</h2>
-            <p class="lede">Traffic is only useful if it turns into booked estimates. Every site is built to make contacting you take seconds.</p>
-            <span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span>
+            <p class="lede">Traffic only matters if it turns into booked estimates. We make contacting you take seconds — and alert you the moment someone does.</p>
+            <ul class="checks two">
+              <li>Short estimate forms</li>
+              <li>Click-to-call and text-us buttons</li>
+              <li>Instant lead alerts by text and email</li>
+              <li>Sticky call button on mobile</li>
+              <li>Square-footage cost estimator</li>
+              <li>In-home estimate booking</li>
+            </ul>
+            <p class="plan-tags"><span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Short estimate request forms</li>
-                <li>Click-to-call and text-us buttons</li>
-                <li>Instant lead alerts to your phone and email</li>
-                <li>Sticky call button on mobile</li>
-                <li>Square-footage cost estimator <small>(Dominate)</small></li>
-                <li>In-home estimate booking calendar <small>(Dominate)</small></li>
-              </ul>
+          <div class="svc-visual">
+            <div class="mk-phone">
+              <div class="mk-phone-screen mk-form">
+                <p class="mk-form-title">Get a free estimate</p>
+                <label>Name<span class="type-target" data-type="Sarah M."></span></label>
+                <label>Floor type<span class="type-target" data-type="Hardwood"></span></label>
+                <label>Room size<span class="type-target" data-type="620 sq ft"></span></label>
+                <label>ZIP<span class="type-target" data-type="75204"></span></label>
+                <span class="mk-submit">Request estimate</span>
+              </div>
             </div>
-            <div class="note"><b>Try it:</b> the estimator on our <a href="/#features">homepage</a> is the same tool your customers would use.</div>
+            <div class="mk-toast"><span class="material-symbols-outlined">notifications_active</span><div><b>New lead</b><span>620 sq ft hardwood · Dallas, TX</span></div></div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="detail" id="galleries">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">compare</span></div>
+      <!-- 5. Galleries -->
+      <section class="svc" id="galleries">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">05</p>
             <h2>Project Galleries &amp; Before/After</h2>
-            <p class="lede">Your finished jobs are your best sales pitch. We turn the photos on your phone into proof that sells the next job.</p>
-            <span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span>
+            <p class="lede">Your finished jobs are your best sales pitch. We turn the photos on your phone into proof that sells the next job. <b>Drag the slider →</b></p>
+            <ul class="checks two">
+              <li>Galleries by floor type and room</li>
+              <li>Drag-to-compare sliders</li>
+              <li>Photo cleanup and compression</li>
+              <li>New photos added monthly</li>
+            </ul>
+            <p class="plan-tags"><span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Galleries filterable by floor type and room</li>
-                <li>Drag-to-compare before/after sliders</li>
-                <li>Photo cleanup and compression</li>
-                <li>New photos added as part of monthly care</li>
-              </ul>
+          <div class="svc-visual">
+            <div class="ba" style="--pos:50%">
+              <img src="/images/services/after.webp" alt="Living room with newly finished oak floor" />
+              <div class="ba-before"><img src="/images/services/before.webp" alt="Same room with worn, scratched floor" /></div>
+              <span class="ba-label l">Before</span><span class="ba-label r">After</span>
+              <span class="ba-handle" aria-hidden="true"><span class="material-symbols-outlined">swap_horiz</span></span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison" />
             </div>
-            <div class="note"><b>No pro photos?</b> Phone photos work. We crop, straighten and color-correct them.</div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="detail" id="reviews">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">reviews</span></div>
+      <!-- 6. Reviews -->
+      <section class="svc alt" id="reviews">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">06</p>
             <h2>Review Generation</h2>
             <p class="lede">Homeowners pick the contractor with more recent 5-star reviews. We make asking for them automatic.</p>
-            <span class="tag hot">Growth</span><span class="tag">Dominate</span>
+            <ul class="checks two">
+              <li>Automatic text and email requests</li>
+              <li>One-tap link to your Google review form</li>
+              <li>Polite follow-up reminders</li>
+              <li>Best reviews shown on your site</li>
+            </ul>
+            <p class="plan-tags"><span class="tag hot">Growth</span><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Automated text and email review requests</li>
-                <li>One-tap link straight to your Google review form</li>
-                <li>Polite follow-up reminders</li>
-                <li>Best reviews shown on your website</li>
-              </ul>
+          <div class="svc-visual">
+            <div class="mk-phone">
+              <div class="mk-phone-screen mk-sms">
+                <p class="sms-head">Your Flooring Co.</p>
+                <p class="bubble in">Hi Sarah! Thanks for choosing us for your new hardwood floors. Would you leave us a quick review? ⭐</p>
+                <p class="bubble link">g.page/your-flooring-co/review</p>
+                <p class="bubble out">Done! The floors look amazing 😍</p>
+                <div class="big-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              </div>
             </div>
+            <div class="mk-review r1"><b>★★★★★</b><p>"On time, spotless, floors look incredible."</p></div>
+            <div class="mk-review r2"><b>★★★★★</b><p>"Best flooring crew we've hired."</p></div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="detail" id="google-ads">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">ads_click</span></div>
+      <!-- 7. Google Ads -->
+      <section class="svc" id="google-ads">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">07</p>
             <h2>Google Ads &amp; Landing Pages</h2>
             <p class="lede">Need jobs this month, not in six months? Paid search puts you at the top today. We build pages that make every click count.</p>
-            <span class="tag">Dominate</span>
+            <ul class="checks two">
+              <li>A landing page per campaign</li>
+              <li>Pages matched to ad keywords</li>
+              <li>Call and form tracking</li>
+              <li>Setup and ongoing tuning</li>
+            </ul>
+            <p class="note"><b>Your ad budget stays yours.</b> You pay Google directly, so you always see where every dollar goes.</p>
+            <p class="plan-tags"><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Dedicated landing page per campaign</li>
-                <li>Pages matched to your ad keywords</li>
-                <li>Call and form conversion tracking</li>
-                <li>Campaign setup and ongoing tuning</li>
-              </ul>
+          <div class="svc-visual">
+            <div class="mk-ads">
+              <div class="mk-ad"><span class="sp">Sponsored</span><span class="url">yourfloors.com/hardwood</span><b>Hardwood Floor Installation | Free In-Home Estimate</b><p>Licensed &amp; insured. Book this week. Financing available.</p></div>
+              <div class="mk-chart">
+                <p class="mk-chart-title">Leads by week <small>demo data</small></p>
+                <div class="bars"><i style="--h:28%"></i><i style="--h:40%"></i><i style="--h:36%"></i><i style="--h:55%"></i><i style="--h:62%"></i><i style="--h:74%"></i><i style="--h:88%"></i></div>
+                <div class="kpis"><span><b data-count="42">42</b>calls</span><span><b data-count="18">18</b>forms</span><span><b data-count="9">9</b>booked jobs</span></div>
+              </div>
             </div>
-            <div class="note"><b>Your ad budget is separate.</b> You pay Google directly, so you always see exactly where the money goes.</div>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <article class="detail" id="care">
-          <div class="reveal">
-            <div class="detail-icon"><span class="material-symbols-outlined" aria-hidden="true">verified_user</span></div>
+      <!-- 8. Care -->
+      <section class="svc alt" id="care">
+        <div class="wrap svc-row">
+          <div class="svc-copy">
+            <p class="svc-num">08</p>
             <h2>Hosting, Security &amp; Care</h2>
             <p class="lede">You run crews, not website plugins. We keep your site fast, secure and up to date for one small monthly fee.</p>
-            <span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span>
+            <ul class="checks two">
+              <li>Fast global hosting</li>
+              <li>SSL certificate</li>
+              <li>Daily backups</li>
+              <li>Security updates</li>
+              <li>Uptime monitoring</li>
+              <li>Small edits every month</li>
+            </ul>
+            <p class="plan-tags"><span class="tag">Starter</span><span class="tag">Growth</span><span class="tag">Dominate</span></p>
           </div>
-          <div class="detail-body reveal">
-            <div>
-              <h3>What you get</h3>
-              <ul class="checks two">
-                <li>Fast hosting on a global network</li>
-                <li>SSL certificate (the padlock)</li>
-                <li>Daily backups</li>
-                <li>Security and software updates</li>
-                <li>Uptime monitoring</li>
-                <li>Small content edits each month</li>
+          <div class="svc-visual">
+            <div class="mk-dash">
+              <div class="gauge"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" /><circle class="g-val" cx="60" cy="60" r="50" /></svg><b data-count="99" data-suffix=".9%">99.9%</b><span>uptime</span></div>
+              <ul class="mk-checks">
+                <li><span class="material-symbols-outlined">lock</span>SSL certificate active</li>
+                <li><span class="material-symbols-outlined">backup</span>Backup complete · 3:00 AM</li>
+                <li><span class="material-symbols-outlined">system_update_alt</span>Updates installed</li>
+                <li><span class="material-symbols-outlined">edit</span>Gallery photos added</li>
               </ul>
             </div>
           </div>
-        </article>
-
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
 
     <section class="section section-dark">
       <div class="wrap">
@@ -332,7 +432,7 @@
           <p class="eyebrow eyebrow-light">Included in every plan</p>
           <h2>The Basics Are Never Extra</h2>
         </div>
-        <div class="card-grid four">
+        <div class="card-grid four tilt-grid">
           <div class="card reveal"><span class="material-symbols-outlined" aria-hidden="true">smartphone</span><h3>Mobile-first</h3><p>Designed for phones first, then desktop.</p></div>
           <div class="card reveal"><span class="material-symbols-outlined" aria-hidden="true">lock</span><h3>SSL &amp; backups</h3><p>Secure padlock and daily backups.</p></div>
           <div class="card reveal"><span class="material-symbols-outlined" aria-hidden="true">key</span><h3>You own it</h3><p>Your domain and your content stay yours.</p></div>
@@ -380,7 +480,7 @@
           <p class="lede">More answers on the <a href="/#faq">FAQ page</a>.</p>
         </div>
         <div class="faq-list">
-          <details class="reveal"><summary>Can I start with a website and add SEO later?</summary><p>Yes. Start on Starter and move up to Growth whenever you're ready. Your site is already built SEO-ready, so nothing gets rebuilt.</p></details>
+          <details class="reveal"><summary>Can I start with a website and add SEO later?</summary><p>Yes. Start on Starter and move up to Growth whenever you're ready. Your site is built SEO-ready, so nothing gets rebuilt.</p></details>
           <details class="reveal"><summary>Can you fix my existing Google Business Profile?</summary><p>Yes. We audit and clean up existing profiles. You keep all your current reviews.</p></details>
           <details class="reveal"><summary>Do you manage my Google Ads budget?</summary><p>We set up and manage the campaigns. You pay Google directly for clicks, so the budget stays in your account and under your control.</p></details>
           <details class="reveal"><summary>How do leads reach me?</summary><p>Instantly, by text and email. The form, call button and text button all go straight to you — no shared lead marketplace.</p></details>
@@ -389,14 +489,12 @@
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0">
+    <section class="final-photo" style="--img:url('/images/services/after.webp')">
       <div class="wrap">
-        <div class="cta-band reveal">
-          <div>
-            <h2>Not Sure What You Need?</h2>
-            <p>Tell us about your business. We'll send a free homepage mockup and an honest take on what will bring you more jobs.</p>
-          </div>
-          <a class="btn btn-accent btn-lg" href="/#mockup">Get My Free Mockup</a>
+        <div class="reveal">
+          <h2>Not Sure What You Need?</h2>
+          <p class="lede">Tell us about your business. We'll send a free homepage mockup and an honest take on what will bring you more jobs.</p>
+          <div class="btn-row"><a class="btn btn-accent btn-lg" href="/#mockup">Get My Free Mockup</a><a class="btn btn-ghost-light btn-lg" href="tel:+10000000000">Call (XXX) XXX-XXXX</a></div>
         </div>
       </div>
     </section>
@@ -429,5 +527,6 @@
   </div>
 
   <script src="/page.js" defer></script>
+  <script src="/services.js" defer></script>
 </body>
 </html>
