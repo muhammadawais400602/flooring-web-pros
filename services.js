@@ -176,14 +176,4 @@
   addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 
-  /* ---------- Tilt cards (mouse only) ---------- */
-  document.querySelectorAll('.tilt-grid .card').forEach((card) => {
-    card.addEventListener('pointermove', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 14).toFixed(2) + 'deg');
-      card.style.setProperty('--rx', (((e.clientY - r.top) / r.height - .5) * -14).toFixed(2) + 'deg');
-    });
-    card.addEventListener('pointerleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
-  });
 })();
