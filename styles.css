@@ -887,3 +887,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
   .niche-track, .wws-pill.active::after { animation: none !important; }
   .story-screen, .story-screen * { transition: none !important; }
 }
+/* Who We Serve hero: trade name + "pros." always on their own line, never wraps */
+.wws-hero h1 .l1, .wws-hero h1 .l2 { display: block; }
+.wws-hero h1 .l2 { white-space: nowrap; }
+@media (max-width: 760px) { .wws-hero h1 { font-size: min(56px, 10.8vw); } }
