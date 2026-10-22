@@ -17,85 +17,87 @@
   mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-  /* ---------- Hero: scroll-scrubbed image sequence on canvas ---------- */
+  /* ---------- Hero: scroll-scrubbed image sequence on canvas ----------
+     Smoothness: frames are pre-decoded off the main thread (createImageBitmap),
+     neighbouring frames are cross-faded for sub-frame motion, the canvas never
+     renders above the frames' own resolution, and the loop only runs while the
+     hero is on screen and something changed. */
   const hero = document.querySelector('.hero');
   const canvas = document.querySelector('.hero-canvas');
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
   const stages = [...document.querySelectorAll('.stage')];
   const bar = document.querySelector('.hero-progress span');
   const FRAMES = 132;
   const portrait = matchMedia('(max-aspect-ratio: 1/1)').matches;
   const dir = portrait ? 'frames-m' : 'frames';
+  const SRC_W = portrait ? 600 : 1280;
   const src = (i) => `${dir}/f${String(i + 1).padStart(3, '0')}.webp`;
-  const images = new Array(FRAMES);
-  let current = 0;      // frame drawn (smoothed)
-  let target = 0;       // frame wanted by scroll
-  let drawn = -1;
+  const frames = new Array(FRAMES).fill(null);   // decoded, ready-to-draw bitmaps
+  let current = 0, target = 0, drawnAt = -1, lastP = -1, rect = null, needsDraw = true;
 
-  function loadFrame(i) {
-    if (images[i]) return images[i];
-    const img = new Image();
-    img.decoding = 'async';
-    img.src = src(i);
-    img.onload = () => { if (Math.round(current) === i || drawn === -1) draw(true); };
-    images[i] = img;
-    return img;
-  }
+  const decode = async (i) => {
+    try {
+      if ('createImageBitmap' in window) {
+        const blob = await (await fetch(src(i))).blob();
+        frames[i] = await createImageBitmap(blob);
+      } else {
+        const img = new Image(); img.src = src(i); await img.decode(); frames[i] = img;
+      }
+    } catch { /* leave empty; nearest frame is used */ }
+    needsDraw = true;
+  };
 
-  // Load coarse first (every 8th frame) so scrubbing works early, then fill the gaps.
-  function preload() {
-    const order = [];
-    for (let step of [8, 4, 2, 1]) for (let i = 0; i < FRAMES; i += step) if (!order.includes(i)) order.push(i);
+  // Coarse first (every 8th frame), then fill gaps, 6 at a time
+  const preload = async () => {
+    const order = [], seen = new Set();
+    for (const step of [8, 4, 2, 1]) for (let i = 0; i < FRAMES; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
     let k = 0;
-    const next = () => {
-      const batch = order.slice(k, k + 6);
-      k += 6;
-      if (!batch.length) return;
-      let left = batch.length;
-      batch.forEach((i) => {
-        const img = loadFrame(i);
-        const done = () => { if (--left === 0) next(); };
-        if (img.complete) done(); else { img.addEventListener('load', done, { once: true }); img.addEventListener('error', done, { once: true }); }
-      });
-    };
-    next();
-  }
+    const worker = async () => { while (k < order.length) await decode(order[k++]); };
+    await Promise.all(Array.from({ length: 6 }, worker));
+  };
 
-  function nearestLoaded(i) {
+  const nearest = (i, dirn) => {
     for (let d = 0; d < FRAMES; d++) {
-      const a = images[i - d], b = images[i + d];
-      if (a && a.complete && a.naturalWidth) return a;
-      if (b && b.complete && b.naturalWidth) return b;
+      const a = frames[i - d * dirn], b = frames[i + d * dirn];
+      if (a) return a; if (b) return b;
     }
     return null;
-  }
+  };
 
-  function resize() {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    canvas.width = Math.round(canvas.clientWidth * dpr);
-    canvas.height = Math.round(canvas.clientHeight * dpr);
-    draw(true);
-  }
+  const resize = () => {
+    // Never render more pixels than the frames contain (cover-scaled)
+    const cssW = canvas.clientWidth, cssH = canvas.clientHeight;
+    const coverScale = Math.max(cssW / SRC_W, cssH / (SRC_W * 9 / 16));
+    const dpr = Math.min(devicePixelRatio || 1, 2, Math.max(1, 1 / coverScale * 1.25));
+    canvas.width = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+    rect = null; needsDraw = true;
+  };
 
-  function draw(force) {
-    const i = Math.round(current);
-    if (!force && i === drawn) return;
-    const img = nearestLoaded(i);
-    if (!img) return;
+  const draw = () => {
+    const i = Math.floor(current), f = current - i;
+    const a = frames[i] || nearest(i, -1);
+    if (!a) return;
     const cw = canvas.width, ch = canvas.height;
-    const s = Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
-    const w = img.naturalWidth * s, h = img.naturalHeight * s;
-    ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
-    drawn = i;
-  }
+    if (!rect) {
+      const s = Math.max(cw / a.width, ch / a.height);
+      const w = a.width * s, h = a.height * s;
+      rect = [(cw - w) / 2, (ch - h) / 2, w, h];
+    }
+    ctx.globalAlpha = 1;
+    ctx.drawImage(a, rect[0], rect[1], rect[2], rect[3]);
+    const b = f > 0.02 && i + 1 < FRAMES ? frames[i + 1] : null;
+    if (b) { ctx.globalAlpha = f; ctx.drawImage(b, rect[0], rect[1], rect[2], rect[3]); ctx.globalAlpha = 1; }
+    drawnAt = current;
+  };
 
-  function heroProgress() {
+  const heroProgress = () => {
     const r = hero.getBoundingClientRect();
     const total = r.height - innerHeight;
     return total > 0 ? clamp(-r.top / total) : 0;
-  }
+  };
 
-  function updateStages(p) {
+  const updateStages = (p) => {
     const fade = 0.07;
     stages.forEach((el) => {
       const a = parseFloat(el.dataset.in), b = parseFloat(el.dataset.out);
@@ -103,27 +105,35 @@
       const outP = clamp((b - p) / fade);
       const o = Math.min(inP, outP);
       el.style.opacity = o.toFixed(3);
-      el.style.transform = `translateY(${((1 - inP) * 30 - (1 - outP) * 30).toFixed(1)}px)`;
+      el.style.transform = `translate3d(0, ${((1 - inP) * 30 - (1 - outP) * 30).toFixed(1)}px, 0)`;
       el.classList.toggle('on', o > 0.02);
     });
     bar.style.transform = `scaleX(${p.toFixed(4)})`;
-  }
+  };
 
   if (!reduceMotion) {
-    loadFrame(0);
-    preload();
-    resize();
+    decode(0).then(() => { resize(); draw(); preload(); });
     addEventListener('resize', resize);
-    const tick = () => {
+    let heroVisible = true, running = false, last = performance.now();
+    new IntersectionObserver((e) => { heroVisible = e[0].isIntersecting; if (heroVisible) kick(); }).observe(hero);
+    const tick = (now) => {
+      const dt = Math.min(64, now - last); last = now;
       const p = heroProgress();
       target = p * (FRAMES - 1);
-      current += (target - current) * 0.18;
-      if (Math.abs(target - current) < 0.05) current = target;
-      draw(false);
-      updateStages(p);
-      requestAnimationFrame(tick);
+      // Frame-rate independent easing: same feel at 60Hz and 120Hz
+      current += (target - current) * (1 - Math.exp(-dt / 90));
+      if (Math.abs(target - current) < 0.01) current = target;
+      if (needsDraw || Math.abs(current - drawnAt) > 0.004) { draw(); needsDraw = false; }
+      if (Math.abs(p - lastP) > 0.0002) { updateStages(p); lastP = p; }
+      if (heroVisible && (current !== target || needsDraw)) requestAnimationFrame(tick);
+      else running = false;
     };
-    requestAnimationFrame(tick);
+    const kick = () => { if (!running && heroVisible) { running = true; last = performance.now(); requestAnimationFrame(tick); } };
+    addEventListener('scroll', kick, { passive: true });
+    addEventListener('resize', kick);
+    // keep drawing as new frames finish decoding
+    setInterval(() => { if (needsDraw) kick(); }, 250);
+    kick();
   }
 
   /* ---------- Who we serve: card photo fills section background on hover ---------- */

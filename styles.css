@@ -1427,3 +1427,6 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 @media (prefers-reduced-motion: reduce) { .feat-screen img { animation: none; } .feat-screen { overflow: auto; } }
 .feat-tag .dot { animation: dotpulse 1.8s ease-out infinite; }
 @keyframes dotpulse { from { box-shadow: 0 0 0 0 rgba(194,85,31,.55); } to { box-shadow: 0 0 0 8px rgba(194,85,31,0); } }
+/* Homepage hero: keep scrubbing on the GPU */
+.stage { will-change: opacity, transform; }
+.hero-progress span { will-change: transform; }
