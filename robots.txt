@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://flooring-web-pros.vercel.app/sitemap.xml
