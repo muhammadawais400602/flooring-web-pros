@@ -104,4 +104,22 @@
   /* ---------- Timeline ---------- */
   const tl = document.querySelector('.pf-time');
   if (tl) { const tio = new IntersectionObserver((es) => { if (es[0].isIntersecting) { tio.disconnect(); tl.classList.add('in'); } }, { threshold: .4 }); tio.observe(tl); }
+
+  /* ---------- Featured project: auto-scroll the full-page design, open full view ---------- */
+  const feat = document.querySelector('.feat-screen');
+  if (feat) {
+    const img = feat.querySelector('img');
+    const size = () => {
+      const dist = Math.max(0, img.offsetHeight - feat.clientHeight);
+      feat.style.setProperty('--scroll', dist + 'px');
+      feat.style.setProperty('--dur', Math.max(12, dist / 70).toFixed(1) + 's');
+    };
+    img.complete ? size() : img.addEventListener('load', size);
+    addEventListener('resize', size);
+    const fm = document.querySelector('.feat-modal');
+    const openFeat = () => { fm.showModal(); fm.scrollTop = 0; };
+    document.querySelectorAll('.feat-open, .feat-open-2').forEach((b) => b.addEventListener('click', openFeat));
+    fm.querySelector('.pf-close').addEventListener('click', () => fm.close());
+    fm.addEventListener('click', (e) => { if (e.target === fm) fm.close(); });
+  }
 })();

@@ -1398,3 +1398,32 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .fq-empty .btn-row { justify-content: center; margin-top: 20px; }
 @media (prefers-reduced-motion: reduce) { .fq-bubbles { display: none; } }
 .faq-list .fq[open] summary::after { content: "add"; transform: translateY(-50%) rotate(45deg); }
+
+/* Portfolio: featured project */
+.feat { background: linear-gradient(180deg, var(--paper), var(--cream)); }
+.feat-grid { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 1000px) { .feat-grid { grid-template-columns: .9fr 1.1fr; gap: 72px; } }
+.feat-open { display: block; width: min(560px, 100%); margin-inline: auto; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; text-align: left; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.feat-open:hover { transform: translateY(-6px) rotate(-.5deg); }
+.feat-open .pf-browser { box-shadow: 0 50px 100px rgba(40,25,10,.35); }
+.feat-screen { height: clamp(420px, 62vh, 640px); overflow: hidden; border-radius: 6px; background: #f6f1e8; }
+.feat-screen img { width: 100%; height: auto; display: block; animation: featscroll var(--dur, 26s) ease-in-out infinite alternate; }
+.feat-open:hover .feat-screen img, .feat-open:focus-visible .feat-screen img { animation-play-state: paused; }
+@keyframes featscroll { 0%, 6% { transform: translateY(0); } 94%, 100% { transform: translateY(calc(-1 * var(--scroll, 0px))); } }
+.feat-hint { position: absolute; right: 18px; bottom: 18px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; color: #fff; background: rgba(18,15,12,.75); backdrop-filter: blur(6px); padding: 8px 14px; border-radius: 999px; opacity: 0; translate: 0 8px; transition: opacity .3s, translate .3s; }
+.feat-open:hover .feat-hint, .feat-open:focus-visible .feat-hint { opacity: 1; translate: 0 0; }
+@media (hover: none) { .feat-hint { opacity: 1; translate: 0 0; } }
+.feat-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.feat-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(194,85,31,.5); animation: callpulse 1.8s ease-out infinite; }
+.feat-copy h2 { font-size: clamp(38px, 5vw, 68px); font-weight: 900; font-stretch: 80%; letter-spacing: -0.035em; line-height: 1; }
+.feat-meta { color: var(--ink-3); font-weight: 600; margin: 10px 0 0; }
+.feat-copy .lede { margin: 18px 0 24px; }
+.feat-chips { margin: 22px 0 28px; }
+.feat-modal { width: min(560px, 100% - 24px); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: 18px; background: #f6f1e8; overflow: auto; box-shadow: 0 40px 120px rgba(0,0,0,.5); }
+.feat-modal::backdrop { background: rgba(18,15,12,.75); backdrop-filter: blur(6px); }
+.feat-modal[open] { animation: pfPop .4s cubic-bezier(.2,.9,.3,1.1); }
+.feat-modal img { width: 100%; height: auto; display: block; }
+.feat-modal .pf-close { position: sticky; top: 12px; float: right; margin: 12px 12px -56px 0; }
+@media (prefers-reduced-motion: reduce) { .feat-screen img { animation: none; } .feat-screen { overflow: auto; } }
+.feat-tag .dot { animation: dotpulse 1.8s ease-out infinite; }
+@keyframes dotpulse { from { box-shadow: 0 0 0 0 rgba(194,85,31,.55); } to { box-shadow: 0 0 0 8px rgba(194,85,31,0); } }
