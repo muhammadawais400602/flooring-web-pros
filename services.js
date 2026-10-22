@@ -4,7 +4,7 @@
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  /* ---------- Hero: split headline into words, play oak frames on canvas ---------- */
+  /* ---------- Hero: split headline into words ---------- */
   const hero = document.querySelector('.svc-hero');
   const h1 = hero.querySelector('.split-words');
   let wi = 0;
@@ -30,53 +30,6 @@
   h1.setAttribute('aria-label', h1.textContent.replace(/\s+/g, ' ').trim());
   wrapWords(h1);
   requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('ready')));
-
-  const canvas = hero.querySelector('.svc-hero-canvas');
-  const ctx = canvas.getContext('2d');
-  const portrait = matchMedia('(max-aspect-ratio: 1/1)').matches;
-  const dir = portrait ? '/frames-m' : '/frames';
-  const IDS = []; for (let i = 1; i <= 132; i += 2) IDS.push(i);   // every 2nd frame: 66 images
-  const imgs = IDS.map(() => null);
-  const load = (k) => {
-    if (imgs[k]) return imgs[k];
-    const im = new Image(); im.decoding = 'async';
-    im.src = `${dir}/f${String(IDS[k]).padStart(3, '0')}.webp`;
-    imgs[k] = im; return im;
-  };
-  const sizeCanvas = () => {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    canvas.width = Math.round(canvas.clientWidth * dpr);
-    canvas.height = Math.round(canvas.clientHeight * dpr);
-  };
-  const drawImg = (im) => {
-    if (!im || !im.complete || !im.naturalWidth) return false;
-    const cw = canvas.width, ch = canvas.height;
-    const s = Math.max(cw / im.naturalWidth, ch / im.naturalHeight);
-    const w = im.naturalWidth * s, h = im.naturalHeight * s;
-    ctx.drawImage(im, (cw - w) / 2, (ch - h) / 2, w, h);
-    return true;
-  };
-  sizeCanvas(); addEventListener('resize', () => { sizeCanvas(); drawImg(imgs[frame]); });
-  let frame = 0, dirn = 1;
-  const first = load(0); first.onload = () => drawImg(first);
-  if (!reduce) {
-    // load in order, then ping-pong through loaded frames
-    let k = 1; const loadNext = () => { if (k >= IDS.length) return; const im = load(k++); im.onload = im.onerror = loadNext; };
-    for (let n = 0; n < 4; n++) loadNext();
-    let last = 0, heroVisible = true;
-    new IntersectionObserver((e) => { heroVisible = e[0].isIntersecting; }).observe(hero);
-    const tick = (t) => {
-      if (heroVisible && t - last > 83) {   // ~12 fps
-        const nxt = frame + dirn;
-        if (nxt < 0 || nxt >= IDS.length) dirn *= -1;
-        const cand = frame + dirn;
-        if (imgs[cand] && imgs[cand].complete && imgs[cand].naturalWidth) { frame = cand; drawImg(imgs[frame]); }
-        last = t;
-      }
-      requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }
 
   /* ---------- Marquee: duplicate track for a seamless loop ---------- */
   const track = document.querySelector('.marquee-track');
