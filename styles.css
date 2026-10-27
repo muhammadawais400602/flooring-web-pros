@@ -1430,3 +1430,25 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 /* Homepage hero: keep scrubbing on the GPU */
 .stage { will-change: opacity, transform; }
 .hero-progress span { will-change: transform; }
+
+/* Portfolio: more of our work */
+.work { background: var(--cream); }
+.work-grid { display: grid; gap: 36px 24px; }
+@media (min-width: 640px) { .work-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .work-grid { grid-template-columns: repeat(4, 1fr); } }
+.work-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; text-align: left; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.work-open:hover { transform: translateY(-8px); }
+.work-open .pf-browser { box-shadow: 0 30px 60px rgba(40,25,10,.25); transition: box-shadow .4s; }
+.work-open:hover .pf-browser { box-shadow: 0 44px 80px rgba(40,25,10,.38); }
+.work-open .mk-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.work-screen { height: clamp(360px, 46vh, 460px); overflow: hidden; border-radius: 6px; background: #fff; }
+.work-screen img { width: 100%; height: auto; display: block; transition: transform 1s cubic-bezier(.5,0,.3,1); }
+.work-open:hover .work-screen img, .work-open:focus-visible .work-screen img { transform: translateY(calc(-1 * var(--scroll, 0px))); transition: transform var(--dur, 9s) linear; }
+.work-card.auto .work-screen img { animation: featscroll var(--dur, 12s) ease-in-out infinite alternate; }
+.work-open:hover .feat-hint, .work-open:focus-visible .feat-hint { opacity: 1; translate: 0 0; }
+.work-info { margin-top: 18px; }
+.work-info h3 { font-size: 22px; }
+.work-info p { color: var(--ink-3); font-size: 14px; margin: 4px 0 10px; }
+.work-info ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.work-info li { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { .work-screen { overflow: auto; } .work-screen img { transition: none !important; animation: none !important; } }

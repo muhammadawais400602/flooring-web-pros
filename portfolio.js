@@ -117,9 +117,31 @@
     img.complete ? size() : img.addEventListener('load', size);
     addEventListener('resize', size);
     const fm = document.querySelector('.feat-modal');
-    const openFeat = () => { fm.showModal(); fm.scrollTop = 0; };
-    document.querySelectorAll('.feat-open, .feat-open-2').forEach((b) => b.addEventListener('click', openFeat));
+    const fmImg = fm.querySelector('img');
+    const openFull = (src, alt) => {
+      fmImg.src = src; fmImg.alt = alt;
+      const fit = () => { fm.style.width = `min(${Math.round(Math.max(320, fmImg.naturalWidth * 1.35))}px, 100% - 24px)`; };
+      fmImg.complete ? fit() : fmImg.addEventListener('load', fit, { once: true });
+      fm.showModal(); fm.scrollTop = 0;
+    };
+    document.querySelectorAll('.feat-open, .feat-open-2').forEach((b) => b.addEventListener('click', () => openFull('/images/portfolio/silvan-hardwood.webp', 'Silvan Hardwood full homepage design')));
+    document.querySelectorAll('.work-open').forEach((b) => b.addEventListener('click', () => openFull(b.dataset.src, b.dataset.alt)));
     fm.querySelector('.pf-close').addEventListener('click', () => fm.close());
     fm.addEventListener('click', (e) => { if (e.target === fm) fm.close(); });
+  }
+
+  /* ---------- More of our work: scroll distance per card, auto-scroll on touch ---------- */
+  const workCards = [...document.querySelectorAll('.work-card')];
+  const sizeWork = () => workCards.forEach((c) => {
+    const sc = c.querySelector('.work-screen'), img = sc.querySelector('img');
+    const dist = Math.max(0, img.offsetHeight - sc.clientHeight);
+    c.style.setProperty('--scroll', dist + 'px');
+    c.style.setProperty('--dur', Math.max(6, dist / 110).toFixed(1) + 's');
+  });
+  workCards.forEach((c) => { const img = c.querySelector('img'); if (!img.complete) img.addEventListener('load', sizeWork); });
+  addEventListener('resize', sizeWork); addEventListener('load', sizeWork); sizeWork();
+  if (noHover && !reduce) {
+    const wio = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('auto', e.isIntersecting)), { threshold: .4 });
+    workCards.forEach((c) => wio.observe(c));
   }
 })();
