@@ -37,10 +37,7 @@
 
   /* ---------- Touch screens: cards auto-scroll while in view ---------- */
   const cards = [...document.querySelectorAll('.pf-card')];
-  if (noHover && !reduce) {
-    const aio = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('auto', e.isIntersecting)), { threshold: .5 });
-    cards.forEach((c) => aio.observe(c));
-  }
+
 
   /* ---------- Filters ---------- */
   const filters = [...document.querySelectorAll('.pf-filter')];
@@ -53,29 +50,8 @@
       c.classList.remove('pop');
       if (show) { c.classList.add('in'); void c.offsetWidth; c.classList.add('pop'); }
     });
-    refresh();
+    refresh(); if (typeof sizeWork === 'function') requestAnimationFrame(sizeWork);
   }));
-
-  /* ---------- Preview modal ---------- */
-  const modal = document.querySelector('.pf-modal');
-  const $ = (s) => modal.querySelector(s);
-  cards.forEach((card) => card.querySelector('.pf-open').addEventListener('click', () => {
-    const d = JSON.parse(card.querySelector('.pf-data').innerHTML);
-    $('#pf-m-title').textContent = d.brand;
-    $('.pf-m-meta').textContent = `${d.cat} · ${d.city}`;
-    $('.pf-m-idea').textContent = d.idea;
-    $('.pf-m-feats').innerHTML = d.feats.map((f) => `<li>${f}</li>`).join('');
-    $('.pf-m-pages').innerHTML = d.pages.map((p) => `<span>${p}</span>`).join('');
-    const browser = card.querySelector('.pf-browser');
-    $('.pf-m-laptop').replaceChildren(browser.cloneNode(true));
-    const screen = document.createElement('div'); screen.className = 'pf-screen';
-    screen.appendChild(browser.querySelector('.ms').cloneNode(true));
-    $('.pf-m-phone').replaceChildren(screen);
-    modal.showModal();
-    requestAnimationFrame(() => setScroll(modal));
-  }));
-  $('.pf-close').addEventListener('click', () => modal.close());
-  modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
 
   /* ---------- Old vs new slider ---------- */
   const vs = document.querySelector('.vs');

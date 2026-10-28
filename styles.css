@@ -1452,3 +1452,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .work-info ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .work-info li { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--ink-2); }
 @media (prefers-reduced-motion: reduce) { .work-screen { overflow: auto; } .work-screen img { transition: none !important; animation: none !important; } }
+/* Portfolio: 16 sites by trade */
+.trade-grid-pf { gap: 40px 24px; }
+@media (min-width: 1100px) { .trade-grid-pf { grid-template-columns: repeat(4, 1fr); } }
+.work-cat { font-size: 12px !important; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent) !important; margin: 0 0 4px !important; }
