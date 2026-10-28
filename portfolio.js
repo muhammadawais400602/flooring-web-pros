@@ -41,11 +41,26 @@
 
   /* ---------- Filters ---------- */
   const filters = [...document.querySelectorAll('.pf-filter')];
+  // "All" shows each business once; trade filters show every card in that trade.
+  const firstByName = new Map();
+  cards.forEach((c) => {
+    const name = c.querySelector('h3').textContent.trim();
+    const first = firstByName.get(name);
+    if (first) { c.dataset.dup = '1'; first._cats.push(c.dataset.cat); }
+    else { firstByName.set(name, c); c._cats = [c.dataset.cat]; }
+  });
+  const setLabels = (all) => cards.forEach((c) => {
+    const lab = c.querySelector('.work-cat'); if (!lab) return;
+    lab.textContent = all && c._cats ? c._cats.join(' · ') : c.dataset.cat;
+  });
+  cards.forEach((c) => c.classList.toggle('hide', c.dataset.dup === '1'));
+  setLabels(true);
   filters.forEach((f) => f.addEventListener('click', () => {
     const cat = f.dataset.cat;
+    setLabels(cat === 'All');
     filters.forEach((x) => { const on = x === f; x.classList.toggle('active', on); x.setAttribute('aria-pressed', String(on)); });
     cards.forEach((c) => {
-      const show = cat === 'All' || c.dataset.cat === cat;
+      const show = cat === 'All' ? c.dataset.dup !== '1' : c.dataset.cat === cat;
       c.classList.toggle('hide', !show);
       c.classList.remove('pop');
       if (show) { c.classList.add('in'); void c.offsetWidth; c.classList.add('pop'); }
