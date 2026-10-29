@@ -24,30 +24,40 @@ cfg = re.search(r'tailwind\.config\s*=\s*(\{.*?\});?\s*</script>', s, re.S).grou
 s = re.sub(r'<script src="https://cdn\.tailwindcss\.com[^"]*"></script>', '', s)
 s = re.sub(r'<script id="tailwind-config">.*?</script>', '', s, flags=re.S)
 
-# Header: drop nav + any CTA links/buttons, keep the first (logo) link and images
+# Header: drop nav + CTA links/buttons. Keep the logo: the first <a> only if it
+# comes before the nav position (a logo link), plus images (avatar).
 def clean_header(m):
     h = m.group(0)
+    nav = re.search(r'<nav\b.*?</nav>', h, re.S)
+    cut = nav.start() if nav else len(h)
     h = re.sub(r'<nav\b.*?</nav>', '', h, flags=re.S)
     first = re.search(r'<a\b.*?</a>', h, re.S)
-    keep = first.group(0) if first else ''
+    keep = first.group(0) if first and first.start() < cut and '<span' in first.group(0) else None
     h = re.sub(r'<a\b.*?</a>', lambda a: a.group(0) if a.group(0) == keep else '', h, flags=re.S)
     h = re.sub(r'<button\b.*?</button>', '', h, flags=re.S)
     return h
 s = re.sub(r'<header\b.*?</header>', clean_header, s, count=1, flags=re.S)
 
-# Footer: drop columns whose heading mentions showrooms / addresses
+def div_end(html, start):
+    """Index just after the </div> that closes the <div> starting at `start`."""
+    depth, i = 0, start
+    for t in re.finditer(r'<div\b|</div>', html[start:]):
+        depth += 1 if t.group(0) == '<div' else -1
+        if depth == 0: return start + t.end()
+    return len(html)
+
+# Footer: drop columns whose heading mentions showrooms / addresses / locations
 KEY = r'(showroom|atelier|salon|location|address|visit us|studios?\b)'
 def clean_footer(m):
     f = m.group(0)
-    grid = re.search(r'(<div class="[^"]*grid[^"]*lg:grid-cols-(\d+)[^"]*">)', f)
+    grid = re.search(r'lg:grid-cols-(\d+)', f)
     removed = 0
     while True:
-        # a column = a div whose first child is a heading/span with the keyword
-        col = re.search(r'<div class="[^"]*flex flex-col[^"]*"><(h\d|span)[^>]*>[^<]*' + KEY + r'[^<]*</\1>.*?</div>(?=<div|</div>)', f, re.S | re.I)
+        col = re.search(r'<div class="[^"]*flex flex-col[^"]*"><(h\d|span)[^>]*>[^<]*' + KEY + r'[^<]*</\1>', f, re.I)
         if not col: break
-        f = f[:col.start()] + f[col.end():]; removed += 1
+        f = f[:col.start()] + f[div_end(f, col.start()):]; removed += 1
     if grid and removed:
-        n = int(grid.group(2)); f = f.replace(f'lg:grid-cols-{n}', f'lg:grid-cols-{max(1, n - removed)}', 1)
+        n = int(grid.group(1)); f = f.replace(f'lg:grid-cols-{n}', f'lg:grid-cols-{max(1, n - removed)}', 1)
     return f
 s = re.sub(r'<footer\b.*?</footer>', clean_footer, s, count=1, flags=re.S)
 
