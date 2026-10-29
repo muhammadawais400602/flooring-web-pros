@@ -18,12 +18,11 @@ python3 -m http.server 8080   # http://localhost:8080
 ```
 
 ## Deploy
-Vercel deploys on every push. Project settings: Framework Preset **Other**, Root Directory `./`, no build command, no output directory.
+Live at https://www.flooringwebpros.com. Vercel deploys on every push to `main`; pull requests get preview links. Project settings: Framework Preset **Other**, Root Directory `./`, no build command, no output directory.
 
 ## Before launch
 - Replace `(XXX) XXX-XXXX`, `tel:+10000000000` and `mailto:hello@example.com` in `index.html`.
 - Lead form: set `data-endpoint` on `<form class="lead-form">` (Formspree, CRM webhook, etc.). Empty = success message only, nothing sent.
-- Set `og:image` to an absolute URL once the domain is live.
 - Verify stats (150+, 8+ years, 40+ countries), prices and competitor ranges.
 - Portfolio cards are labeled "Demo Design"; swap for real builds. Swap "Our Promise" for real testimonials later.
 - Footer links About, Blog, Privacy Policy, Terms point to `#` (pages not built yet).
