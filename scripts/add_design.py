@@ -53,7 +53,7 @@ def clean_footer(m):
     grid = re.search(r'lg:grid-cols-(\d+)', f)
     removed = 0
     while True:
-        col = re.search(r'<div class="[^"]*flex flex-col[^"]*"><(h\d|span)[^>]*>[^<]*' + KEY + r'[^<]*</\1>', f, re.I)
+        col = re.search(r'<div class="[^"]*flex flex-col[^"]*"><(h\d|span|div)[^>]*>[^<]*' + KEY + r'[^<]*</\1>', f, re.I)
         if not col: break
         f = f[:col.start()] + f[div_end(f, col.start()):]; removed += 1
     if grid and removed:
