@@ -457,8 +457,11 @@
           </div>
         </div>
 
-        <!-- Set data-endpoint to your form handler (Formspree, Make, CRM webhook…) to receive leads. -->
-        <form class="lead-form reveal" data-endpoint="" novalidate>
+        <!-- Leads are emailed to lead@flooringwebpros.com via FormSubmit (first submission sends a one-time activation email). -->
+        <form class="lead-form reveal" data-endpoint="https://formsubmit.co/ajax/lead@flooringwebpros.com" novalidate>
+          <input type="hidden" name="_subject" value="New mockup request — flooringwebpros.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field"><label for="f-name">Your Name</label><input id="f-name" name="name" autocomplete="name" required /></div>
           <div class="field"><label for="f-biz">Business Name</label><input id="f-biz" name="business" autocomplete="organization" required /></div>
           <div class="field half"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required /></div>
