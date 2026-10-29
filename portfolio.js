@@ -96,31 +96,6 @@
   const tl = document.querySelector('.pf-time');
   if (tl) { const tio = new IntersectionObserver((es) => { if (es[0].isIntersecting) { tio.disconnect(); tl.classList.add('in'); } }, { threshold: .4 }); tio.observe(tl); }
 
-  /* ---------- Featured project: auto-scroll the full-page design, open full view ---------- */
-  const feat = document.querySelector('.feat-screen');
-  if (feat) {
-    const img = feat.querySelector('img');
-    const size = () => {
-      const dist = Math.max(0, img.offsetHeight - feat.clientHeight);
-      feat.style.setProperty('--scroll', dist + 'px');
-      feat.style.setProperty('--dur', Math.max(12, dist / 70).toFixed(1) + 's');
-    };
-    img.complete ? size() : img.addEventListener('load', size);
-    addEventListener('resize', size);
-    const fm = document.querySelector('.feat-modal');
-    const fmImg = fm.querySelector('img');
-    const openFull = (src, alt) => {
-      fmImg.src = src; fmImg.alt = alt;
-      const fit = () => { fm.style.width = `min(${Math.round(Math.max(320, fmImg.naturalWidth * 1.35))}px, 100% - 24px)`; };
-      fmImg.complete ? fit() : fmImg.addEventListener('load', fit, { once: true });
-      fm.showModal(); fm.scrollTop = 0;
-    };
-    document.querySelectorAll('.feat-open, .feat-open-2').forEach((b) => b.addEventListener('click', () => openFull('/images/portfolio/silvan-hardwood.webp', 'Silvan Hardwood full homepage design')));
-    document.querySelectorAll('.work-open:not([data-live])').forEach((b) => b.addEventListener('click', () => openFull(b.dataset.src, b.dataset.alt)));
-    fm.querySelector('.pf-close').addEventListener('click', () => fm.close());
-    fm.addEventListener('click', (e) => { if (e.target === fm) fm.close(); });
-  }
-
   /* ---------- More of our work: scroll distance per card, auto-scroll on touch ---------- */
   const workCards = [...document.querySelectorAll('.work-card')];
   const sizeWork = () => workCards.forEach((c) => {
