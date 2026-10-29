@@ -169,7 +169,6 @@
     const lmFrame = lm.querySelector('iframe'), lmViews = [...lm.querySelectorAll('.lm-views button')];
     document.querySelectorAll('.work-open[data-live]').forEach((b) => b.addEventListener('click', () => {
       lm.querySelector('.lm-title').textContent = b.dataset.alt;
-      lm.querySelector('.lm-new').href = b.dataset.live;
       lmFrame.src = b.dataset.live + '?embed';
       lmViews.forEach((x, i) => x.classList.toggle('on', i === 0)); lmFrame.style.width = '100%';
       lm.showModal();
