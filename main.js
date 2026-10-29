@@ -310,7 +310,11 @@
     btn.disabled = true;
     try {
       if (endpoint) {
-        const res = await fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || String(data.success) === 'false') throw new Error(data.message || String(res.status));
       }
@@ -319,7 +323,7 @@
       form.reset();
     } catch {
       status.classList.add('err');
-      status.textContent = 'Something went wrong. Please call us instead.';
+      status.textContent = 'Something went wrong. Please email us at lead@flooringwebpros.com.';
     } finally {
       btn.disabled = false;
     }

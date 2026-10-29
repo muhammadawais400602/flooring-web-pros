@@ -1,4 +1,6 @@
-Thanks for requesting your free homepage mockup!
+Hi {{first_name}},
+
+Thanks for requesting a free homepage mockup for {{business}}!
 
 We build only for flooring businesses, so we already know your customers, your services and the searches that find you. Here's what happens next:
 
@@ -12,7 +14,7 @@ We build only for flooring businesses, so we already know your customers, your s
    We build, launch and look after the full site. Not for you? Walk away - you owe nothing.
 
 GET A HEAD START
-Email any of these to lead@flooringwebpros.com and your mockup will look even more like you:
+Reply to this email with any of these and your mockup will look even more like you:
  - 5-10 photos of your best jobs (phone photos are fine)
  - Your logo, if you have one
  - The towns and cities you serve

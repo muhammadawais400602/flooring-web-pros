@@ -1,0 +1,9 @@
+{
+  "name": "flooring-web-pros",
+  "private": true,
+  "description": "Static site + /api/lead form handler",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "nodemailer": "6.10.1"
+  }
+}
