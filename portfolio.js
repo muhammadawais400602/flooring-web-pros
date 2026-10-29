@@ -117,7 +117,12 @@
   const sizeLive = (c) => {
     const sc = c.querySelector('.work-screen'), fr = c.querySelector('.live-frame'), ifr = fr.querySelector('iframe');
     let fh = 6000;
-    try { fh = ifr.contentDocument.documentElement.scrollHeight || fh; } catch {}
+    try {
+      const doc = ifr.contentDocument, win = ifr.contentWindow;
+      const kids = [...doc.body.children].filter((el) => win.getComputedStyle(el).position !== 'fixed');
+      const bottom = Math.max(0, ...kids.map((el) => el.getBoundingClientRect().bottom + win.scrollY));
+      if (bottom > 200) fh = Math.ceil(bottom);
+    } catch {}
     const k = sc.clientWidth / 1440;
     fr.style.setProperty('--k', k.toFixed(5));
     fr.style.setProperty('--fh', fh + 'px');
@@ -130,7 +135,7 @@
     if (!e.isIntersecting) return;
     lio.unobserve(e.target);
     const ifr = e.target.querySelector('iframe');
-    ifr.addEventListener('load', () => { sizeLive(e.target); setTimeout(() => sizeLive(e.target), 1500); });
+    ifr.addEventListener('load', () => { sizeLive(e.target); setTimeout(() => sizeLive(e.target), 1500); setTimeout(() => sizeLive(e.target), 4000); });
     ifr.src = ifr.dataset.src;
   }), { rootMargin: '400px 0px' });
   liveCards.forEach((c) => { sizeLive(c); lio.observe(c); });
