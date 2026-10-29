@@ -296,7 +296,7 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let ok = true;
-    form.querySelectorAll('input, select').forEach((f) => {
+    form.querySelectorAll('.field input, .field select').forEach((f) => {
       const bad = !f.checkValidity();
       f.closest('.field').classList.toggle('invalid', bad);
       f.setAttribute('aria-invalid', String(bad));
@@ -311,7 +311,8 @@
     try {
       if (endpoint) {
         const res = await fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
-        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) === 'false') throw new Error(data.message || String(res.status));
       }
       status.classList.add('ok');
       status.textContent = "Got it! We'll call within 1 business day to start your free mockup.";
