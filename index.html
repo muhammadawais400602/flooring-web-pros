@@ -457,12 +457,8 @@
           </div>
         </div>
 
-        <!-- Leads are emailed to lead@flooringwebpros.com via FormSubmit (first submission sends a one-time activation email). -->
-        <form class="lead-form reveal" data-endpoint="https://formsubmit.co/ajax/lead@flooringwebpros.com" novalidate>
-          <input type="hidden" name="_subject" value="New mockup request — flooringwebpros.com" />
-          <input type="hidden" name="_template" value="table" />
-          <!-- Auto-reply to the visitor (plain text; source: source/emails/mockup-reply.txt) -->
-          <input type="hidden" name="_autoresponse" value="Thanks for requesting your free homepage mockup!&#10;&#10;We build only for flooring businesses, so we already know your customers, your services and the searches that find you. Here&#x27;s what happens next:&#10;&#10;1) WE CALL YOU - within 1 business day&#10;   A quick 15-minute chat about your services, service area and the jobs you want more of.&#10;&#10;2) YOU SEE YOUR MOCKUP - within 48 hours&#10;   A real homepage design for your business, your trade and your city. Free, no commitment.&#10;&#10;3) LOVE IT? YOU&#x27;RE LIVE IN 7 DAYS&#10;   We build, launch and look after the full site. Not for you? Walk away - you owe nothing.&#10;&#10;GET A HEAD START&#10;Email any of these to lead@flooringwebpros.com and your mockup will look even more like you:&#10; - 5-10 photos of your best jobs (phone photos are fine)&#10; - Your logo, if you have one&#10; - The towns and cities you serve&#10;&#10;See what we build for flooring pros: https://www.flooringwebpros.com/portfolio&#10;&#10;Talk soon,&#10;The Flooring WebPros team&#10;https://www.flooringwebpros.com" />
+        <!-- Leads go to /api/lead (api/lead.js): emailed to lead@flooringwebpros.com + branded auto-reply to the visitor. -->
+        <form class="lead-form reveal" data-endpoint="/api/lead" novalidate>
           <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field"><label for="f-name">Your Name</label><input id="f-name" name="name" autocomplete="name" required /></div>
           <div class="field"><label for="f-biz">Business Name</label><input id="f-biz" name="business" autocomplete="organization" required /></div>
@@ -497,7 +493,7 @@
           <div><h4>Services</h4><a href="/services#websites">Flooring Websites</a><a href="/services#local-seo">Local SEO</a><a href="/services#google-business">Google Business Profile</a><a href="/services#google-ads">Google Ads</a><a href="/services#care">Website Care</a></div>
           <div><h4>Who We Serve</h4><a href="/who-we-serve#hardwood">Hardwood</a><a href="/who-we-serve#carpet">Carpet</a><a href="/who-we-serve#tile">Tile &amp; Stone</a><a href="/who-we-serve#lvp">LVP &amp; Laminate</a><a href="/who-we-serve#epoxy">Epoxy</a><a href="/who-we-serve#refinishing">Refinishing</a><a href="/who-we-serve#commercial">Commercial</a></div>
           <div><h4>Company</h4><a href="#">About</a><a href="/portfolio">Portfolio</a><a href="/pricing">Pricing</a><a href="#">Blog</a><a href="#mockup">Contact</a></div>
-          <div><h4>Contact</h4><a href="tel:+10000000000">Phone</a><a href="mailto:hello@example.com">Email</a><a class="btn btn-accent btn-sm" href="#mockup">Free Mockup</a></div>
+          <div><h4>Contact</h4><a href="tel:+10000000000">Phone</a><a href="mailto:info@flooringwebpros.com">info@flooringwebpros.com</a><a class="btn btn-accent btn-sm" href="#mockup">Free Mockup</a></div>
         </div>
       </div>
       <div class="footer-bottom">
