@@ -8,7 +8,7 @@ Run: python3 scripts/build.py
 import json, re, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SITE = "https://flooring-web-pros.vercel.app"
+SITE = "https://www.flooringwebpros.com"
 NAV = [("/services", "Services"), ("/who-we-serve", "Who We Serve"), ("/portfolio", "Portfolio"),
        ("/pricing", "Pricing"), ("/how-it-works", "How It Works"), ("/faq", "FAQ")]
 
