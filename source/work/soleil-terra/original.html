@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed":"#101f07","on-surface-variant":"#56423c","inverse-surface":"#372f2b","error-container":"#ffdad6","surface-variant":"#eedfda","surface-container-low":"#fff1ec","tertiary-fixed":"#d4e9c2","surface":"#fff8f6","on-surface":"#211a17","surface-container":"#faebe6","on-error":"#ffffff","on-error-container":"#93000a","secondary-container":"#b8d7ff","on-primary":"#ffffff","outline":"#8a726a","on-tertiary":"#ffffff","background":"#fff8f6","on-secondary-fixed-variant":"#29496a","on-primary-fixed":"#390c00","tertiary-fixed-dim":"#b8cda7","surface-container-lowest":"#ffffff","on-secondary-container":"#3f5e80","surface-container-high":"#f4e5e0","surface-dim":"#e6d7d2","on-background":"#211a17","on-secondary":"#ffffff","on-tertiary-container":"#f8ffed","surface-container-highest":"#eedfda","surface-tint":"#a0401d","primary-fixed":"#ffdbd0","primary-fixed-dim":"#ffb59d","on-primary-container":"#fffbff","secondary-fixed":"#d1e4ff","secondary":"#426083","surface-bright":"#fff8f6","on-primary-fixed-variant":"#802906","outline-variant":"#ddc0b8","on-tertiary-fixed-variant":"#3a4c2f","primary":"#9d3e1b","on-secondary-fixed":"#001d36","inverse-primary":"#ffb59d","primary-container":"#bd5531","tertiary":"#4f6142","error":"#ba1a1a","tertiary-container":"#677a59","secondary-fixed-dim":"#aac9f1","inverse-on-surface":"#fdeee8"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"margin-mobile":"1.25rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-xl":"2.5rem","margin":"3rem","space-sm":"0.5rem","space-lg":"1.5rem","space-md":"1rem","gutter":"1.5rem"},fontFamily:{"headline-lg-mobile":["Domine"],"headline-lg":["Domine"],"headline-sm":["Domine"],"headline-md":["Domine"],"label-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"title-lg":["Domine"],"display-lg-mobile":["Domine"],"body-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display-lg":["Domine"]},fontSize:{"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"500"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.04em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(43,35,32,0.06)]"><div class="w-full bg-surface-container-high py-space-xs px-margin-mobile lg:px-margin flex items-center justify-between"><p class="font-label-sm text-label-sm tracking-widest text-on-surface-variant uppercase">ATELIER DE CARRELAGE ARTISANAL // FÈS &amp; MARRAKESH // EST. 1974</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-wider hidden sm:inline-block">100% Hand-Chiseled Raw Clay</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-lg"><a class="flex flex-col flex-shrink-0" data-path="home" href="#"><span class="font-headline-sm text-headline-sm tracking-tight text-primary uppercase font-bold">SOLEIL TERRA</span><span class="font-label-sm text-label-sm tracking-[0.2em] text-on-surface-variant uppercase -mt-1">Tile Atelier</span></a><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="zellige-formulations" href="#">Zellige Formulations</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="encaustic-patterns" href="#">Encaustic Patterns</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="bespoke-colorways" href="#">Bespoke Colorways</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="riad-and-villa-portfolio" href="#">Riad &amp; Villa Portfolio</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="installation-and-care" href="#">Installation &amp; Care</a><a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors" data-path="sample-coffret" href="#">Sample Coffret</a></nav><div class="flex items-center gap-space-md"><a class="hidden md:inline-flex items-center justify-center px-space-lg py-space-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-colors shadow-[0_2px_6px_rgba(43,35,32,0.06)]" data-path="specimen-box-request" href="#">Request Specimen Box</a><button class="xl:hidden p-space-xs text-on-surface flex items-center justify-center"><span class="material-symbols-outlined text-[26px]">menu</span></button></div></div></header><main class="w-full pt-[6.75rem] bg-surface"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-low pt-space-xl pb-space-xl -mt-6">
+<div class="w-full px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Column -->
+<div class="lg:col-span-6 flex flex-col gap-space-md z-10">
+<div class="inline-flex items-center gap-space-xs self-start px-space-sm py-1 bg-surface-container rounded-lg shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold">ATELIER DE CARRELAGE ARTISANAL // FÈS &amp; MARRAKESH // EST. 1974</span>
+</div>
+<h1 class="font-display-lg text-headline-lg lg:text-display-lg text-on-surface tracking-tight font-bold">
+            Sculpted by Clay, Glazed by Sunlight.
+          </h1>
+<p class="font-headline-sm text-headline-sm text-primary font-medium italic -mt-2">
+            Hand-Chiseled Moroccan Zellige &amp; Encaustic Tile.
+          </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Authentic high-fire terracotta, hand-cut zellige mosaics, and hydraulically pressed encaustic cement tiles engineered for Mediterranean courtyards, luxury villas, and historic riad restorations.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="px-space-xl py-space-md bg-primary text-on-primary rounded-lg font-label-lg text-label-lg uppercase tracking-wider hover:bg-primary-container transition-all shadow-md hover:shadow-lg flex items-center gap-space-xs" href="#material-repertoire">
+<span>Explore Tile Collections</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="px-space-lg py-space-md bg-surface text-secondary border border-secondary/20 hover:bg-secondary/5 rounded-lg font-label-lg text-label-lg uppercase tracking-wider transition-colors shadow-sm flex items-center gap-space-xs" href="#specimen-coffret">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+<span>Order Specimen Box</span>
+</a>
+</div>
+<!-- Trust Badges -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-lg">
+<div class="flex flex-col p-space-sm bg-surface rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px] mb-1">eco</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">100% Raw Clay</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Non-toxic &amp; unrefined</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mb-1">content_cut</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Hand-Chiseled</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Beveled 0.5mm joint</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mb-1">thermostat</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Thermal Mass</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Underfloor radiant safe</span>
+</div>
+<div class="flex flex-col p-space-sm bg-surface rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px] mb-1">water_drop</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Zero Effluent</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Solar cured &amp; bio-kilns</span>
+</div>
+</div>
+</div>
+<!-- Hero Image Frame Column -->
+<div class="lg:col-span-6 relative">
+<div class="relative rounded-xl overflow-hidden shadow-xl bg-surface-container-high group">
+<img alt="Villa Dar Kawa Marrakesh Medina courtyard with hand-chiseled emerald zellige and terracotta bejmat floors" class="w-full h-[520px] lg:h-[620px] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhYrGPwmiL84n3NS6E-7AsO6oI38fte8129jnrG4oJJaHf9g4nYzDqMuFXDz58rWwkWThwZ2Xur4n7Nof1HrkjqIZZ2xNAGoMpvalrUz4UNllIbVP_uRGYV03ZR-tya_yHLfyWamraFWBk_ypxiYmqlOTTk5rWu_Hx8_3kGBQtBiSbwo_HOcuqbv4q9jJG49eaunRy7KdtTP5hxWqnTPKT63IKdei7DSzID2283NM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/10 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-space-lg flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm text-surface">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed font-bold">Commission Highlight</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-surface-bright">Villa Dar Kawa, Marrakesh Medina</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high/90">Custom emerald zellige border medallions &amp; sun-fired terracotta bejmat flooring.</p>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-1 bg-inverse-surface/60 backdrop-blur-md rounded-lg self-start sm:self-auto">
+<span class="material-symbols-outlined text-primary-fixed text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm text-surface tracking-wider">Fès Kiln Batch #842</span>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Swatch Accent -->
+<div class="hidden xl:flex absolute -bottom-6 -left-6 bg-surface p-space-md rounded-xl shadow-xl flex-col gap-1 z-20 max-w-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Authentic Maâlem Provenance</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Carved with traditional Mencharr hammer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ARTISANAL BENCHMARK BAR -->
+<section class="w-full bg-surface-container py-space-lg">
+<div class="w-full px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg items-center divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
+<div class="flex flex-col items-center md:items-start text-center md:text-left px-space-md">
+<span class="font-display-lg text-headline-lg lg:text-display-lg text-primary font-bold">50+</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">Years Maâlem Guild</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Unbroken artisan lineages in Fès &amp; Meknes kilns.</p>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left px-space-md pt-space-sm md:pt-0">
+<span class="font-display-lg text-headline-lg lg:text-display-lg text-secondary font-bold">32</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">Mineral Glazes</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Natural cobalt, copper, and iron oxides.</p>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left px-space-md pt-space-sm md:pt-0">
+<span class="font-display-lg text-headline-lg lg:text-display-lg text-tertiary font-bold">0.5mm</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">Beveled Joinery</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hand-cut reverse angles for jointless mosaic fitting.</p>
+</div>
+<div class="flex flex-col items-center md:items-start text-center md:text-left px-space-md pt-space-sm md:pt-0">
+<span class="font-display-lg text-headline-lg lg:text-display-lg text-primary-container font-bold">Class 1</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">Hydraulic Hardness</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">300 kg/cm² pressure for footfall endurance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- THE MATERIAL REPERTOIRE -->
+<section class="w-full py-space-xl bg-surface" id="material-repertoire">
+<div class="w-full px-margin-mobile lg:px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold">THE ARCHITECTURAL LIBRARY</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Master Formulations &amp; Modules</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Each piece possesses organic surface irregularities and tonal variations (V2–V4), capturing raw Mediterranean light with unrepeatable tactile character.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Filter Series:</span>
+<span class="px-3 py-1 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm uppercase">All Formats</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface rounded-lg font-label-sm text-label-sm uppercase hover:bg-surface-container-high cursor-pointer transition-colors">Glazed</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface rounded-lg font-label-sm text-label-sm uppercase hover:bg-surface-container-high cursor-pointer transition-colors">Unrefined Clay</span>
+</div>
+</div>
+<!-- 4 Showcase Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Card 1 -->
+<div class="flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up architectural macro photography of deep emerald green and cobalt blue glazed Moroccan Zellige square tiles with glossy undulating uneven surface catching sunlight, handcrafted imperfections and chipped clay edges in high end luxury riad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZaY4MefrZsGE5X-5qEGk6_OdDFOqmDtzhVGFLz7BHCVQ0yCDTjQJR7Fgjc7ZyKA1c6--pRvDTybCbxnHY6v06O9dpP5M6mQTQKpcbI2HcfaQ6YhqE8VThEzPoZYZRdrtAyfq0VeJNveqCD-NCzVfvNA6Re1Nf8vsl9_YOQ0Y6iM842VjjOCAt63MGS6Z5e88HAVummwnluH8UtLuWKrO35T4I1wGfXbu1S9IRsII"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+              Zellige Series
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold">Mineral Glaze V4 High Variation</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Zellige Émeraude &amp; Lapis</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">10x10 cm hand-cut glazed tiles with subtle undulating vitreous reflection and vibrant copper-cobalt mineral depths.</p>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Thickness:</span>
+<span class="text-on-surface font-semibold">12 mm (Nominal)</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Joint Recommendation:</span>
+<span class="text-on-surface font-semibold">0.5 – 1.0 mm</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Usage:</span>
+<span class="text-on-surface font-semibold">Fountains, Baths, Accent Floors</span>
+</div>
+</div>
+<a class="w-full py-space-sm bg-surface hover:bg-primary hover:text-on-primary text-primary text-center font-label-md text-label-md uppercase tracking-wider rounded-lg transition-colors font-semibold shadow-sm" href="#specimen-coffret">
+              Request Specimen Swatch
+            </a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Overhead close up texture of warm unglazed Moroccan terracotta bejmat rectangular tiles arranged in a tight herringbone pattern, sun-baked clay texture with velvety tactile warmth and soft earthen sand mortar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiROUVijYrAVkW2YezTDs87kuDKq3-KzeieU4BlLtz28LtRmMF-nY4-_1g7HLJgw5gZVD34rzhIBwsPLZTi-xdPCTybOuM9v7UpjJ08Zi9clfrGBAk4kADcvzycsqCW7nhQd2Z0OEVQkB_oy0W-mJfBx_i8L4sCs_647I1WoLAb01RjGXqR-BEs9hiXeSgDsko58p_mzDG-PwSBl5jk64Wxi96MyyivjDqGKrnins"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+              Bejmat Raw
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold">Raw Wood-Fired Clay V2</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Terracotta Natural Bejmat</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">5x15 cm rectangular natural unglazed clay with a velvety honey-terracotta finish and tactile barefoot thermal grounding.</p>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Thickness:</span>
+<span class="text-on-surface font-semibold">16 mm (Full Body)</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Joint Recommendation:</span>
+<span class="text-on-surface font-semibold">1.0 – 2.0 mm</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Usage:</span>
+<span class="text-on-surface font-semibold">Courtyards, Porticos, Heated Floors</span>
+</div>
+</div>
+<a class="w-full py-space-sm bg-surface hover:bg-primary hover:text-on-primary text-primary text-center font-label-md text-label-md uppercase tracking-wider rounded-lg transition-colors font-semibold shadow-sm" href="#specimen-coffret">
+              Request Specimen Swatch
+            </a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial flat lay shot of handcrafted Moroccan encaustic hydraulic cement tiles featuring complex Moorish eight-pointed star and medallion geometric motif in deep terracotta red, bone white and charcoal tones with velvety matte porous finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcRvJjmn4nayDn6KQNkaTtOu2CJiS3dR6qFsjDgQKLWSYDY1KMD1LZ4Tu0H4BPi3HE3cT2n_H37Bq9Jf-u927E9p6ng4D3BTs9Cvqgbarmf0TbUs-3Pu6NKkK9fvJhQfSxWBbIlMlg8PJC0qbopOd0G0jQcnjxZqNSCXsXh9DdWv7MF89J6J1nq9ZNXbKONkFQdTlMN0R-Ii1ZTq0reyD-mp57ywk1o4zEf2EVfIw"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+              Encaustic Hydraulic
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Dual-Pour Cement V1 Uniform</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Encaustic Andalusian Star</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">20x20 cm hand-poured hydraulic cement tiles bearing crisp Moorish geometric interlocking stars with matte tactile richness.</p>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Thickness:</span>
+<span class="text-on-surface font-semibold">16 mm (Pressed)</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Joint Recommendation:</span>
+<span class="text-on-surface font-semibold">1.5 mm Hairline</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Usage:</span>
+<span class="text-on-surface font-semibold">Dining Pavilions, Hallways, Loggias</span>
+</div>
+</div>
+<a class="w-full py-space-sm bg-surface hover:bg-primary hover:text-on-primary text-primary text-center font-label-md text-label-md uppercase tracking-wider rounded-lg transition-colors font-semibold shadow-sm" href="#specimen-coffret">
+              Request Specimen Swatch
+            </a>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col bg-surface-container rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative w-full aspect-square overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Detailed macro of iridescent pearl white handcrafted zellige tiles with semi-translucent enamel glaze catching warm morning sunlight, showing raw biscuit clay peeking through natural bevels and chiseled edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPrWJp3v7t1dfPxph7qo6WEzb9ZNQu-MTvlulioO3NKvmsBYuQVPRWm3Kph4ZSEaUmX9Sf6TdjFzINMmV9HTvLX_suXWO7cRxMR_AtWoHN87hT8LmuNgkI8Z5PkNeHWf-pLN2XvBxoKRd6CmB58tlwBumSk5SXjINQybQcgtQynUvz6fXstpnYU3vM15zUbTUqjLgTQ5h6KIUaoDNml6K385WYzMV0kQSbbarqZg0"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider backdrop-blur-sm">
+              Zellige Nacré
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-semibold">Mother-of-Pearl Glaze V3</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Zellige Nacré Ivoire</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Semi-translucent white enamel with exposed raw clay rims, engineered for soft luminous light diffusion across interior facades.</p>
+</div>
+<div class="flex flex-col gap-space-xs pt-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Thickness:</span>
+<span class="text-on-surface font-semibold">12 mm (Hand-Drawn)</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Joint Recommendation:</span>
+<span class="text-on-surface font-semibold">0.5 – 1.0 mm</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Usage:</span>
+<span class="text-on-surface font-semibold">Reflective Walls, Master Hammams</span>
+</div>
+</div>
+<a class="w-full py-space-sm bg-surface hover:bg-primary hover:text-on-primary text-primary text-center font-label-md text-label-md uppercase tracking-wider rounded-lg transition-colors font-semibold shadow-sm" href="#specimen-coffret">
+              Request Specimen Swatch
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- THE 4-STAGE MAÂLEM CRAFT JOURNEY -->
+<section class="w-full py-space-xl bg-surface-container-high">
+<div class="w-full px-margin-mobile lg:px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto gap-space-xs">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold">THE TIMELESS TECHNIQUE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">The Four Alchemical Rites of Maâlem Craft</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          No automated rollers. No synthetic glazes. Each tile is born from the gray sedimentary clay beds of Fès, shaped by human muscle, and fired in wood kilns using olive-crush pomace.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Stage 01 -->
+<div class="p-space-lg bg-surface rounded-xl shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<span class="font-display-lg text-[64px] font-bold text-outline-variant/30 leading-none">01</span>
+<div class="flex flex-col gap-2 -mt-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Mineral Extraction &amp; Kneading</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Fès Marl Clay Sun-Drying</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Grey clay soaked in ancient water pits, kneaded by foot to expel air pockets, hand-cast into square biscuits and dried under the scorching sun of the Saïss plain.
+            </p>
+</div>
+<div class="mt-auto pt-space-sm flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">sunny</span>
+<span class="font-label-sm text-label-sm">Natural 14-Day Solar Cure</span>
+</div>
+</div>
+<!-- Stage 02 -->
+<div class="p-space-lg bg-surface rounded-xl shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<span class="font-display-lg text-[64px] font-bold text-outline-variant/30 leading-none">02</span>
+<div class="flex flex-col gap-2 -mt-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Pyrolytic Firing</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">1,000°C Olive-Pit Kilns</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Wood kilns fueled by compressed olive residues deliver variable pyrolytic heats. Temperature gradients create organic chromatic variation across the batch.
+            </p>
+</div>
+<div class="mt-auto pt-space-sm flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm">Zero Fossil Fuel Emissions</span>
+</div>
+</div>
+<!-- Stage 03 -->
+<div class="p-space-lg bg-surface rounded-xl shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<span class="font-display-lg text-[64px] font-bold text-outline-variant/30 leading-none">03</span>
+<div class="flex flex-col gap-2 -mt-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Natural Vitrification</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Raw Mineral Enamel Glass</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Silica quartz blended with copper filings (greens), lapis lazuli &amp; cobalt (deep blues), and tin oxides (milky opalescents) poured by hand on the bisque.
+            </p>
+</div>
+<div class="mt-auto pt-space-sm flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+<span class="font-label-sm text-label-sm">Pure Oxide Chemistry</span>
+</div>
+</div>
+<!-- Stage 04 -->
+<div class="p-space-lg bg-surface rounded-xl shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<span class="font-display-lg text-[64px] font-bold text-outline-variant/30 leading-none">04</span>
+<div class="flex flex-col gap-2 -mt-4">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">The Mencharr Chisel</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Hairline Beveled Edging</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              The Master Maâlem sits cross-legged, using a weighted steel chisel to bevel the underside edges of every single tile, enabling tight mortar-less joints.
+            </p>
+</div>
+<div class="mt-auto pt-space-sm flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">handyman</span>
+<span class="font-label-sm text-label-sm">Hand-Crafted Precision</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE MOROCCAN TILE LAYOUT & PATTERN STUDIO -->
+<section class="w-full py-space-xl bg-surface">
+<div class="w-full px-margin-mobile lg:px-margin">
+<div class="bg-surface-container rounded-xl p-space-lg lg:p-space-xl shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Controls -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold">ARCHITECT’S CAD BENCH</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Interactive Tile Layout &amp; Pattern Studio</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Simulate spatial rhythm, bond geometry, and mortar formulations before drafting your specifications.
+              </p>
+</div>
+<!-- Pattern Selection -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface">1. Choose Bond Geometry</label>
+<div class="grid grid-cols-2 gap-2" id="pattern-selector">
+<button class="pattern-btn px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors font-semibold" data-pattern="herringbone" type="button">
+                  Bejmat Herringbone
+                </button>
+<button class="pattern-btn px-space-md py-space-sm bg-surface text-on-surface hover:bg-surface-container-high rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors" data-pattern="grid" type="button">
+                  Zellige 10x10 Grid
+                </button>
+<button class="pattern-btn px-space-md py-space-sm bg-surface text-on-surface hover:bg-surface-container-high rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors" data-pattern="star" type="button">
+                  Andalusian Star
+                </button>
+<button class="pattern-btn px-space-md py-space-sm bg-surface text-on-surface hover:bg-surface-container-high rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors" data-pattern="chequer" type="button">
+                  Chequerboard Duo
+                </button>
+</div>
+</div>
+<!-- Colorway Selection -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface">2. Mineral Palette Harmony</label>
+<div class="grid grid-cols-2 gap-2" id="color-selector">
+<button class="color-btn px-space-md py-space-sm bg-primary-container text-on-primary rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors font-semibold" data-color="terra-ivory" type="button">
+                  Terracotta &amp; Ivory
+                </button>
+<button class="color-btn px-space-md py-space-sm bg-surface text-on-surface hover:bg-surface-container-high rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors" data-color="emerald-ochre" type="button">
+                  Emerald &amp; Ochre
+                </button>
+<button class="color-btn px-space-md py-space-sm bg-surface text-on-surface hover:bg-surface-container-high rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors" data-color="cobalt-sand" type="button">
+                  Cobalt &amp; Sand
+                </button>
+<button class="color-btn px-space-md py-space-sm bg-surface text-on-surface hover:bg-surface-container-high rounded-lg font-label-sm text-label-sm uppercase text-left transition-colors" data-color="noir-blanc" type="button">
+                  Noir &amp; Blanc
+                </button>
+</div>
+</div>
+<!-- Dynamic Specs Output -->
+<div class="p-space-md bg-surface rounded-lg shadow-sm flex flex-col gap-2 mt-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Joint Spacing:</span>
+<span class="text-on-surface font-bold" id="spec-joint">1.0 mm (Tight Masonry)</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Sealant Class:</span>
+<span class="text-on-surface font-bold" id="spec-seal">Breathable Siloxane Emulsion</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Wet Slip Resistance:</span>
+<span class="text-on-surface font-bold" id="spec-slip">PTV 44 (Low Slip Potential)</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Calculated Weight:</span>
+<span class="text-on-surface font-bold" id="spec-weight">28.5 kg / m²</span>
+</div>
+</div>
+<button class="w-full py-space-md bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-lg hover:bg-primary-container transition-colors shadow-sm font-semibold flex items-center justify-center gap-space-xs" id="btn-export-cad" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Layout &amp; Architectural Spec</span>
+</button>
+</div>
+<!-- Canvas / Visual Display -->
+<div class="lg:col-span-7 flex flex-col items-center">
+<div class="w-full h-[400px] lg:h-[460px] bg-surface-container-low rounded-xl overflow-hidden shadow-inner p-space-md flex flex-col relative justify-center items-center">
+<!-- SVG Tile Grid Simulation (Herringbone default) -->
+<div class="w-full h-full flex items-center justify-center overflow-hidden" id="tile-canvas-container">
+<svg class="w-full h-full max-w-[500px] max-h-[380px]" fill="none" id="pattern-canvas" viewbox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Dynamic Pattern Group -->
+<g id="dynamic-pattern">
+<!-- Herringbone Layout by default -->
+<rect fill="#bd5531" height="40" opacity="0.9" rx="2" width="110" x="20" y="20"></rect>
+<rect fill="#fff8f6" height="110" opacity="0.95" rx="2" width="40" x="135" y="20"></rect>
+<rect fill="#9d3e1b" height="40" opacity="0.95" rx="2" width="110" x="180" y="20"></rect>
+<rect fill="#eedfda" height="110" rx="2" width="40" x="295" y="20"></rect>
+<rect fill="#bd5531" height="40" opacity="0.9" rx="2" width="110" x="340" y="20"></rect>
+<rect fill="#fff8f6" height="110" rx="2" width="40" x="20" y="65"></rect>
+<rect fill="#bd5531" height="40" opacity="0.95" rx="2" width="110" x="65" y="135"></rect>
+<rect fill="#fff8f6" height="110" rx="2" width="40" x="180" y="65"></rect>
+<rect fill="#9d3e1b" height="40" rx="2" width="110" x="225" y="135"></rect>
+<rect fill="#eedfda" height="110" rx="2" width="40" x="340" y="65"></rect>
+<rect fill="#bd5531" height="40" rx="2" width="110" x="385" y="135"></rect>
+<rect fill="#9d3e1b" height="40" opacity="0.9" rx="2" width="110" x="20" y="180"></rect>
+<rect fill="#fff8f6" height="110" rx="2" width="40" x="135" y="180"></rect>
+<rect fill="#bd5531" height="40" rx="2" width="110" x="180" y="180"></rect>
+<rect fill="#eedfda" height="110" rx="2" width="40" x="295" y="180"></rect>
+<rect fill="#9d3e1b" height="40" rx="2" width="110" x="340" y="180"></rect>
+<rect fill="#fff8f6" height="110" rx="2" width="40" x="20" y="225"></rect>
+<rect fill="#bd5531" height="40" rx="2" width="110" x="65" y="295"></rect>
+<rect fill="#fff8f6" height="110" rx="2" width="40" x="180" y="225"></rect>
+<rect fill="#9d3e1b" height="40" rx="2" width="110" x="225" y="295"></rect>
+<rect fill="#eedfda" height="110" rx="2" width="40" x="340" y="225"></rect>
+<rect fill="#bd5531" height="40" rx="2" width="110" x="385" y="295"></rect>
+</g>
+</svg>
+</div>
+<!-- Interactive Floating Overlay Indicator -->
+<div class="absolute bottom-3 right-3 px-space-md py-1 bg-surface/90 backdrop-blur-md rounded-lg shadow-sm flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface" id="canvas-label">Herringbone Bond // Terracotta &amp; Ivory</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ARCHITECTURAL LANDMARK COMMISSIONS -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="w-full px-margin-mobile lg:px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold">PORTFOLIO &amp; MONUMENTS</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Architectural Landmark Commissions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            From secluded mountain riads in the High Atlas to coastal bioclimatic estates along the Balearic Sea.
+          </p>
+</div>
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary hover:text-primary-container font-semibold flex items-center gap-1 self-start" href="#">
+<span>View All 84 Projects</span>
+<span class="material-symbols-outlined text-[18px]">east</span>
+</a>
+</div>
+<!-- 4 Portfolio Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Commission 1 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row">
+<div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Sunlit open-air courtyard in Marrakesh with towering olive trees, marble central fountain, and custom emerald green Moroccan zellige tiled floor surrounded by sand plaster columns and brass lanterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaD6W7ev1PbH3iQcGAUY8QsKdejkN4hNgiakksCgDjl18q1_ZKhns8P4qBsrmG68YNb5mDrA8oobF-Cw_7o1JJ05IkXWJDsAukklm8SyUYcVXcSJqjnn_IdNBqABMf-2Qxuvl-1Qo7QNbp9l3qN-ywQ8BsOZSgOMEJxcF9uhVA6o6kW2jADTQSwhI2MingbaqzUL_I0v2VMkiJCxsblJ_KHdzT9QCzCq4VgxbJkRw"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider">
+              Marrakesh, 650 m²
+            </div>
+</div>
+<div class="lg:w-1/2 p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Private Estate Restoration</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dar Zemora Sanctuary</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Full restoration of a 19th-century riad courtyard utilizing custom emerald zellige mosaic perimeter borders and high-fire terracotta bejmat throughout all interior salons.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Emerald Zellige</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Bejmat 5x15</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Historic Guild Spec</span>
+</div>
+</div>
+</div>
+<!-- Commission 2 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row">
+<div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Mediterranean cliffside luxury villa in Mallorca overlooking the blue sea, featuring terracotta encaustic cement geometric tile loggia and sunken bath pavilion in golden afternoon light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-3gNLhfUhNUQ78u056yirfSTep1wTD1Y79cky_PZWd4zDWC5rsm674VgVxkhQaCZX6b6kEgHoUvjUgUwtJNYHomgk4rhqdyf2oVVAoN-s_Ryzv4aikuAdqigQDXdmssIUS2xPsuM4H8POJcMjRjQxnoLgMGo58fhl7tt3_lsQxDBBIZ6s0907-XrPyvg0zdjoPH4upyY5X9kdoJpNLR7zrEIz_43iUcVSC4l6Fls"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider">
+              Mallorca, 420 m²
+            </div>
+</div>
+<div class="lg:w-1/2 p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Coastal Pavilion</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Villa Miramar Cliffside</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Custom-pigmented terracotta hydraulic encaustic tile floors linking indoor dining loggias with cliffside outdoor terraces, sealed with breathable salt-air siloxane.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Andalusian Star</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Salt Resistant</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Sunken Baths</span>
+</div>
+</div>
+</div>
+<!-- Commission 3 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row">
+<div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="High ceiling Haussmannian luxury apartment gallery in Paris with pearl white handcrafted zellige tile feature wall, large potted palms and minimalist brutalist stone benches" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh6QVAtZBYslLkFsuMZlecD3cuA3peqPDS0E3oymvhiZH6S2gVznCc-8VVL7tar9ghyMMMTmFvMaziybKGaVrzS0bAdq3-lWKP4WC41QBH1CGT6HtPTO9uO0fo6OkOydk9u75xdwrO89bHVbQ56JTvuQCks-_RHB1Ma6qw-UV_cUkESXp9FO87VtlZ-y0z5GCHy5wmGAYg3ulX82YfLf2IsdZT5DU448rxMQwakUA"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider">
+              Paris, 280 m²
+            </div>
+</div>
+<div class="lg:w-1/2 p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Gallery &amp; Salon</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">The Nomadic Botanist</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Curated retail space in Saint-Germain featuring 280 square meters of pearl Zellige Nacré Ivoire, bouncing daylight into deep stone corridors.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Zellige Nacré</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Reflective Glaze</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Saint-Germain</span>
+</div>
+</div>
+</div>
+<!-- Commission 4 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col lg:flex-row">
+<div class="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Ancient masseria in Puglia with whitewashed limestone walls and warm salt cured natural terracotta tile plank floors, rustic wood dining table and Mediterranean herb garden outside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbWM1DgQJW6RkjwjBZDcdmhT6Cc88DyG-v8vOl1_y50ojCRdctkCidPXG_dIQiLE64nXwxY_xZnWKYDJ_9tvCsIBPSbx-5qr1DX8NScmZsXcz9FHMSFEO8gCRKpDGTL6Yin_9vTfi-YaZul7oOA96rqmzZCX_8lb9OZFdgt8tswCIgKbskecm0MCmUf6SFLZZaIw_g1hyTVp6gBdA2JISdw_bugZ5iyK8_jDdfax0"/>
+<div class="absolute top-3 left-3 px-space-xs py-1 bg-inverse-surface/80 text-surface rounded font-label-sm text-label-sm uppercase tracking-wider">
+              Puglia, 510 m²
+            </div>
+</div>
+<div class="lg:w-1/2 p-space-lg flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Masseria Conversion</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Casa dell’Olivo Estate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Conversion of an 18th-century olive mill with natural unglazed wood-fired terracotta planks, retaining heat during winter months over geothermal loops.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-space-xs">
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Salt-Cured Clay</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Radiant Underfloor</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface font-label-sm text-[11px] rounded">Masseria Living</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- EMPIRICAL MATERIAL PERFORMANCE MATRIX -->
+<section class="w-full py-space-xl bg-surface">
+<div class="w-full px-margin-mobile lg:px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col max-w-3xl gap-space-xs">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold">EMPIRICAL COMPARISON</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Soleil Terra vs. Mass-Manufactured Ceramic</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Why leading interior architects specify genuine hand-chiseled clay over industrial digital printed porcelain.
+        </p>
+</div>
+<!-- Specification Table -->
+<div class="w-full overflow-x-auto bg-surface-container rounded-xl shadow-sm p-space-sm">
+<table class="w-full text-left min-w-[700px]">
+<thead>
+<tr class="border-b border-outline-variant/30 text-on-surface">
+<th class="py-space-md px-space-md font-label-md text-label-md uppercase">Performance Criteria</th>
+<th class="py-space-md px-space-md font-label-md text-label-md uppercase text-primary bg-surface-container-high rounded-t-lg">Soleil Terra Handcrafted</th>
+<th class="py-space-md px-space-md font-label-md text-label-md uppercase text-on-surface-variant">Standard Commercial Ceramic</th>
+<th class="py-space-md px-space-md font-label-md text-label-md uppercase text-on-surface-variant">Digital Printed Porcelain</th>
+<th class="py-space-md px-space-md font-label-md text-label-md uppercase text-on-surface-variant">Cement Look-Alikes</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-sm text-body-sm">
+<tr>
+<td class="py-space-md px-space-md font-bold text-on-surface">Surface Individuality</td>
+<td class="py-space-md px-space-md bg-surface-container-high font-semibold text-primary">100% Unique / Zero Repeated Faces</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Identical molded faces</td>
+<td class="py-space-md px-space-md text-on-surface-variant">6–12 recurring digital patterns</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Uniform pressed texture</td>
+</tr>
+<tr>
+<td class="py-space-md px-space-md font-bold text-on-surface">Thermal Mass Storage</td>
+<td class="py-space-md px-space-md bg-surface-container-high font-semibold text-primary">High (Slow Radiant Heat Dissipation)</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Low thermal density</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Medium / Cool foot-feel</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Medium</td>
+</tr>
+<tr>
+<td class="py-space-md px-space-md font-bold text-on-surface">Joint Dimensioning</td>
+<td class="py-space-md px-space-md bg-surface-container-high font-semibold text-primary">0.5mm – 1.0mm (Beveled Reverse)</td>
+<td class="py-space-md px-space-md text-on-surface-variant">3.0mm – 5.0mm Required</td>
+<td class="py-space-md px-space-md text-on-surface-variant">2.0mm Minimum Grout</td>
+<td class="py-space-md px-space-md text-on-surface-variant">3.0mm Grout</td>
+</tr>
+<tr>
+<td class="py-space-md px-space-md font-bold text-on-surface">Ageing &amp; Patina</td>
+<td class="py-space-md px-space-md bg-surface-container-high font-semibold text-primary">Deepens Gracefully Over Centuries</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Glaze scratches &amp; chips white</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Static / No patina development</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Vulnerable to acid stains</td>
+</tr>
+<tr>
+<td class="py-space-md px-space-md font-bold text-on-surface">Repair &amp; Restoration</td>
+<td class="py-space-md px-space-md bg-surface-container-high font-semibold text-primary">Single Tile Spot-Replaceable</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Discontinued lines impossible to match</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Pattern batch mismatches common</td>
+<td class="py-space-md px-space-md text-on-surface-variant">Requires total floor resurfacing</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SPECIFIER'S CURATED TILE COFFRET FORM -->
+<section class="w-full py-space-xl bg-surface-container-high" id="specimen-coffret">
+<div class="w-full px-margin-mobile lg:px-margin">
+<div class="bg-surface rounded-2xl shadow-xl overflow-hidden p-space-lg lg:p-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Info -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">package_2</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-bold">ATELIER DIRECT SHIPMENT</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+              The Architect's Curated Specimen Coffret
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Receive a cedarwood presentation box hand-assembled in our Marrakesh atelier. Contains 4 hand-selected glazed Zellige and encaustic tile specimens, a brass joint specification gauge, and our binder of mortar formulations.
+            </p>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold">Priority FedEx Express Courier Delivery</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold">Includes Complete Technical Data Binder &amp; Slip Ratings</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-semibold">Credited 100% Against Future Commission Orders</span>
+</div>
+</div>
+<!-- Atelier Guarantee seal -->
+<div class="mt-space-sm p-space-md bg-surface-container rounded-lg flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Direct Atelier Dispatch</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Prepared within 48h from Sidi Ghanem workshops.</span>
+</div>
+</div>
+</div>
+<!-- Form Panel -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-lg lg:p-space-xl rounded-xl">
+<form class="flex flex-col gap-space-md" id="specimen-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Specifier Full Name *</label>
+<input class="w-full px-space-md py-space-sm bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none shadow-sm focus:ring-2 focus:ring-primary/40" placeholder="e.g. Elena Rostova" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Practice / Design Firm *</label>
+<input class="w-full px-space-md py-space-sm bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none shadow-sm focus:ring-2 focus:ring-primary/40" placeholder="e.g. Studio Rostova Architecture" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Professional Email *</label>
+<input class="w-full px-space-md py-space-sm bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none shadow-sm focus:ring-2 focus:ring-primary/40" placeholder="name@architecturedesk.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Project Type *</label>
+<select class="w-full px-space-md py-space-sm bg-surface rounded-lg font-body-sm text-body-sm text-on-surface outline-none shadow-sm focus:ring-2 focus:ring-primary/40">
+<option>Private Luxury Villa / Residential</option>
+<option>Boutique Hotel / Hospitality</option>
+<option>Historic Monument / Riad Restoration</option>
+<option>Commercial Flagship / Gallery</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Courier Delivery Address &amp; Country *</label>
+<input class="w-full px-space-md py-space-sm bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none shadow-sm focus:ring-2 focus:ring-primary/40" placeholder="Studio address, Suite, City, Postal Code, Country" required="" type="text"/>
+</div>
+<!-- Specimen Selection Checkboxes -->
+<div class="flex flex-col gap-2 pt-space-xs">
+<label class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Select Preferred Specimen Series (Up to 4)</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<label class="flex items-center gap-2 p-2 bg-surface rounded-lg cursor-pointer">
+<input checked="" class="w-4 h-4 accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Emerald &amp; Lapis Zellige 10x10</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-surface rounded-lg cursor-pointer">
+<input checked="" class="w-4 h-4 accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Natural Honey Bejmat 5x15</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-surface rounded-lg cursor-pointer">
+<input checked="" class="w-4 h-4 accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Encaustic Andalusian Star</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-surface rounded-lg cursor-pointer">
+<input checked="" class="w-4 h-4 accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Zellige Nacré Ivoire</span>
+</label>
+</div>
+</div>
+<button class="w-full mt-space-sm py-space-md bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg uppercase tracking-wider rounded-lg transition-colors font-bold shadow-md flex items-center justify-center gap-space-xs" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Dispatch Atelier Specimen Coffret</span>
+</button>
+<p class="font-label-sm text-center text-on-surface-variant text-[12px]">
+                Complimentary for accredited architects and licensed interior designers. Typical arrival within 3–5 business days.
+              </p>
+</form>
+<div class="hidden flex-col items-center justify-center p-space-xl text-center gap-space-md" id="coffret-success">
+<div class="w-16 h-16 rounded-full bg-tertiary/15 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[36px]">mark_email_read</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Specimen Coffret Dispatched</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                Your bespoke tile selection is being packed at the Sidi Ghanem atelier in Marrakesh. Tracking notification has been sent to your email address.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript -->
+<script>
+    (function() {
+      // Form Handler
+      const specimenForm = document.getElementById('specimen-form');
+      const coffretSuccess = document.getElementById('coffret-success');
+      if (specimenForm && coffretSuccess) {
+        specimenForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          specimenForm.classList.add('hidden');
+          coffretSuccess.classList.remove('hidden');
+          coffretSuccess.classList.add('flex');
+        });
+      }
+
+      // Pattern Studio Logic
+      const patterns = {
+        herringbone: {
+          label: "Bejmat Herringbone",
+          joint: "1.0 mm (Tight Masonry)",
+          seal: "Breathable Siloxane Emulsion",
+          slip: "PTV 44 (Low Slip Potential)",
+          weight: "28.5 kg / m²",
+          render: (c1, c2, c3) => `
+            <rect x="20" y="20" width="110" height="40" rx="2" fill="${c1}" opacity="0.9" />
+            <rect x="135" y="20" width="40" height="110" rx="2" fill="${c2}" opacity="0.95" />
+            <rect x="180" y="20" width="110" height="40" rx="2" fill="${c3}" opacity="0.95" />
+            <rect x="295" y="20" width="40" height="110" rx="2" fill="${c1}" opacity="0.8" />
+            <rect x="340" y="20" width="110" height="40" rx="2" fill="${c2}" />
+            <rect x="20" y="65" width="40" height="110" rx="2" fill="${c2}" />
+            <rect x="65" y="135" width="110" height="40" rx="2" fill="${c1}" />
+            <rect x="180" y="65" width="40" height="110" rx="2" fill="${c3}" />
+            <rect x="225" y="135" width="110" height="40" rx="2" fill="${c2}" />
+            <rect x="340" y="65" width="40" height="110" rx="2" fill="${c1}" />
+            <rect x="385" y="135" width="110" height="40" rx="2" fill="${c3}" />
+            <rect x="20" y="180" width="110" height="40" rx="2" fill="${c3}" />
+            <rect x="135" y="180" width="40" height="110" rx="2" fill="${c2}" />
+            <rect x="180" y="180" width="110" height="40" rx="2" fill="${c1}" />
+            <rect x="295" y="180" width="40" height="110" rx="2" fill="${c2}" />
+            <rect x="340" y="180" width="110" height="40" rx="2" fill="${c3}" />
+          `
+        },
+        grid: {
+          label: "Zellige 10x10 Grid",
+          joint: "0.5 mm (Hairline Mosaic)",
+          seal: "Natural Carnauba Wax Wash",
+          slip: "PTV 40 (Moderate Grip)",
+          weight: "22.0 kg / m²",
+          render: (c1, c2, c3) => `
+            <g>
+              ${[0, 1, 2, 3, 4].map(r => 
+                [0, 1, 2, 3, 4, 5].map(c => {
+                  const fill = (r + c) % 3 === 0 ? c1 : ((r + c) % 3 === 1 ? c2 : c3);
+                  return `<rect x="${25 + c * 75}" y="${20 + r * 68}" width="68" height="62" rx="2" fill="${fill}" opacity="0.92" />`;
+                }).join('')
+              ).join('')}
+            </g>
+          `
+        },
+        star: {
+          label: "Andalusian Star Mosaic",
+          joint: "1.5 mm (Hydraulic Standard)",
+          seal: "Deep-Penetrating Fluoropolymer",
+          slip: "PTV 48 (High Slip Resistance)",
+          weight: "32.0 kg / m²",
+          render: (c1, c2, c3) => `
+            <g transform="translate(40, 20)">
+              <polygon points="100,20 120,70 170,70 130,100 150,150 100,120 50,150 70,100 30,70 80,70" fill="${c1}" />
+              <polygon points="260,20 280,70 330,70 290,100 310,150 260,120 210,150 230,100 190,70 240,70" fill="${c2}" />
+              <polygon points="180,160 200,210 250,210 210,240 230,290 180,260 130,290 150,240 110,210 160,210" fill="${c3}" />
+              <circle cx="100" cy="85" r="22" fill="${c2}" />
+              <circle cx="260" cy="85" r="22" fill="${c1}" />
+              <circle cx="180" cy="225" r="22" fill="${c1}" />
+            </g>
+          `
+        },
+        chequer: {
+          label: "Chequerboard Duo",
+          joint: "1.0 mm (Classic Joint)",
+          seal: "Siloxane Oil Repellent",
+          slip: "PTV 42 (Standard Grip)",
+          weight: "26.0 kg / m²",
+          render: (c1, c2) => `
+            <g>
+              ${[0, 1, 2, 3].map(r => 
+                [0, 1, 2, 3, 4].map(c => {
+                  const fill = (r + c) % 2 === 0 ? c1 : c2;
+                  return `<rect x="${25 + c * 90}" y="${20 + r * 85}" width="84" height="80" rx="3" fill="${fill}" />`;
+                }).join('')
+              ).join('')}
+            </g>
+          `
+        }
+      };
+
+      const colorPalettes = {
+        "terra-ivory": { label: "Terracotta & Ivory", c1: "#bd5531", c2: "#fff8f6", c3: "#9d3e1b" },
+        "emerald-ochre": { label: "Emerald & Ochre", c1: "#4f6142", c2: "#e6d7d2", c3: "#677a59" },
+        "cobalt-sand": { label: "Cobalt & Sand", c1: "#426083", c2: "#f4e5e0", c3: "#29496a" },
+        "noir-blanc": { label: "Noir & Blanc", c1: "#372f2b", c2: "#ffffff", c3: "#56423c" }
+      };
+
+      let currentPattern = "herringbone";
+      let currentColor = "terra-ivory";
+
+      function updateCanvas() {
+        const pData = patterns[currentPattern];
+        const cData = colorPalettes[currentColor];
+        const container = document.getElementById('dynamic-pattern');
+        const canvasLabel = document.getElementById('canvas-label');
+        const specJoint = document.getElementById('spec-joint');
+        const specSeal = document.getElementById('spec-seal');
+        const specSlip = document.getElementById('spec-slip');
+        const specWeight = document.getElementById('spec-weight');
+
+        if (container) {
+          container.innerHTML = pData.render(cData.c1, cData.c2, cData.c3);
+        }
+
+        if (canvasLabel) {
+          canvasLabel.innerText = `${pData.label} // ${cData.label}`;
+        }
+        if (specJoint) specJoint.innerText = pData.joint;
+        if (specSeal) specSeal.innerText = pData.seal;
+        if (specSlip) specSlip.innerText = pData.slip;
+        if (specWeight) specWeight.innerText = pData.weight;
+      }
+
+      // Pattern button listeners
+      document.querySelectorAll('.pattern-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.pattern-btn').forEach(b => {
+            b.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+            b.classList.add('bg-surface', 'text-on-surface');
+          });
+          this.classList.remove('bg-surface', 'text-on-surface');
+          this.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+          currentPattern = this.getAttribute('data-pattern');
+          updateCanvas();
+        });
+      });
+
+      // Color button listeners
+      document.querySelectorAll('.color-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.color-btn').forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary', 'font-semibold');
+            b.classList.add('bg-surface', 'text-on-surface');
+          });
+          this.classList.remove('bg-surface', 'text-on-surface');
+          this.classList.add('bg-primary-container', 'text-on-primary', 'font-semibold');
+          currentColor = this.getAttribute('data-color');
+          updateCanvas();
+        });
+      });
+
+      // Export CAD button feedback
+      const btnExportCad = document.getElementById('btn-export-cad');
+      if (btnExportCad) {
+        btnExportCad.addEventListener('click', function() {
+          const original = this.innerHTML;
+          this.innerHTML = `<span class="material-symbols-outlined text-[18px]">done</span><span>Generating CAD & Spec Package...</span>`;
+          setTimeout(() => {
+            this.innerHTML = original;
+            alert("Soleil Terra Atelier: Architectural CAD specification bundle (DWG, BIM, and PDF Mortar Schedules) initiated for download.");
+          }, 1000);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl pt-space-xl pb-space-lg shadow-[0_-1px_12px_rgba(43,35,32,0.04)]"><div class="w-full px-margin-mobile lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl pb-space-xl"><div class="lg:col-span-4 flex flex-col gap-space-md"><span class="font-headline-sm text-headline-sm text-primary uppercase tracking-tight font-bold">SOLEIL TERRA</span><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Born in historic Fès and perfected through generational lineages of Maâlem master craftsmen. We sculpt, dry, wood-kiln fire, and hand-chisel every individual tile from native Moroccan marl clay, preserving the tactile poetry of imperfect architectural ceramics.</p><div class="flex flex-wrap gap-space-xs pt-space-xs"><span class="px-space-sm py-space-xs bg-tertiary/10 text-tertiary font-label-sm text-label-sm uppercase rounded-lg">Natural Gray Marl Clay</span><span class="px-space-sm py-space-xs bg-secondary/10 text-secondary font-label-sm text-label-sm uppercase rounded-lg">Hand-Chiseled Edges</span><span class="px-space-sm py-space-xs bg-primary/10 text-primary font-label-sm text-label-sm uppercase rounded-lg">Wood-Fired Kilns</span></div></div><div class="lg:col-span-3 flex flex-col gap-space-sm"><h4 class="font-title-lg text-title-lg text-on-surface mb-space-xs">Atelier Guilds &amp; Salons</h4><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><p class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Marrakesh Atelier</p><p>Sidi Ghanem Industrial Quarter, No. 418, Marrakesh, Morocco</p></div><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant mt-space-sm"><p class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Seville Showroom</p><p>Calle San Vicente 24, Barrio de San Lorenzo, 41002 Seville, Spain</p></div><div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant mt-space-sm"><p class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Paris Specimen Salon</p><p>14 Rue de Turenne, Le Marais, 75004 Paris, France</p></div></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-title-lg text-title-lg text-on-surface mb-space-xs">Material Library</h4><ul class="flex flex-col gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="zellige-formulations" href="#">Zellige 10x10 Glazes</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="encaustic-patterns" href="#">Hydraulic Bejmat Bars</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="bespoke-colorways" href="#">Mineral Pigment Index</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="riad-and-villa-portfolio" href="#">Courtyard Case Studies</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="sample-coffret" href="#">Architectural Swatch Kits</a></ul></div><div class="lg:col-span-3 flex flex-col gap-space-md"><h4 class="font-title-lg text-title-lg text-on-surface">Trade &amp; Atelier Gazette</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Receive technical installation bulletins, shade variation indices (V1–V4), and rare seasonal kiln release notifications.</p><div class="flex flex-col gap-space-xs"><div class="flex gap-space-xs"><input class="flex-1 px-space-md py-space-sm bg-surface rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none shadow-[0_1px_4px_rgba(43,35,32,0.04)] focus:shadow-[0_0_0_2px_rgba(157,62,27,0.3)]" placeholder="Architect or Designer Email" type="email"/><button class="px-space-md py-space-sm bg-secondary text-on-secondary rounded-lg font-label-md text-label-md uppercase tracking-wider hover:bg-on-secondary-container transition-colors">Join</button></div><p class="font-label-sm text-label-sm text-on-surface-variant">Reserved for interior architects, historic restorers &amp; developers.</p></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">© 1974–2025 SOLEIL TERRA TILE ATELIER. ALL RIGHTS RESERVED. SOLEILTERRA.COM</p><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider" href="#">Technical Specifications</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider" href="#">Artisan Charter</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider" href="#">Privacy &amp; Terms</a></div></div></div></footer></body></html>

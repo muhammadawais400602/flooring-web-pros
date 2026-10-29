@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed-variant":"#5b4226","outline-variant":"#d2c4b9","secondary-container":"#dbe5dd","on-tertiary-container":"#fffbff","surface-container":"#f0eee8","tertiary":"#725739","inverse-primary":"#e6bf9b","surface":"#fcf9f3","on-background":"#1c1c18","on-surface-variant":"#4f453c","tertiary-fixed":"#ffddbb","on-error-container":"#93000a","on-tertiary-fixed":"#2a1702","surface-container-highest":"#e5e2dc","tertiary-fixed-dim":"#e4c09c","on-primary-fixed-variant":"#5c4126","surface-container-low":"#f6f3ed","on-secondary-fixed-variant":"#404944","secondary-fixed":"#dbe5dd","surface-tint":"#76593b","outline":"#81756b","on-secondary":"#ffffff","on-secondary-container":"#5d6761","error":"#ba1a1a","surface-container-high":"#ebe8e2","surface-bright":"#fcf9f3","on-primary-fixed":"#2b1702","primary-fixed-dim":"#e6bf9b","on-surface":"#1c1c18","secondary":"#57615b","background":"#fcf9f3","inverse-surface":"#31312d","on-secondary-fixed":"#151d19","secondary-fixed-dim":"#bfc9c2","on-primary":"#ffffff","surface-container-lowest":"#ffffff","on-error":"#ffffff","error-container":"#ffdad6","primary-container":"#8e6f50","on-tertiary":"#ffffff","surface-variant":"#e5e2dc","on-primary-container":"#fffbff","inverse-on-surface":"#f3f0ea","tertiary-container":"#8d6f50","primary-fixed":"#ffdcbd","primary":"#735639","surface-dim":"#dcdad4"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","space-xl":"3rem","space-xs":"0.25rem","gutter":"1.5rem","margin-mobile":"1.25rem","margin":"3.5rem","space-2xl":"5rem","space-md":"1rem","space-lg":"1.75rem","space-sm":"0.5rem"},"fontFamily":{"headline-sm":["Playfair Display"],"body-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"label-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"300"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["28px",{"lineHeight":"38px","fontWeight":"400"}],"headline-lg-mobile":["30px",{"lineHeight":"40px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"600"}],"display-lg":["56px",{"lineHeight":"68px","letterSpacing":"-0.02em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"52px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-lg-mobile":["38px",{"lineHeight":"48px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(47,56,51,0.04)]"><div class="bg-surface-container-low py-1.5 px-margin text-center"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">100% Undyed Virgin Wool // Sustainable Fleece // Acoustic Luxury</p></div><div class="h-20 max-w-[1440px] mx-auto px-margin flex items-center justify-between gap-gutter"><a class="flex flex-col group" data-path="wool-repertoire" href="#"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none group-hover:text-primary transition-colors">BOREAL ACOUSTICS</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mt-0.5">&amp; Softweave Studio</span></a><nav class="hidden xl:flex items-center gap-6" data-active-classes="bg-primary-container text-on-primary-container rounded-lg"><a aria-current="page" class="font-label-md uppercase tracking-wider py-1.5 px-3 transition-all bg-primary-container text-on-primary-container rounded-lg" data-path="wool-repertoire" href="#">Wool Repertoire</a><a class="font-label-md text-label-md uppercase tracking-wider py-1.5 px-3 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="weave-textures" href="#">Weave Textures</a><a class="font-label-md text-label-md uppercase tracking-wider py-1.5 px-3 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="acoustic-telemetry" href="#">Acoustic Telemetry</a><a class="font-label-md text-label-md uppercase tracking-wider py-1.5 px-3 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="hospitality-residential" href="#">Hospitality &amp; Residential</a><a class="font-label-md text-label-md uppercase tracking-wider py-1.5 px-3 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="circular-wool-sourcing" href="#">Circular Wool Sourcing</a><a class="font-label-md text-label-md uppercase tracking-wider py-1.5 px-3 rounded-DEFAULT text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="specifier-portal" href="#">Specifier Portal</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center font-label-md text-label-md uppercase tracking-wider bg-primary text-on-primary px-space-md py-2.5 rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-[0_4px_12px_-2px_rgba(158,125,93,0.15)]" data-path="swatch-folio" href="#">Request Swatch Folio</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO VIEWPORT -->
+<section class="relative w-full overflow-hidden bg-surface py-space-xl lg:py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin">
+<!-- Breadcrumb / Eyebrow Header -->
+<div class="flex items-center gap-3 mb-space-md">
+<span class="inline-block w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">100% Undyed Virgin Wool // Sustainable Fleece // Acoustic Luxury</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start mb-space-xl">
+<div class="lg:col-span-8 space-y-space-md">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-tight">
+            Silence Underfoot.<br/>
+<span class="italic font-headline-lg text-primary">Crafted from Earth’s Purest Unbleached Fleece.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Architectural broadloom and woven wool floorings engineered for acoustic serenity, thermal equilibrium, and tactile quiet luxury. Sourced responsibly from high-altitude New Zealand and Scottish heritage flocks.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="inline-flex items-center justify-center font-label-md text-label-md uppercase tracking-wider bg-primary text-on-primary px-space-lg py-3.5 rounded-DEFAULT shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all" href="#wool-repertoire">
+              Explore Wool Repertoire
+            </a>
+<a class="inline-flex items-center justify-center font-label-md text-label-md uppercase tracking-wider bg-transparent text-secondary px-space-lg py-3.5 rounded-DEFAULT shadow-sm bg-surface-container hover:bg-surface-container-high transition-all" href="#swatch-requisition">
+              Request Swatch Folio
+            </a>
+</div>
+</div>
+<!-- Metric Badges in Split Column -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-lg rounded-DEFAULT">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Acoustics</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">NRC 0.65+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Noise reduction index</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Circularity</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">100%</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Biodegradable fleece</p>
+</div>
+<div class="space-y-1 pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Chemistry</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Zero Dye</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pure unbleached fibre</p>
+</div>
+<div class="space-y-1 pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Air Purity</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">VOC Absorb</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Active keratin filter</p>
+</div>
+</div>
+</div>
+<!-- Hero Focal Image -->
+<div class="relative w-full rounded-DEFAULT overflow-hidden shadow-xl bg-surface-container-high">
+<img alt="Private Waterfront Penthouse, Stockholm living room featuring Boreal Acoustics ribbed cashmere bouclé broadloom" class="w-full h-[520px] lg:h-[640px] object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSt5Js_mYKVRAZsxBHx5v2ZoEnnIjxX1ob74P0sSy4v6yUoMAMIEvT4YrCYkdXXc9yNCIQ-zYgcrlZXWoOUaavq4ciWMxGmv-6yTlgdaU2qtcJ6KFvNQOsOfMkICgeVt0PcukjK9SAtldwXinD5F5Erh8gUs9q20y6n7FF0NRHztHQaQUxmlxbU77QrwVkbTx5NKXzSwryeDrQfhJyYad88m0hb_6jBVudrQm_QXI"/>
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-on-background/80 via-on-background/30 to-transparent p-space-md lg:p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="text-on-primary">
+<p class="font-headline-sm text-headline-sm">Private Waterfront Penthouse // Stockholm</p>
+<p class="font-body-sm text-body-sm opacity-90">Architectural Ribbed Cashmere Bouclé Broadloom in Undyed Oat</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-surface bg-on-background/60 backdrop-blur-md px-3 py-1.5 rounded-DEFAULT">NRC 0.72 // Tog 2.85</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: TELEMETRY BAR -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Acoustic Attenuation</span>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">0.70 <span class="font-headline-sm text-headline-sm font-normal text-secondary">NRC</span></p>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">Absorbs 70% of room sound reverberation, eliminating speech flutter echo in vast open plans.</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Thermal Equilibrium</span>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">2.8 <span class="font-headline-sm text-headline-sm font-normal text-secondary">TOG</span></p>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">Natural multi-cellular wool fibers reduce seasonal heat loss through floor assemblies by 18%.</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Fibre Purity</span>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">100<span class="font-headline-sm text-headline-sm font-normal text-secondary">%</span></p>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">Uncut virgin fleece without polyester, nylon scrims, or synthetic flame-retardant sprays.</p>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Architectural Span</span>
+<p class="font-display-lg text-display-lg text-on-surface leading-none">30+ <span class="font-headline-sm text-headline-sm font-normal text-secondary">YRS</span></p>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-2">Triple-ply tight-twist wool yarn saturated in natural lanolin wax for generational stain resilience.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: CURATED WOOL WEAVE REPERTOIRE -->
+<section class="w-full bg-surface py-space-2xl" id="wool-repertoire">
+<div class="max-w-[1440px] mx-auto px-margin space-y-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">The Architecture of Fleece</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Undyed Broadloom &amp; Artisanal Weaves</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Four distinct tactile typologies derived entirely from natural sheep fleece tones—from chalk whites to peaty highland slates.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Weave 1 -->
+<div class="bg-surface-container-low rounded-DEFAULT overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up architectural macro texture of Nordic Ribbed Boucle wool carpet in undyed oatmeal color with soft morning shadows revealing deep looped wool structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAYSBYBBeofa94N_esFgWe7G_V_-UEmrrRqfxYW9Fd39BcBhkIVDgf9ZwvZIYaYpFGaD04STglJe5xh3Z1fJQn27TQQoN22YJ8pIcJ2GPFr5UgooXAtzleo6x6QChImKvvuTjcqbZRRsNdcDP178Uw8avM9POCCvRp5Chx4RY6y0VUQzPVs1ONXr42zRK1Kkea7KrdvqUbvXem0ntfrFsQd46kOQDGFURGUjF1EFw"/>
+<span class="absolute top-3 left-3 font-label-sm text-label-sm uppercase tracking-wider bg-surface/90 text-on-surface px-2.5 py-1 rounded-DEFAULT backdrop-blur-md">NRC 0.70</span>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Loop Pile</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Nordic Ribbed Bouclé</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                Structured linear loops woven from 3-ply high-twist New Zealand fleece. Provides supreme tactile resistance and high-traffic acoustic absorption.
+              </p>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Weight</span>
+<span class="text-on-surface font-semibold">68 oz / yd²</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Backing</span>
+<span class="text-on-surface font-semibold">Natural Jute &amp; Tree Latex</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Tone</span>
+<span class="text-on-surface font-semibold">Undyed Oat Greige</span>
+</div>
+<button class="w-full mt-3 font-label-md text-label-md uppercase tracking-wider py-2.5 bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary rounded-DEFAULT transition-colors" onclick="handleQuickSwatch('Nordic Ribbed Bouclé')">
+                Order Material Swatch
+              </button>
+</div>
+</div>
+</div>
+<!-- Weave 2 -->
+<div class="bg-surface-container-low rounded-DEFAULT overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro photo of Hebridean Chunky Tweed thick wool weave blending natural charcoal and highland peat brown unbleached wool fibers with heavy organic tactile relief" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvxtfpIaHMbqlI24fW65GQDtjtiXTAg2eGTAyVywoIZHd-RLlocujELY78SG1sVKXQpOAFVRHT0YLB2upKMx8Q-WiSkXnoued10JveRHANpsVWMcgNKAwwws-qNmbviC2WPkCPQzwVab9dxdyP3uPPrb7YKBrfFhAlVWCAde5rrRyGllA1GWQGwZ1W0eRHb6Us_xNQDvEkm6nHODa-Qx3D_Hp4tFWYlqfu_iH7xl4"/>
+<span class="absolute top-3 left-3 font-label-sm text-label-sm uppercase tracking-wider bg-surface/90 text-on-surface px-2.5 py-1 rounded-DEFAULT backdrop-blur-md">NRC 0.65</span>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Tweed Weave</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Hebridean Chunky Tweed</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                Hand-spun, multi-tonal yarn interweaving deep peat slate, charcoal, and warm camel fleeces without artificial tinting or dye baths.
+              </p>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Weight</span>
+<span class="text-on-surface font-semibold">82 oz / yd²</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Backing</span>
+<span class="text-on-surface font-semibold">Organic Cotton / Jute</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Tone</span>
+<span class="text-on-surface font-semibold">Peat &amp; Slate Tweed</span>
+</div>
+<button class="w-full mt-3 font-label-md text-label-md uppercase tracking-wider py-2.5 bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary rounded-DEFAULT transition-colors" onclick="handleQuickSwatch('Hebridean Chunky Tweed')">
+                Order Material Swatch
+              </button>
+</div>
+</div>
+</div>
+<!-- Weave 3 -->
+<div class="bg-surface-container-low rounded-DEFAULT overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Luxurious dense sheared cut pile wool carpet in creamy off-white wool with velvet soft surface texture in architectural minimalist setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAioPTYkfNRW14sn7HWewT3AuVQzXWXotbkBgdwF5PhuZt0kd4k71pCfVQuf6BuzHdllllCY6ASqwHynp951QvRmc9-CuvMg07gxWoABo6i4M7qKM7TIADov8xX5y7oJC_HFFY3x14Uc-UguEEaU52Ox76nLLmroJV4ZHtWkKQ_ZgeWMTqenlzSi71Ff7nNWL0Y5AM3D28XkwBrYeyJxdvw_3brLG9jv2j2g-tPAAc"/>
+<span class="absolute top-3 left-3 font-label-sm text-label-sm uppercase tracking-wider bg-surface/90 text-on-surface px-2.5 py-1 rounded-DEFAULT backdrop-blur-md">NRC 0.78</span>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Cut Pile Velvet</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Cashmere Plush Velvet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                Precision-sheared, ultra-dense cut pile providing an impossibly soft barefoot tactile embrace for private primary residential suites.
+              </p>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Weight</span>
+<span class="text-on-surface font-semibold">95 oz / yd²</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Backing</span>
+<span class="text-on-surface font-semibold">Fleece Cushioned Felt</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Tone</span>
+<span class="text-on-surface font-semibold">Bleach-Free Alabaster</span>
+</div>
+<button class="w-full mt-3 font-label-md text-label-md uppercase tracking-wider py-2.5 bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary rounded-DEFAULT transition-colors" onclick="handleQuickSwatch('Cashmere Plush Velvet')">
+                Order Material Swatch
+              </button>
+</div>
+</div>
+</div>
+<!-- Weave 4 -->
+<div class="bg-surface-container-low rounded-DEFAULT overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Overhead architectural close up of geometric low-profile flatweave wool flooring in subtle herringbone pattern with crisp clean natural fibers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDac_qASdu7a0vMCt4suZFPc6r58qZEHtS1KITdNJeV6MDGvguw6hyQ7uo4-TY6ROuP3Fkvc1mYHikEPKSTAax7TQ5Xicdb6Y_Mb5opmFSXVB6pdNTE9Vz82qdw-yMdWOhyIdV38ZNd2AQzcbx7b3tEnj4Bt736f3AZpaSzoiLXd4IlGHry0PN0XVlu3etn_8PTJr7kmUvnY9Sn1kvjPQWgbmieaYJ9kLbuXLl8k90"/>
+<span class="absolute top-3 left-3 font-label-sm text-label-sm uppercase tracking-wider bg-surface/90 text-on-surface px-2.5 py-1 rounded-DEFAULT backdrop-blur-md">NRC 0.55</span>
+</div>
+<div class="p-space-md flex flex-col flex-grow justify-between space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Flatweave</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Geostructure Flatweave</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                Crisp, architectural low-profile flatweave engineered specifically for underfloor hydronic heating and smooth rolling executive furniture.
+              </p>
+</div>
+<div class="space-y-2 pt-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Weight</span>
+<span class="text-on-surface font-semibold">54 oz / yd²</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Backing</span>
+<span class="text-on-surface font-semibold">Dense Woven Linen</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Tone</span>
+<span class="text-on-surface font-semibold">Raw Ecru &amp; Bone</span>
+</div>
+<button class="w-full mt-3 font-label-md text-label-md uppercase tracking-wider py-2.5 bg-surface-container-high text-on-surface hover:bg-primary hover:text-on-primary rounded-DEFAULT transition-colors" onclick="handleQuickSwatch('Geostructure Flatweave')">
+                Order Material Swatch
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: THE SCIENCE OF BIO-ACOUSTICS & INDOOR AIR -->
+<section class="w-full bg-surface-container-low py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin space-y-space-xl">
+<div class="max-w-2xl space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Biogenic Performance</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Science of Wool Bio-Acoustics</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Wool is an active biological organism. Unlike synthetic petrochemical polymers, undyed fleece responds dynamically to acoustic frequencies, humidity, and airborne toxins.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Feature 1 -->
+<div class="bg-surface p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="space-y-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">01 // Keratin Bond</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">air</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Keratin Air Purification</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Wool permanently sequesters formaldehyde, NO₂, and SO₂ gases into its amino acid helix, irreversibly neutralizing toxic indoor emissions for up to 30 years.
+            </p>
+</div>
+<div class="pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">96% Formaldehyde Elimination</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="space-y-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">02 // Microclimate</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">water_drop</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Hydro-Thermal Equilibrium</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Wool absorbs up to 33% of its dry weight in atmospheric vapor during humid periods and releases it when dry, preventing mold spore germination and static electricity.
+            </p>
+</div>
+<div class="pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">RH 45-55% Stabilization</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="space-y-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">03 // Sound Attenuation</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">graphic_eq</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Acoustic Chamber Damping</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              The three-dimensional helical crimp in high-altitude wool creates millions of air chambers that trap high and mid-frequency sound waves, preventing sound reverberation.
+            </p>
+</div>
+<div class="pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">-32 dB Impact Footstep Drop</span>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="bg-surface p-space-lg rounded-DEFAULT shadow-sm flex flex-col justify-between space-y-space-md">
+<div class="space-y-3">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">04 // Fire Safety</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Natural Fire Resistance</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              With an oxygen index of 25.2% and high nitrogen content, wool will not support flame combustion, self-extinguishing immediately without toxic cyanide fumes.
+            </p>
+</div>
+<div class="pt-4">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Class 1 ASTM E648 Certified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: INTERACTIVE ACOUSTIC & ROOM CALIBRATOR -->
+<section class="w-full bg-surface py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin">
+<div class="bg-surface-container p-space-lg lg:p-space-xl rounded-DEFAULT shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Controls Panel -->
+<div class="lg:col-span-6 space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Diagnostic Telemetry</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Interactive Acoustic Calibrator</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+                Simulate spatial reverberation decay and impact sound damping by configuring your architectural substrate and room envelope.
+              </p>
+</div>
+<!-- Typology Select -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Room Typology</label>
+<div class="grid grid-cols-2 gap-2" id="typology-selector">
+<button class="cal-btn active py-2.5 px-3 text-left font-body-sm text-body-sm rounded-DEFAULT bg-primary text-on-primary transition-all" data-type="penthouse" type="button">
+                  Penthouse Salon (85 m²)
+                </button>
+<button class="cal-btn py-2.5 px-3 text-left font-body-sm text-body-sm rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high transition-all" data-type="boardroom" type="button">
+                  Executive Suite (45 m²)
+                </button>
+<button class="cal-btn py-2.5 px-3 text-left font-body-sm text-body-sm rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high transition-all" data-type="screening" type="button">
+                  Private Cinema (35 m²)
+                </button>
+<button class="cal-btn py-2.5 px-3 text-left font-body-sm text-body-sm rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high transition-all" data-type="hospitality" type="button">
+                  Boutique Lodge (120 m²)
+                </button>
+</div>
+</div>
+<!-- Substrate Select -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Floor Substrate</label>
+<div class="grid grid-cols-3 gap-2" id="substrate-selector">
+<button class="sub-btn active py-2.5 px-2 text-center font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT bg-primary text-on-primary transition-all" data-sub="concrete" type="button">
+                  Concrete Slab
+                </button>
+<button class="sub-btn py-2.5 px-2 text-center font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high transition-all" data-sub="timber" type="button">
+                  Timber Joist
+                </button>
+<button class="sub-btn py-2.5 px-2 text-center font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT bg-surface text-on-surface hover:bg-surface-container-high transition-all" data-sub="acoustic" type="button">
+                  Damped Screed
+                </button>
+</div>
+</div>
+<div class="pt-2">
+<button class="inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-wider bg-on-background text-surface px-space-md py-3 rounded-DEFAULT hover:bg-secondary transition-colors" onclick="downloadAcousticDossier()">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>Download Acoustic Dossier (.PDF)</span>
+</button>
+</div>
+</div>
+<!-- Dynamic Output Visualizer -->
+<div class="lg:col-span-6 bg-surface p-space-lg rounded-DEFAULT shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-3">
+<span class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Calculated Acoustic Metrics</span>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-fixed px-2.5 py-1 rounded-DEFAULT">ISO 354:2003 Compliant</span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Footstep Sound Reduction</span>
+<p class="font-display-lg text-display-lg text-primary mt-1" id="out-db">-28 dB</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct impact energy decay</p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Reverberation (RT60)</span>
+<p class="font-display-lg text-display-lg text-on-surface mt-1" id="out-rt">0.42 s</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Down from 1.35s base decay</p>
+</div>
+</div>
+<!-- Acoustic Absorption Curve (SVG Chart) -->
+<div class="space-y-2 pt-2">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant uppercase">
+<span>Frequency Spectrum Absorption (125Hz - 4000Hz)</span>
+<span class="text-primary font-semibold" id="out-rec">Rec: Nordic Ribbed Bouclé</span>
+</div>
+<div class="h-28 w-full bg-surface-container-low rounded-DEFAULT p-3 flex items-end justify-between gap-2">
+<div class="w-full flex flex-col items-center gap-1">
+<div class="w-full bg-primary/40 rounded-t-DEFAULT transition-all duration-500" id="bar-125" style="height: 35%"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">125Hz</span>
+</div>
+<div class="w-full flex flex-col items-center gap-1">
+<div class="w-full bg-primary/60 rounded-t-DEFAULT transition-all duration-500" id="bar-250" style="height: 55%"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">250Hz</span>
+</div>
+<div class="w-full flex flex-col items-center gap-1">
+<div class="w-full bg-primary/80 rounded-t-DEFAULT transition-all duration-500" id="bar-500" style="height: 75%"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">500Hz</span>
+</div>
+<div class="w-full flex flex-col items-center gap-1">
+<div class="w-full bg-primary rounded-t-DEFAULT transition-all duration-500" id="bar-1k" style="height: 92%"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1kHz</span>
+</div>
+<div class="w-full flex flex-col items-center gap-1">
+<div class="w-full bg-primary rounded-t-DEFAULT transition-all duration-500" id="bar-2k" style="height: 98%"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2kHz</span>
+</div>
+<div class="w-full flex flex-col items-center gap-1">
+<div class="w-full bg-primary rounded-t-DEFAULT transition-all duration-500" id="bar-4k" style="height: 95%"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4kHz</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Recommendation Box -->
+<div class="bg-surface-container-low p-space-md rounded-DEFAULT flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div>
+<p class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">Recommended Assembly</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="out-assembly">
+                  Nordic Ribbed Bouclé (68 oz) with 8mm Dual-Density Natural Wool Felt Underlay.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: ARCHITECTURAL LANDMARK COMMISSIONS -->
+<section class="w-full bg-surface py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin space-y-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Global Architectural Portfolios</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Landmark Residential &amp; Cultural Commissions</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Installed in masterworks by Pritzker laureates, high-altitude alpine lodges, and heritage restorations across Scandinavia, Britain, and North America.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Commission 1 -->
+<div class="space-y-space-sm group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-DEFAULT shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modernist Nordic villa interior in Tromso Norway with floor to ceiling snowy fjord windows and warm undyed wool carpet flooring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlYGnWRLgBaKhLZCC68EAIlkm9WWpKWhSXQPxAACNjkOmZWNqZC4QzHIZcYZFltkjPtl4OU8DU5-Lt_uzMf1pSTbZDsiHu_HtMv1tkaMU3DzLPsvDQrgTWDpBMVpttMYtleKqwyClaffF-T3_2atSbKtXPKAcU4dZwhnqPGfSk6ZpP--MTEfiWisOD-VtBieTVTtfljWmIeDlc1lhOIZ78Xu41_B3pn6zSct8wGAw"/>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Tromsø, Norway</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The Arctic Sanctuary Villa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">380 m² Ribbed Cashmere Bouclé in Unbleached Oat. Acoustic damping for sub-zero panoramic glass pavilion.</p>
+</div>
+</div>
+<!-- Commission 2 -->
+<div class="space-y-space-sm group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-DEFAULT shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Contemporary Copenhagen design residency with oak minimalist furniture and bespoke textured wool flatweave broadloom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD514JeNMfGLl1NIy18LNIyemRBinc4XXHekZNYWREd9zRcONzuq6c-jLAzOhDzgz1gNtexNjynNphWlzCYMyzbZyKiuzql26VckDVML0lK4f2tReft5fI_t8RZ2kBiPNlgcYUzwa6Ez98FwUFyrv28rYQpeghmh5MnpoASgiAhDEKAffRSzu_PYRr-YyDaQuiA2emqIylnKz_st40wt9iJGVz8WWinUwtIn8KBIMM"/>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Copenhagen, Denmark</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Kvadrat Design Residency</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">520 m² Bespoke Geostructure Flatweave with integrated hydronic floor heat dissipation channels.</p>
+</div>
+</div>
+<!-- Commission 3 -->
+<div class="space-y-space-sm group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-DEFAULT shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Classic Georgian London townhouse salon with high ceilings, delicate cornicing, and heavy charcoal and peat Scottish tweed wool broadloom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3c2xh-cNvXv8IAWsiWw6IV8IrzFSFc2EoIlcl1lMXtpBxxKWsv0ltvGe_jAMAO0UG5mWPStyCzgn_qa5FKUMsEhc7ar0zk1SQsfq8pahWni-QXQb47mJWth-P3piQ2NF9aUat41PbaTg_IaWw844ZiVkeNm7FHzGMQskv0hrru3NnL_no5CJSqGcKgPfazfj78OPqmURdqM00tinybCE8Zo2jJQwjV1tmWF_HnDM"/>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">London, United Kingdom</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mayfair Heritage Townhouse</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">290 m² Undyed Hebridean Tweed. Acoustic decoupling between centuries-old timber subfloors.</p>
+</div>
+</div>
+<!-- Commission 4 -->
+<div class="space-y-space-sm group">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-DEFAULT shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Luxury Aspen Colorado alpine timber chalet living room with snow capped Rocky Mountain views and heavy raw camel wool carpet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz9nDk7GuvPohoHS6keFkM90_yfxxB0lWInCm_O9TzN1TrD25dKHPFTWO68NKV-gk0TSeK_9LkbIyvAuWOk0EhEuuBa5-hKaQ5ypr9g8PMbKGCk8XDX5Cq7qYRSX414RM_devYUUMaEl-YUd0MFV_734bMff5lgH8-2he2x7wozoTqbp-2QqO08m8FaTPDNE2W-AYiIgFNB1ZA5vzsbrz0L224eqoW8iNC5gMLd7g"/>
+</div>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Aspen, United States</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Aspen Alpine Pavilion</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">450 m² Ultra-Heavy Loop Pile in Raw Highland Camel. Sound isolation for high-ceilinged timber rafters.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: MATERIAL COMPARATIVE MATRIX -->
+<section class="w-full bg-surface-container-low py-space-2xl">
+<div class="max-w-[1440px] mx-auto px-margin space-y-space-xl">
+<div class="max-w-2xl space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Empirical Verification</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Comparative Material Matrix</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Independent laboratory metrics evaluating biological wool broadloom against petrochemical floorings and bare architectural hard surfaces.
+        </p>
+</div>
+<div class="overflow-x-auto bg-surface rounded-DEFAULT shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container font-label-md text-label-md uppercase tracking-wider text-on-surface">
+<th class="p-space-md">Metric Descriptor</th>
+<th class="p-space-md text-primary font-bold">Boreal Pure Wool</th>
+<th class="p-space-md text-secondary">Nylon 6,6 Commercial</th>
+<th class="p-space-md text-secondary">Polyester Broadloom</th>
+<th class="p-space-md text-secondary">Hardwood + Area Rug</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y-0">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-on-surface">VOC Emission Level</td>
+<td class="p-space-md text-primary font-semibold">0.00 ppm (Actively Binds VOCs)</td>
+<td class="p-space-md text-on-surface-variant">1.45 ppm (Off-gassing)</td>
+<td class="p-space-md text-on-surface-variant">2.10 ppm (Off-gassing)</td>
+<td class="p-space-md text-on-surface-variant">0.35 ppm (Polyurethane seals)</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-on-surface">Static Electricity Hazard</td>
+<td class="p-space-md text-primary font-semibold">0.2 kV (Antistatic natural core)</td>
+<td class="p-space-md text-on-surface-variant">3.8 kV (High electric charge)</td>
+<td class="p-space-md text-on-surface-variant">4.5 kV (High electric charge)</td>
+<td class="p-space-md text-on-surface-variant">0.4 kV (Low)</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-on-surface">Microplastic Fibre Shedding</td>
+<td class="p-space-md text-primary font-semibold">Zero (100% Biodegradable keratin)</td>
+<td class="p-space-md text-on-surface-variant">Severe (Synthetic microfibers)</td>
+<td class="p-space-md text-on-surface-variant">Severe (Synthetic microfibers)</td>
+<td class="p-space-md text-on-surface-variant">None</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-on-surface">Acoustic NRC Rating</td>
+<td class="p-space-md text-primary font-semibold">0.65 – 0.78</td>
+<td class="p-space-md text-on-surface-variant">0.30 – 0.45</td>
+<td class="p-space-md text-on-surface-variant">0.25 – 0.40</td>
+<td class="p-space-md text-on-surface-variant">0.05 – 0.15</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-on-surface">Thermal Insulation (TOG)</td>
+<td class="p-space-md text-primary font-semibold">2.6 – 2.9 TOG</td>
+<td class="p-space-md text-on-surface-variant">1.1 – 1.4 TOG</td>
+<td class="p-space-md text-on-surface-variant">1.0 – 1.3 TOG</td>
+<td class="p-space-md text-on-surface-variant">0.6 – 0.8 TOG</td>
+</tr>
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-on-surface">End-of-Life Circularity</td>
+<td class="p-space-md text-primary font-semibold">Soil Compostable (6 Months)</td>
+<td class="p-space-md text-on-surface-variant">Landfill Bound (500+ Yrs)</td>
+<td class="p-space-md text-on-surface-variant">Landfill Bound (450+ Yrs)</td>
+<td class="p-space-md text-on-surface-variant">Recyclable / Incinerable</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SECTION 8: ARCHITECT & SPECIFIER SWATCH FOLIO ORDER FORM -->
+<section class="w-full bg-surface py-space-2xl" id="swatch-requisition">
+<div class="max-w-[1440px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter bg-surface-container p-space-lg lg:p-space-2xl rounded-DEFAULT shadow-lg">
+<!-- Folio Description -->
+<div class="lg:col-span-5 space-y-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Complimentary Trade Sample Folio</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Specifier’s Material Archive</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Reserved exclusively for licensed architectural practices, bespoke interior studios, and acoustic consultants. 
+          </p>
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">6 Generous (15×20cm) tactile undyed wool broadloom swatches</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Natural unvulcanized latex and jute backing cross-section samples</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Complete acoustic lab NRC absorption frequency certificates</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">LEED v4, BREEAM &amp; WELL Building specification documentation</span>
+</div>
+</div>
+<div class="p-space-md bg-surface rounded-DEFAULT shadow-sm mt-space-md">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Dispatch Timeline</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Dispatched via carbon-neutral courier within 24 hours of trade credentials verification.</p>
+</div>
+</div>
+<!-- Order Form -->
+<div class="lg:col-span-7 bg-surface p-space-lg lg:p-space-xl rounded-DEFAULT shadow-sm">
+<form class="space-y-space-md" id="folio-form" onsubmit="handleFolioSubmit(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Architect / Specifier Name *</label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-DEFAULT font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="e.g. Henrik Lindqvist" required="" type="text"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Practice / Studio Name *</label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-DEFAULT font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="e.g. Studio Lindqvist Arkitektur" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Professional Email *</label>
+<input class="w-full bg-surface-container-low px-4 py-3 rounded-DEFAULT font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="h.lindqvist@studiolindqvist.se" required="" type="email"/>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Project Typology *</label>
+<select class="w-full bg-surface-container-low px-4 py-3 rounded-DEFAULT font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all">
+<option value="residential">High-End Private Residence</option>
+<option value="hospitality">Boutique Luxury Hotel / Resort</option>
+<option value="commercial">Executive Architectural Headquarters</option>
+<option value="cultural">Gallery / Cultural Institution</option>
+</select>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Courier Shipping Address *</label>
+<textarea class="w-full bg-surface-container-low px-4 py-3 rounded-DEFAULT font-body-sm text-body-sm text-on-surface outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="Street Address, Studio Suite, Postal Code, City, Country" required="" rows="2"></textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md uppercase tracking-wider text-on-surface block">Primary Weave Focus for Folio</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-DEFAULT cursor-pointer hover:bg-surface-container">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Nordic Ribbed Bouclé</span>
+</label>
+<label class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-DEFAULT cursor-pointer hover:bg-surface-container">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Hebridean Chunky Tweed</span>
+</label>
+<label class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-DEFAULT cursor-pointer hover:bg-surface-container">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Cashmere Plush Velvet</span>
+</label>
+<label class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-DEFAULT cursor-pointer hover:bg-surface-container">
+<input checked="" class="accent-primary w-4 h-4" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Geostructure Flatweave</span>
+</label>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded-DEFAULT hover:bg-primary-container hover:text-on-primary-container shadow-md transition-all" type="submit">
+              Dispatch Curated Swatch Folio
+            </button>
+<p class="hidden text-center font-body-sm text-body-sm text-primary font-medium pt-2" id="form-feedback">
+              Thank you. Your swatch folio requisition has been logged. Our dispatch desk will confirm tracking within 4 hours.
+            </p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE LOGIC -->
+<script>
+    // Room Telemetry Data
+    const roomMetrics = {
+      penthouse: {
+        concrete: { db: "-28 dB", rt: "0.42 s", rec: "Nordic Ribbed Bouclé", assembly: "Nordic Ribbed Bouclé (68 oz) with 8mm Dual-Density Wool Felt Underlay.", bars: [35, 55, 75, 92, 98, 95] },
+        timber: { db: "-25 dB", rt: "0.38 s", rec: "Cashmere Plush Velvet", assembly: "Cashmere Plush Velvet (95 oz) on Structural Floating Wool Barrier.", bars: [40, 60, 80, 95, 99, 97] },
+        acoustic: { db: "-32 dB", rt: "0.30 s", rec: "Nordic Ribbed Bouclé", assembly: "Nordic Ribbed Bouclé with Resilient Decoupled Acoustic Batts.", bars: [48, 70, 88, 98, 100, 98] }
+      },
+      boardroom: {
+        concrete: { db: "-26 dB", rt: "0.45 s", rec: "Geostructure Flatweave", assembly: "Geostructure Flatweave (54 oz) on High-Tack Underfloor Cable Grid.", bars: [30, 48, 68, 88, 92, 90] },
+        timber: { db: "-24 dB", rt: "0.41 s", rec: "Geostructure Flatweave", assembly: "Geostructure Flatweave with Recycled Acoustic Felt Layer.", bars: [32, 50, 72, 90, 94, 91] },
+        acoustic: { db: "-30 dB", rt: "0.32 s", rec: "Nordic Ribbed Bouclé", assembly: "Nordic Ribbed Bouclé over Hydronic Radiant Heating Substrate.", bars: [42, 65, 84, 96, 98, 95] }
+      },
+      screening: {
+        concrete: { db: "-32 dB", rt: "0.28 s", rec: "Cashmere Plush Velvet", assembly: "Cashmere Plush Velvet (95 oz) with 10mm Heavy-Felt Sub-Layer.", bars: [50, 75, 92, 99, 100, 99] },
+        timber: { db: "-29 dB", rt: "0.26 s", rec: "Cashmere Plush Velvet", assembly: "Cashmere Plush Velvet on Acoustically Decoupled Floating Joists.", bars: [52, 78, 95, 100, 100, 100] },
+        acoustic: { db: "-35 dB", rt: "0.22 s", rec: "Cashmere Plush Velvet", assembly: "Cashmere Plush Velvet with Triple-Layer High-Mass Acoustic Core.", bars: [58, 85, 98, 100, 100, 100] }
+      },
+      hospitality: {
+        concrete: { db: "-27 dB", rt: "0.48 s", rec: "Hebridean Chunky Tweed", assembly: "Hebridean Chunky Tweed (82 oz) with High-Traffic Jute Underlay.", bars: [38, 58, 76, 90, 94, 92] },
+        timber: { db: "-25 dB", rt: "0.43 s", rec: "Hebridean Chunky Tweed", assembly: "Hebridean Chunky Tweed with Dual Wool Barrier for Sound Separation.", bars: [40, 62, 79, 92, 96, 93] },
+        acoustic: { db: "-31 dB", rt: "0.35 s", rec: "Hebridean Chunky Tweed", assembly: "Hebridean Chunky Tweed on Heavy Acoustic Floor Compound.", bars: [45, 68, 85, 95, 98, 96] }
+      }
+    };
+
+    let currentRoom = 'penthouse';
+    let currentSubstrate = 'concrete';
+
+    function updateCalibrator() {
+      const data = roomMetrics[currentRoom][currentSubstrate];
+      document.getElementById('out-db').innerText = data.db;
+      document.getElementById('out-rt').innerText = data.rt;
+      document.getElementById('out-rec').innerText = 'Rec: ' + data.rec;
+      document.getElementById('out-assembly').innerText = data.assembly;
+
+      const barIds = ['bar-125', 'bar-250', 'bar-500', 'bar-1k', 'bar-2k', 'bar-4k'];
+      barIds.forEach((id, idx) => {
+        document.getElementById(id).style.height = data.bars[idx] + '%';
+      });
+    }
+
+    document.querySelectorAll('.cal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cal-btn').forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary');
+          b.classList.add('bg-surface', 'text-on-surface');
+        });
+        btn.classList.remove('bg-surface', 'text-on-surface');
+        btn.classList.add('bg-primary', 'text-on-primary');
+        currentRoom = btn.getAttribute('data-type');
+        updateCalibrator();
+      });
+    });
+
+    document.querySelectorAll('.sub-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sub-btn').forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary');
+          b.classList.add('bg-surface', 'text-on-surface');
+        });
+        btn.classList.remove('bg-surface', 'text-on-surface');
+        btn.classList.add('bg-primary', 'text-on-primary');
+        currentSubstrate = btn.getAttribute('data-sub');
+        updateCalibrator();
+      });
+    });
+
+    function downloadAcousticDossier() {
+      const current = roomMetrics[currentRoom][currentSubstrate];
+      alert("Generating Acoustic Dossier:\n\n• Room: " + currentRoom.toUpperCase() + "\n• Substrate: " + currentSubstrate.toUpperCase() + "\n• Impact Noise Decay: " + current.db + "\n• RT60 Decay: " + current.rt + "\n• Recommended Weave: " + current.rec + "\n\nDownloading Boreal-Spec-Report.pdf");
+    }
+
+    function handleQuickSwatch(weaveName) {
+      const formSection = document.getElementById('swatch-requisition');
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleFolioSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('form-feedback');
+      feedback.classList.remove('hidden');
+      e.target.reset();
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-2xl"><div class="max-w-[1440px] mx-auto px-margin py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-2xl"><div class="space-y-space-md"><span class="font-headline-sm text-headline-sm text-on-surface">BOREAL ACOUSTICS</span><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Engineered to foster serene architectural sanctuaries through undyed, high-density virgin broadloom, bespoke bouclé weaves, and sensory acoustic balance.</p><div class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">eco</span><span class="font-label-sm text-label-sm uppercase tracking-wider">100% Undyed Fleece</span></div></div><div class="space-y-space-md"><h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Provenance &amp; Integrity</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Sourced exclusively from ethical highland pastoralists across New Zealand and the Scottish Highlands. Naturally resilient, lanolin-rich, and non-allergenic fibres.</p><ul class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant space-y-1"><li>Cradle to Cradle Certified® Gold</li><li>OEKO-TEX® Standard 100 Class 1</li><li>Bio-Thermal Resistance Class A</li></ul></div><div class="space-y-space-md"><h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Architectural Repertoire</h3><nav class="flex flex-col space-y-2" data-active-classes="bg-primary-container text-on-primary-container rounded-lg"><a aria-current="page" class="font-body-sm transition-colors bg-primary-container text-on-primary-container rounded-lg" data-path="wool-repertoire" href="#">Undyed Wool Broadloom</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="weave-textures" href="#">Artisanal Bouclé &amp; Flatweaves</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="acoustic-telemetry" href="#">NRC Acoustic Telemetry Reports</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="specifier-portal" href="#">Architectural BIM &amp; CAD Files</a></nav></div><div class="space-y-space-md"><h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface">Specifier Desk</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Advisory services for hospitality projects, master residences, and commercial acoustic envelopes.</p><div class="font-body-sm text-body-sm text-on-surface space-y-1"><p>architects@borealacoustics.com</p><p>+44 (0) 20 7946 0842</p><p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Copenhagen • London • Zurich</p></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-4 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant"><p>© 2025 Boreal Acoustics &amp; Softweave Studio. All rights reserved.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-surface transition-colors" data-path="specifier-portal" href="#">Environmental Product Declaration</a><a class="hover:text-on-surface transition-colors" data-path="specifier-portal" href="#">LEED / BREEAM Credits</a><a class="hover:text-on-surface transition-colors" data-path="specifier-portal" href="#">Privacy Policy</a></div></div></div></footer></body></html>

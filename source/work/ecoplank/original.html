@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;family=Syne:wght@400..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#062014","secondary-fixed":"#ccead6","inverse-on-surface":"#f3f1eb","on-secondary-fixed-variant":"#324c3e","on-tertiary-fixed-variant":"#5e4123","primary-fixed-dim":"#abcfb7","on-surface":"#1b1c18","tertiary-fixed-dim":"#e9bf98","on-tertiary":"#ffffff","on-primary-container":"#c5ead1","surface-container-highest":"#e4e2dd","primary-fixed":"#c6ebd2","secondary-container":"#ccead6","on-secondary":"#ffffff","secondary-fixed-dim":"#b0cdbb","surface-container":"#f0eee8","surface-container-high":"#eae8e2","on-surface-variant":"#424843","error":"#ba1a1a","primary-container":"#4a6b57","surface-bright":"#fbf9f3","tertiary-container":"#7e5d3d","on-error-container":"#93000a","surface-container-low":"#f5f3ed","on-primary-fixed-variant":"#2d4d3b","on-tertiary-container":"#ffdab9","on-primary-fixed":"#002112","on-error":"#ffffff","surface-dim":"#dcdad4","on-secondary-container":"#4f6a5b","background":"#fbf9f3","error-container":"#ffdad6","surface-container-lowest":"#ffffff","inverse-primary":"#abcfb7","outline":"#727973","on-tertiary-fixed":"#2c1600","surface-variant":"#e4e2dd","tertiary":"#634627","surface-tint":"#456552","on-primary":"#ffffff","secondary":"#496455","primary":"#325340","tertiary-fixed":"#ffdcbd","on-background":"#1b1c18","inverse-surface":"#30312d","outline-variant":"#c1c8c1","surface":"#fbf9f3"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2.5rem","space-xs":"0.25rem","space-lg":"1.5rem","space-2xl":"4rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","margin":"3rem","space-sm":"0.5rem","space-md":"1rem","gutter":"1.5rem"},"fontFamily":{"headline-md":["Syne"],"display-hero":["Syne"],"headline-lg-mobile":["Syne"],"body-md":["Hanken Grotesk"],"display-hero-mobile":["Syne"],"headline-lg":["Syne"],"body-sm":["Hanken Grotesk"],"label-caps":["Hanken Grotesk"],"mono-metric":["Hanken Grotesk"],"body-lg":["Hanken Grotesk"],"headline-sm":["Syne"]},"fontSize":{"headline-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-hero":["72px",{"lineHeight":"76px","letterSpacing":"-0.03em","fontWeight":"800"}],"headline-lg-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"display-hero-mobile":["40px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"700"}],"mono-metric":["14px",{"lineHeight":"18px","letterSpacing":"0.04em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><a class="flex flex-col group" data-path="home" href="#"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface group-hover:text-primary transition-colors">EcoPlank Studio</span><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Regenerative Architectural Surfaces</span></a><div class="hidden xl:flex items-center gap-space-xs py-1 px-space-sm bg-secondary-container/40"><span class="w-1.5 h-1.5 bg-primary"></span><span class="font-label-caps text-label-caps uppercase text-on-secondary-container">Cradle to Cradle Certified® Gold // Zero Carbon</span></div></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-bold"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="botanical-cork" href="#">Botanical Cork</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="moso-bamboo" href="#">Moso Bamboo</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="reclaimed-timber" href="#">Reclaimed Timber</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="circular-lifecycle" href="#">Circular Lifecycle</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="life-cycle-assessment-lca" href="#">Life Cycle Assessment (LCA)</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="architectural-monograph" href="#">Architectural Monograph</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps uppercase px-space-lg py-3 hover:bg-primary-container hover:text-on-primary-container transition-colors" data-path="sample-request" href="#">Request Eco-Sample Box</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkTYnwf_fA7HCahivmRdVT_O8WL_jjdYVKFJ_iQwhjSVKF6mle50kRA9gFvHeI9OX8EWQmXZjRR3m_2k8JkuKb5rUzcHPjE46tRqt2aSTXlsmxO8AXdG0nPSnn6NXnQbelVJEt7Ifufht1bR-IKsErS5SLX1L-P4lHXa9PTL1QyO4hK4iFD_AKos_x1MQ3-kTet11bR0rO_lf3v3JqRBnYNRGgRRIF-SJ3HBTDGb62bs31cIFEY2iv"/></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Immersive Hero Section Bleeding Under Transparent Shell Header -->
+<section class="relative w-full -mt-20 overflow-hidden bg-surface-container-low min-h-[92vh] flex items-end pb-space-2xl pt-36">
+<div class="absolute inset-0 z-0">
+<img alt="Biophilic modern living interior with skylights and sustainable timber flooring" class="w-full h-full object-cover object-center filter brightness-[0.96]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkTYnwf_fA7HCahivmRdVT_O8WL_jjdYVKFJ_iQwhjSVKF6mle50kRA9gFvHeI9OX8EWQmXZjRR3m_2k8JkuKb5rUzcHPjE46tRqt2aSTXlsmxO8AXdG0nPSnn6NXnQbelVJEt7Ifufht1bR-IKsErS5SLX1L-P4lHXa9PTL1QyO4hK4iFD_AKos_x1MQ3-kTet11bR0rO_lf3v3JqRBnYNRGgRRIF-SJ3HBTDGb62bs31cIFEY2iv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/20 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-margin">
+<div class="max-w-3xl flex flex-col gap-space-lg">
+<!-- Tactile Certification Stamp -->
+<div class="inline-flex flex-wrap items-center gap-2 bg-surface/90 backdrop-blur-md px-space-md py-2 border-l-4 border-primary shadow-sm w-fit">
+<span class="w-2 h-2 bg-primary"></span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface tracking-wider">
+            Net-Negative Embodied Carbon // Zero Formaldehyde // Cradle to Cradle Certified® Gold
+          </span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight leading-none uppercase">
+            Floors Rooted in Nature.<br/>
+<span class="text-primary italic font-normal">Crafted for Generations.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl font-light">
+            Carbon-negative botanical cork, rapidly regenerative Moso bamboo, and salvaged historic timber surfaces. Designed for restorative, non-toxic living environments and progressive architectural projects.
+          </p>
+</div>
+<!-- Hero CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-caps text-label-caps uppercase px-space-xl py-4 shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-all" href="#collections">
+            Explore Botanical Collections
+          </a>
+<a class="inline-flex items-center justify-center bg-surface text-on-surface font-label-caps text-label-caps uppercase px-space-lg py-4 border-l-2 border-primary shadow-sm hover:bg-surface-container transition-all gap-2" href="#coffret-specimen">
+<span class="material-symbols-outlined text-primary text-base">download_for_offline</span>
+            Architectural EPD &amp; Specifier Guide
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Environmental Trust & Material Provenance Strip -->
+<section class="w-full bg-surface-container-high py-space-md px-margin">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-gutter items-center">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">forest</span>
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase">FSC® 100% Recycled</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Authenticated salvage chains</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">published_with_changes</span>
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase">9-Year Harvest Cycle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Oak bark naturally regrows</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">shield_moon</span>
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase">Plant Bio-Polyurethane</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Zero synthetic voc off-gassing</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase">Declare Red List Free</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">100% transparent chemistry</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 01: Biophilic Material Repertoire -->
+<section class="w-full py-space-2xl px-margin bg-surface" id="collections">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b-2 border-primary/20 pb-space-lg">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">[ Specimen Repertoire 01 ]</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Regenerative Forest Materials</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Surfaces harvested from cyclical biomes without tree fell. Engineered with cellular resilience, zero toxic resins, and active acoustic absorption.
+        </p>
+</div>
+<!-- 4-Card Architectural Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Material 1: Serra de Portel Cork -->
+<article class="flex flex-col bg-surface-container-low shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Macro tactile photograph of Portuguese organic cork flooring planks with natural cellular fissures and warm earthy golden-sand undertones, architectural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHF45aL1JvxOlh7pImXZeBLKbqbDbmcE-tS6j1A1vvZQ-6ryG9sqgv5t3_mDG7O4tuL2LmpKZxyy0AMu9PHLGsPCh62KcDvll-30c0gTmCOldbboBhoa7687i49O71hfHFgnSJhq9JnN-UDHh2hfsjnJ---4Z6Yo2c3CYv_ED9Ll67V4Y2Ayfudxg6ZU3K_CZNeBdRS4qWDNqeVYHSQ9jvLqfggFS9T8g_Kt9JtxSDRhPQ0uYnzHQy"/>
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-label-caps text-primary uppercase">
+              R-Value 1.40
+            </span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Alentejo Montado // Portugal</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Serra de Portel Cork Planks</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Harvested from living Quercus suber oaks every nine years. Naturally thermal, impact-absorbing cellular honeycomb that cushions stride and naturally suppresses ambient footfall resonance.
+              </p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-outline-variant/30">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Acoustic Reduction</span>
+<span class="font-mono-metric text-mono-metric font-bold text-primary">ΔLw = 21 dB</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Harvest Integrity</span>
+<span class="font-mono-metric text-mono-metric text-on-surface">Non-Lethal Stripping</span>
+</div>
+<button class="mt-2 w-full py-2.5 bg-surface text-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors text-center shadow-sm" onclick="selectSpecimen('Serra de Portel Cork Planks')">
+                Request Specimen
+              </button>
+</div>
+</div>
+</article>
+<!-- Material 2: Moso Strand Bamboo -->
+<article class="flex flex-col bg-surface-container-low shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up architectural plank texture of high density strand woven bamboo with fine vertical grain, matte honey amber finish, minimalist studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQgO25bRAct6UEz1zLemUTC5kA5FlnOhbWrB5xPljeTiokrUmcdM7ZBj3YNNJzk3pQ4yo2KnNT_PNIabPYcvgfFf2e0yLHL446NOAgsv5oupsz0TxODWFXowea2Scb4NeCCpctWO50afqwMxEmHtg_bo81Z7NWba5_vx8cAJKis3yoowKC4NqdxqVxJf-BZLAoFSbEoG6L8-JBQsZfO4DvnaDiVQAX7GD-PTNb5UyoR8XGrVgiUFaD"/>
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-label-caps text-primary uppercase">
+              Janka 3,000+
+            </span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Anji Biosphere // 5-Yr Growth</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Moso Strand Bamboo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Rapidly renewing woody grass that reaches structural maturation in 60 months. Compressed under extreme hydraulic pressure with plant lignin binders to exceed hardwood density ratings.
+              </p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-outline-variant/30">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Hardness vs Oak</span>
+<span class="font-mono-metric text-mono-metric font-bold text-primary">+120% Resilience</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Binder Chem</span>
+<span class="font-mono-metric text-mono-metric text-on-surface">0.0% Formaldehyde</span>
+</div>
+<button class="mt-2 w-full py-2.5 bg-surface text-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors text-center shadow-sm" onclick="selectSpecimen('Moso Strand Bamboo')">
+                Request Specimen
+              </button>
+</div>
+</div>
+</article>
+<!-- Material 3: Salvaged River Timber -->
+<article class="flex flex-col bg-surface-container-low shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High quality overhead view of reclaimed historic heart pine wood plank showing rich mineral staining, tight virgin-growth growth rings, and warm patina" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBajatIwOdqb3d4dtFtB_B3Zj9oPmzSSHOQS2xK4EdDHXDRxtMn03SH2DJXhcorsTIbFpfjkLQFOtoJLE48BdLQhnNqc8jDfuaLCH_RvGpf5gmlChHyZ1opKEc-ZXi2Y7gC2YCoCRTt0A2xH16Dj6bTooWrMODrQBA-1MILaU7bLEAU2NufB4LTJsAX_XvWuvJNmMmTnzSxPKbxDvThJKSOj1rXW9RfnWfWUXZKq9TF5FRaovtQWiw5"/>
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-label-caps text-tertiary uppercase">
+              Circa 1880 Salvage
+            </span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Savannah Basin // Reclaimed</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Salvaged River Timber</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Diver-retrieved virgin timber submerged in cold fluvial currents for over a century. Anaerobic preservation yields extreme resin crystallization and unparalleled dimensional stability.
+              </p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-outline-variant/30">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Ring Density</span>
+<span class="font-mono-metric text-mono-metric font-bold text-tertiary">38 Rings / Inch</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Carbon State</span>
+<span class="font-mono-metric text-mono-metric text-on-surface">Locked Permanence</span>
+</div>
+<button class="mt-2 w-full py-2.5 bg-surface text-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors text-center shadow-sm" onclick="selectSpecimen('Salvaged River Timber')">
+                Request Specimen
+              </button>
+</div>
+</div>
+</article>
+<!-- Material 4: BioPure Parquet -->
+<article class="flex flex-col bg-surface-container-low shadow-sm hover:shadow-md transition-shadow group">
+<div class="h-64 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Tactile architectural sample of sage green plant-resin linoleum parquet tiles laid in clean herringbone pattern on light concrete backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-IX6WXCJrfBiLhApIOUNFJgtf7eT_BG5Y8eVQKtmh_r2-1Lr7p2PSQs3q2PPBPQEMfpRPasLAhALQ9vQ6DnHq-QGAvxCNnTH3NKMsGnUqR802-ktWfHo05_Rsh9WPInFttY5KxGtL74TALLX2q7ESoT2-vxGgYNyi5ZGumwOspMbTIp2UyWOJR1nXMNvZTHxP_G-3alPnBS_uEac2N3ERn2cVLQZ4Rf-M1uYPkF3CdQoSfViVdjYv"/>
+<span class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2 py-1 font-label-caps text-label-caps text-secondary uppercase">
+              100% Bio-Based
+            </span>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Linseed &amp; Wood Flour Matrix</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">BioPure Resin Parquet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Pressed from cold-pressed flaxseed oil, limestone, natural pine rosin, and recycled wood particulate mounted to woven raw jute. Naturally bacteriostatic and fully compostable at lifecycle culmination.
+              </p>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-outline-variant/30">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Circularity Rate</span>
+<span class="font-mono-metric text-mono-metric font-bold text-secondary">Cradle-to-Grave Zero</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-mono-metric text-mono-metric text-on-surface-variant">Microbial Shield</span>
+<span class="font-mono-metric text-mono-metric text-on-surface">Inherent Natural</span>
+</div>
+<button class="mt-2 w-full py-2.5 bg-surface text-primary font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors text-center shadow-sm" onclick="selectSpecimen('BioPure Resin Parquet')">
+                Request Specimen
+              </button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Section 02: Circular Lifecycle & Carbon Impact Telemetry -->
+<section class="w-full py-space-2xl px-margin bg-surface-container-high">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">[ Real-Time LCA Telemetry ]</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+            Embodied Carbon is Not an Estimate.<br/>
+<span class="text-primary italic font-normal">It is a Formula.</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Standard vinyl floors release +18.4 kg CO₂e per square meter throughout extraction and polymerization. EcoPlank biological architecture functions as an active carbon sink, sequestering atmospheric CO₂ directly inside living structures.
+          </p>
+<div class="p-space-md bg-surface border-l-4 border-primary">
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase block font-bold">EPD Module A1-A3 Verification</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Third-party verified under ISO 14025 &amp; EN 15804+A2 specifications by the Institut Bauen und Umwelt (IBU).
+            </p>
+</div>
+</div>
+<!-- Architectural Telemetry Grid -->
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="bg-surface p-space-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-caps text-label-caps uppercase">Carbon Sink Index</span>
+<span class="material-symbols-outlined">eco</span>
+</div>
+<div class="py-space-md">
+<div class="font-display-hero text-headline-lg text-primary font-bold tracking-tight">-14.2</div>
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase block font-bold">kg CO₂e / m² Installed</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Net negative balance factoring photosynthesis intake against transport logistics.
+              </p>
+</div>
+<div class="w-full bg-surface-container h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+<div class="bg-surface p-space-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps uppercase">End of Life Paradigm</span>
+<span class="material-symbols-outlined">all_inclusive</span>
+</div>
+<div class="py-space-md">
+<div class="font-display-hero text-headline-lg text-secondary font-bold tracking-tight">100%</div>
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase block font-bold">Circular Take-Back Loop</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Guaranteed reclaim protocol: post-use planks are shredded into acoustic insulation boards.
+              </p>
+</div>
+<div class="w-full bg-surface-container h-1.5 overflow-hidden">
+<div class="bg-secondary h-full w-full"></div>
+</div>
+</div>
+<div class="bg-surface p-space-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-tertiary">
+<span class="font-label-caps text-label-caps uppercase">Indoor Air Toxicity</span>
+<span class="material-symbols-outlined">air</span>
+</div>
+<div class="py-space-md">
+<div class="font-display-hero text-headline-lg text-tertiary font-bold tracking-tight">0.00</div>
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase block font-bold">PPM Volatile Compounds</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Eurofins Indoor Air Comfort Gold verified. Tested for 28-day emission limits.
+              </p>
+</div>
+<div class="w-full bg-surface-container h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full w-full"></div>
+</div>
+</div>
+<div class="bg-surface p-space-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-caps text-label-caps uppercase">Forest Longevity</span>
+<span class="material-symbols-outlined">update</span>
+</div>
+<div class="py-space-md">
+<div class="font-display-hero text-headline-lg text-primary font-bold tracking-tight">9-YR</div>
+<span class="font-mono-metric text-mono-metric text-on-surface uppercase block font-bold">Bark Regeneration Rhythm</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Zero tree mortality. Harvested oaks absorb 5× more carbon while rebuilding bark.
+              </p>
+</div>
+<div class="w-full bg-surface-container h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[100%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Comparative Bar Visualisation -->
+<div class="p-space-lg bg-surface flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Comparative Global Warming Potential (GWP) per 100m²</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cradle to Gate Module A1-A3</span>
+</div>
+<div class="flex flex-col gap-3 font-mono-metric text-mono-metric">
+<!-- EcoPlank -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<span class="w-48 text-on-surface font-bold">EcoPlank Cork &amp; Timber</span>
+<div class="flex-1 bg-surface-container h-7 flex items-center relative">
+<div class="bg-primary h-full flex items-center justify-end px-3 text-on-primary font-bold text-xs" style="width: 25%;">
+                -1,420 kg CO₂e
+              </div>
+</div>
+<span class="w-32 text-right text-primary font-bold">Net Carbon Sink</span>
+</div>
+<!-- Engineered Oak -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<span class="w-48 text-on-surface-variant">Standard Engineered Oak</span>
+<div class="flex-1 bg-surface-container h-7 flex items-center relative">
+<div class="bg-outline-variant h-full flex items-center justify-end px-3 text-on-surface font-bold text-xs" style="width: 55%;">
+                +840 kg CO₂e
+              </div>
+</div>
+<span class="w-32 text-right text-on-surface-variant">Embodied Load</span>
+</div>
+<!-- Virgin LVT -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<span class="w-48 text-on-surface-variant">Commercial Vinyl / LVT</span>
+<div class="flex-1 bg-surface-container h-7 flex items-center relative">
+<div class="bg-error/70 h-full flex items-center justify-end px-3 text-on-error font-bold text-xs" style="width: 95%;">
+                +1,840 kg CO₂e
+              </div>
+</div>
+<span class="w-32 text-right text-error font-bold">+230% Intensity</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 03: Architectural Case Studies -->
+<section class="w-full py-space-2xl px-margin bg-surface">
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b-2 border-primary/20 pb-space-lg">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">[ Built Environment 02 ]</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Architectural Case Studies</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Examining installed biological performance in high-specification residential sanctuaries and Michelin-starred culinary ateliérs.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Project 1 -->
+<article class="flex flex-col bg-surface-container-low group shadow-sm">
+<div class="h-80 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Architectural photograph of a modern sunlit living pavilion in Portland with expansive floor to ceiling glass, lush ferns, indoor plants, and natural cork plank floors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAxnoHlGZGq6L2ICbzUApQdwvj460rUBAUU6tu0_96WTcaPg1kqldmwwJpk3H0LHnnMnWsUlQ_XCIGTmO-LpqzGK31swKIyxmpGiNOLVB1YyiwnzRE_PQB2so7ea6Jjn0edZOi1mddPbnSDXcXRCqJ0s_KH9ueYyd_uxdIEJXFSJAkdZaWE4GA2pAPbYPf3yCV_qB-EMoa_-CL5Md1ytrO7ELbypDoBVUG9mnKor0wUvy-JzPPsoIE"/>
+<div class="absolute bottom-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 font-mono-metric text-mono-metric text-on-surface">
+              Portland, OR
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase">Private Residence // 480 m²</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">The Biophilic Sanctuary House</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Full-envelope installation of Serra de Portel botanical cork across pavilion corridors and master suites. Reduced HVAC cycling energy by 14% via natural insulative thermal retention.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/30 flex justify-between items-center">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Spec: Botanical Cork</span>
+<span class="font-mono-metric text-mono-metric text-primary font-bold">LEED Platinum</span>
+</div>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="flex flex-col bg-surface-container-low group shadow-sm">
+<div class="h-80 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Scandinavian restaurant dining room with minimalist timber tables, soft natural linen drapery, and high traffic warm strand bamboo plank flooring in Copenhagen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6OaOJrpJjWJiEodVJKwQDbbQGbUGfwyp_f5NVBGa7S3LBU2QE324slVLlh7JgXPAGxPDkaDQgisKjmZjk2rQV2h8rd5_BSNRa4-LxLoXd4ZAxayJ-kth-TuyA5H3r7Pv5EJD4jGR3lj1uG8W_MMBbeaZm3XZohsoAjFDhmTtwHxro3PMLg_3-L8F6B1rK1ohfmBR7y6DSEyWPPp0-rARl6o0dwZd1yMKulPd1ugvhKE962j4YBBF"/>
+<div class="absolute bottom-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 font-mono-metric text-mono-metric text-on-surface">
+              Copenhagen, DK
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Hospitality // 620 m²</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Noma Circular Dining Atelier</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                High-density Moso Strand Bamboo engineered to sustain heavy guest footfall and wine spillages while preserving pristine acoustic tranquility across open Scandinavian vaulted ceilings.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/30 flex justify-between items-center">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Spec: Moso Strand Bamboo</span>
+<span class="font-mono-metric text-mono-metric text-secondary font-bold">C2C Gold</span>
+</div>
+</div>
+</article>
+<!-- Project 3 -->
+<article class="flex flex-col bg-surface-container-low group shadow-sm">
+<div class="h-80 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Alpine timber chalet interior in Whistler with exposed massive fir ceiling beams, stone hearth fireplace, and salvaged rustic heartwood Douglas fir floorboards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWoQ9VQoGgsYsxrWoJUB9QEnEC2xvY0i3DQhjvTv1c1EMQ3g4ohzhhD86GFnTnqMagcUQU8bxgTPiFwMWmnNe7YyH6UL50cohEty3zz4JKX6YXDMlcjEgB6QMcR-xs446c8Ra22FHVSKB19WHXBdXxQxo6b5R5sfqGxWiAo5xohfvuZazunn5fbMrkSk5xuxpK6Iix5nz1O4WhQ5n4YIC6xTXlK9d5kjANDt2r6DHGSUXEhcJtQBjd"/>
+<div class="absolute bottom-3 left-3 bg-surface/90 backdrop-blur-md px-3 py-1 font-mono-metric text-mono-metric text-on-surface">
+              Whistler, BC
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-1 justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Passive House // 340 m²</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Passive House Alpine Residence</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Salvaged 19th-century Virgin River Timber milled to millimeter tolerance. Seamless integration with sub-surface hydronic radiant heating ribbons without contraction warping.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-outline-variant/30 flex justify-between items-center">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Spec: Salvaged Heartwood</span>
+<span class="font-mono-metric text-mono-metric text-tertiary font-bold">Phius Certified</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Section 04: Curated Eco-Sample Coffret Request Form -->
+<section class="w-full py-space-2xl px-margin bg-surface-container-high border-t border-outline-variant/40" id="coffret-specimen">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-2xl">
+<div class="lg:col-span-5 flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">[ Architectural Materiality Box ]</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">
+            Curated Eco-Sample Coffret
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Specify four physical samples precision-cut to 150×150mm. Packaged inside an untreated, unbleached sugarcane pulp carton with certified chain-of-custody laboratory certificates and life-cycle declaration dossiers.
+          </p>
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">local_shipping</span>
+<span class="font-body-sm text-body-sm">Dispatched carbon-neutral via DHL GoGreen within 48h</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">assignment_turned_in</span>
+<span class="font-body-sm text-body-sm">Includes complete BIM/Revit material libraries on USB card</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">recycling</span>
+<span class="font-body-sm text-body-sm">Prepaid return carton included for cradle-to-cradle box reuse</span>
+</div>
+</div>
+</div>
+<div class="bg-surface p-space-md border-l-2 border-primary flex items-center gap-space-md">
+<div class="w-12 h-12 bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-mono-metric text-mono-metric font-bold text-on-surface">Selected Box Quota:</span>
+<span class="font-body-sm text-body-sm text-primary font-bold" id="sample-count-badge">0 of 4 Specimens Selected</span>
+</div>
+</div>
+</div>
+<!-- Interactive Specimen Coffret Customizer Form -->
+<div class="lg:col-span-7 bg-surface p-space-xl shadow-sm flex flex-col gap-space-lg">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-wider">Step 1: Choose Your 4 Architectural Specimens</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mt-3">
+<label class="sample-checkbox-card flex items-start gap-3 p-3 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="sample-check mt-1 accent-primary" onchange="updateSpecimenCount()" type="checkbox" value="Serra de Portel Cork Planks"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Serra de Portel Botanical Cork</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Natural R-1.40 // 12mm Plank</span>
+</div>
+</label>
+<label class="sample-checkbox-card flex items-start gap-3 p-3 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="sample-check mt-1 accent-primary" onchange="updateSpecimenCount()" type="checkbox" value="Moso Strand Bamboo"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Moso Architectural Strand Bamboo</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Janka 3,000+ // Matte Amber</span>
+</div>
+</label>
+<label class="sample-checkbox-card flex items-start gap-3 p-3 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="sample-check mt-1 accent-primary" onchange="updateSpecimenCount()" type="checkbox" value="Salvaged River Timber"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Heritage Salvaged River Timber</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Heart Pine &amp; Oak // 1880s Cut</span>
+</div>
+</label>
+<label class="sample-checkbox-card flex items-start gap-3 p-3 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="sample-check mt-1 accent-primary" onchange="updateSpecimenCount()" type="checkbox" value="BioPure Resin Parquet"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">BioPure Plant-Resin Linoleum</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Flaxseed &amp; Jute // Mineral Green</span>
+</div>
+</label>
+<label class="sample-checkbox-card flex items-start gap-3 p-3 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="sample-check mt-1 accent-primary" onchange="updateSpecimenCount()" type="checkbox" value="Smoked Alentejo Dark Cork"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Smoked Alentejo Dark Cork</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Steam-Expanded // Espresso Tint</span>
+</div>
+</label>
+<label class="sample-checkbox-card flex items-start gap-3 p-3 bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="sample-check mt-1 accent-primary" onchange="updateSpecimenCount()" type="checkbox" value="Carbonized Vertical Bamboo"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-bold text-on-surface">Carbonized Vertical Bamboo</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Thermal Steam Cured // Raw Satin</span>
+</div>
+</label>
+</div>
+</div>
+<form class="flex flex-col gap-space-md" id="specimen-form" onsubmit="handleSampleSubmit(event)">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-wider">Step 2: Dispatch Destination</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-1">Full Name *</label>
+<input class="bg-surface-container-high px-3 py-2.5 font-body-sm text-body-sm text-on-surface border-b border-primary focus:outline-none focus:border-b-2 focus:border-primary" placeholder="Elena Vance" required="" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-1">Architectural Atelier / Firm *</label>
+<input class="bg-surface-container-high px-3 py-2.5 font-body-sm text-body-sm text-on-surface border-b border-primary focus:outline-none focus:border-b-2 focus:border-primary" placeholder="Studio Kinetica Architects" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-1">Professional Email *</label>
+<input class="bg-surface-container-high px-3 py-2.5 font-body-sm text-body-sm text-on-surface border-b border-primary focus:outline-none focus:border-b-2 focus:border-primary" placeholder="spec@studiokinetica.com" required="" type="email"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-1">Primary Project Type</label>
+<select class="bg-surface-container-high px-3 py-2.5 font-body-sm text-body-sm text-on-surface border-b border-primary focus:outline-none focus:border-b-2 focus:border-primary">
+<option>Residential Biophilic Sanctuary</option>
+<option>Commercial / Workplace Circular HQ</option>
+<option>Hospitality &amp; Wellness Retreat</option>
+<option>Civic / Cultural Pavilion</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-1">Delivery Address &amp; Country *</label>
+<input class="bg-surface-container-high px-3 py-2.5 font-body-sm text-body-sm text-on-surface border-b border-primary focus:outline-none focus:border-b-2 focus:border-primary" placeholder="Vesterbrogade 14, 1620 København V, Denmark" required="" type="text"/>
+</div>
+<button class="w-full py-4 mt-2 bg-primary text-on-primary font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center justify-center gap-2 shadow-sm" type="submit">
+<span class="material-symbols-outlined text-base">package_2</span>
+            Dispatch 4-Specimen Coffret (Complimentary to Trade)
+          </button>
+<p class="hidden font-mono-metric text-mono-metric text-primary text-center pt-2" id="form-feedback">
+            ✓ Your Eco-Sample Coffret has been queued for carbon-neutral dispatch. Tracking details will arrive shortly.
+          </p>
+</form>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function selectSpecimen(materialName) {
+    const checkboxes = document.querySelectorAll('.sample-check');
+    let matched = false;
+    checkboxes.forEach(cb => {
+      if (cb.value === materialName) {
+        cb.checked = true;
+        matched = true;
+      }
+    });
+    updateSpecimenCount();
+    const coffretSection = document.getElementById('coffret-specimen');
+    if (coffretSection) {
+      coffretSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function updateSpecimenCount() {
+    const checkboxes = document.querySelectorAll('.sample-check');
+    let checkedCount = 0;
+    checkboxes.forEach(cb => {
+      if (cb.checked) checkedCount++;
+    });
+
+    const badge = document.getElementById('sample-count-badge');
+    if (badge) {
+      badge.textContent = checkedCount + ' of 4 Specimens Selected';
+      if (checkedCount > 4) {
+        badge.classList.remove('text-primary');
+        badge.classList.add('text-error');
+        badge.textContent = checkedCount + ' Selected (Maximum 4 allowed)';
+      } else {
+        badge.classList.remove('text-error');
+        badge.classList.add('text-primary');
+      }
+    }
+  }
+
+  function handleSampleSubmit(e) {
+    e.preventDefault();
+    const feedback = document.getElementById('form-feedback');
+    if (feedback) {
+      feedback.classList.remove('hidden');
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-low text-on-surface py-space-2xl px-margin mt-space-2xl"><div class="w-full max-w-7xl mx-auto flex flex-col gap-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter"><div class="md:col-span-5 flex flex-col gap-space-md"><span class="font-headline-sm text-headline-sm uppercase text-primary">EcoPlank Studio</span><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Biophilic materiality engineered for circular architecture. We synthesize raw botanical regeneration with rigorous carbon negative validation, ensuring pure non-toxic indoor atmospheres and permanent structural longevity.</p><div class="flex flex-wrap gap-space-sm pt-space-xs"><div class="bg-surface-container-high px-space-sm py-1"><span class="font-mono-metric text-mono-metric text-on-surface-variant">FSC-100% Certified</span></div><div class="bg-surface-container-high px-space-sm py-1"><span class="font-mono-metric text-mono-metric text-on-surface-variant">EPD ISO 14025 Type III</span></div><div class="bg-surface-container-high px-space-sm py-1"><span class="font-mono-metric text-mono-metric text-on-surface-variant">C2C Gold Spec</span></div></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Studio Ateliers</span><div class="flex flex-col gap-1"><span class="font-body-sm text-body-sm font-bold text-on-surface">Copenhagen Atelier</span><span class="font-body-sm text-body-sm text-on-surface-variant">Refshaleøen 42B, 1432 København K</span><span class="font-mono-metric text-mono-metric text-on-surface-variant">dk@ecoplankstudio.com</span></div><div class="flex flex-col gap-1 mt-space-xs"><span class="font-body-sm text-body-sm font-bold text-on-surface">Vancouver Studio</span><span class="font-body-sm text-body-sm text-on-surface-variant">1807 Mast Tower Rd, Granville Island, BC</span><span class="font-mono-metric text-mono-metric text-on-surface-variant">van@ecoplankstudio.com</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Sustainability Manifesto</span><p class="font-body-sm text-body-sm text-on-surface-variant">Zero volatile organic compounds. Non-depleting regenerative forest harvest cycles. Every surface engineered by EcoPlank embodies fully auditable chain-of-custody data and net-negative biogenic carbon sequestration metrics verified across life cycle modules A1–A3.</p><div class="pt-space-xs"><span class="font-mono-metric text-mono-metric text-primary">Net Biogenic Sequestration: -1.82 kg CO₂e / m²</span></div></div></div><div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2025 EcoPlank Studio Architectural Systems. All biological rights reserved.</span><div class="flex items-center gap-space-md font-body-sm text-body-sm"><a class="hover:text-primary transition-colors" data-path="transparency-dossier" href="#">EPD Transparency Declaration</a><a class="hover:text-primary transition-colors" data-path="fsc-metrics" href="#">Forest Stewardship Council Audit</a><a class="hover:text-primary transition-colors" data-path="circular-lifecycle" href="#">End-of-Life Takeback</a></div></div></div></footer></body></html>
