@@ -323,7 +323,7 @@
       form.reset();
     } catch {
       status.classList.add('err');
-      status.textContent = 'Something went wrong. Please email us at lead@flooringwebpros.com.';
+      status.textContent = 'Something went wrong. Please email us at info@flooringwebpros.com.';
     } finally {
       btn.disabled = false;
     }
