@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary": "#ffd07f", "surface-bright": "#363940", "surface-tint": "#ffb952", "on-secondary-fixed-variant": "#003ea8", "primary": "#ffcf91", "primary-fixed-dim": "#ffb952", "outline-variant": "#524433", "inverse-primary": "#825500", "secondary-container": "#0053db", "tertiary-container": "#f4af00", "inverse-on-surface": "#2e3037", "surface-dim": "#101319", "primary-container": "#ffaa00", "on-background": "#e1e2eb", "secondary-fixed": "#dbe1ff", "on-secondary-fixed": "#00174b", "on-tertiary": "#422c00", "surface-container-lowest": "#0b0e14", "on-error-container": "#ffdad6", "error": "#ffb4ab", "surface-container": "#1d2026", "on-surface": "#e1e2eb", "primary-fixed": "#ffddb4", "secondary": "#b4c5ff", "on-tertiary-container": "#644500", "on-tertiary-fixed": "#271900", "on-surface-variant": "#d8c3ac", "tertiary-fixed": "#ffdea9", "on-tertiary-fixed-variant": "#5e4100", "outline": "#a08e79", "background": "#101319", "on-primary": "#452b00", "on-error": "#690005", "surface-container-high": "#272a31", "surface-container-low": "#191c22", "on-secondary-container": "#cdd7ff", "on-secondary": "#002a78", "surface": "#101319", "on-primary-fixed": "#291800", "tertiary-fixed-dim": "#ffba27", "inverse-surface": "#e1e2eb", "on-primary-fixed-variant": "#633f00", "surface-container-highest": "#32353c", "secondary-fixed-dim": "#b4c5ff", "surface-variant": "#32353c", "on-primary-container": "#694300", "error-container": "#93000a" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1.5rem", "margin": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, "fontFamily": { "headline-sm": [ "Barlow Condensed" ], "body-lg": [ "Inter" ], "label-technical": [ "Inter" ], "body-md": [ "Inter" ], "stat-metric": [ "Barlow Condensed" ], "headline-md": [ "Barlow Condensed" ], "body-sm": [ "Inter" ], "display-hero-mobile": [ "Barlow Condensed" ], "display-hero": [ "Barlow Condensed" ], "headline-lg-mobile": [ "Barlow Condensed" ], "headline-lg": [ "Barlow Condensed" ] }, "fontSize": { "headline-sm": [ "20px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "28px", "fontWeight": "400" } ], "label-technical": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "body-md": [ "15px", { "lineHeight": "24px", "fontWeight": "400" } ], "stat-metric": [ "32px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "headline-md": [ "24px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-hero-mobile": [ "40px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "700" } ], "display-hero": [ "56px", { "lineHeight": "60px", "letterSpacing": "0.02em", "fontWeight": "700" } ], "headline-lg-mobile": [ "28px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "700" } ], "headline-lg": [ "36px", { "lineHeight": "40px", "letterSpacing": "0.01em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><div class="w-2.5 h-7 bg-primary-container rounded"></div><a class="flex flex-col text-left" data-path="home" href="#"><span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">VULCAN PRO ARMOR</span><span class="font-label-technical text-label-technical uppercase tracking-widest text-primary-container">// INDUSTRIAL FLOORING</span></a></div><nav class="hidden xl:flex items-center gap-1" data-active-classes="bg-surface-container-high text-primary-container font-bold rounded"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-label-technical text-label-technical uppercase transition-colors" data-path="coatings-and-polyaspartic" href="#">Coatings &amp; Polyaspartic</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-label-technical text-label-technical uppercase transition-colors" data-path="modular-interlocking" href="#">Modular Interlocking</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-label-technical text-label-technical uppercase transition-colors" data-path="specifier-data" href="#">Specifier Data</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-label-technical text-label-technical uppercase transition-colors" data-path="chemical-resistance" href="#">Chemical Resistance</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-label-technical text-label-technical uppercase transition-colors" data-path="project-gallery" href="#">Project Gallery</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded font-label-technical text-label-technical uppercase transition-colors" data-path="warranty" href="#">Warranty</a></nav><div class="flex items-center gap-3 shrink-0"><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded bg-surface-container-high text-on-surface font-label-technical text-label-technical uppercase hover:bg-surface-bright hover:text-on-surface transition-all" data-path="configurator" href="#">Configurator</a><a class="inline-flex items-center justify-center px-4 py-2 rounded bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wide hover:brightness-105 transition-all shadow-[0_0_0_1px_#FFAA00,0_4px_16px_rgba(255,170,0,0.15)]" data-path="sample-kit-request" href="#">Request Spec Sample Kit</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest -mt-20 pt-28 pb-16 lg:pb-24">
+<!-- Ambient technical grid lines overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-size: 40px 40px; background-image: linear-gradient(to right, #ffaa00 1px, transparent 1px), linear-gradient(to bottom, #ffaa00 1px, transparent 1px);"></div>
+<div class="relative max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<!-- MasterFormat & Hazard Badge Strip -->
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded text-primary-container font-label-technical text-label-technical uppercase tracking-widest shadow-sm">
+<span class="w-1.5 h-3 bg-primary-container rounded-sm"></span>
+          CSI MASTERFORMAT 09 67 00 // RESINOUS &amp; MODULAR FLOORS
+        </span>
+<span class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low rounded text-on-surface-variant font-label-technical text-label-technical uppercase">
+<span class="material-symbols-outlined text-primary text-[15px]">verified</span>
+          ASTM D4060 / MIL-PRF-24613 HEAVY-WHEEL VALIDATED
+        </span>
+</div>
+<!-- Monumental Headline Block -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+<div class="lg:col-span-8 space-y-4">
+<h1 class="font-display-hero text-display-hero uppercase tracking-wide text-on-surface leading-none">
+            ARMORED RESILIENCE.<br/>
+<span class="text-primary-container">ENGINEERED FOR EXTREME TORQUE</span><br/>
+            &amp; CHEMICAL ASSAULT.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+            Rapid-cure aliphatic polyaspartic coatings—4x harder than conventional epoxy with zero hot-tire pickup—paired with modular vented interlocking tiles rated for 75,000 lbs compressive rolling load.
+          </p>
+</div>
+<!-- Action Panel -->
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-4">
+<a class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wider hover:brightness-110 transition-all shadow-[0_0_0_1px_#FFAA00,0_4px_20px_rgba(255,170,0,0.25)]" href="#configurator-section">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+            Launch Workshop Configurator
+          </a>
+<a class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded bg-surface-container-high text-on-surface font-label-technical text-label-technical uppercase hover:bg-surface-bright transition-all shadow-sm" href="#spec-matrix">
+<span class="material-symbols-outlined text-primary text-[20px]">download</span>
+            Download Chemical Resistance Matrix (PDF)
+          </a>
+</div>
+</div>
+<!-- Hero Visual Showcase Banner -->
+<div class="relative w-full rounded-lg overflow-hidden shadow-2xl bg-surface-container-low">
+<div class="relative w-full aspect-[21/9] min-h-[360px] max-h-[580px] bg-cover bg-center" data-alt="Ultra luxury modern supercar workshop with hexagon ceiling LED light rigs casting crisp reflections onto high-gloss graphite polyaspartic resin floor with yellow hazard stripe bays housing Ferrari, Lamborghini, and Porsche sports cars under industrial steel trusses." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtoaOT-RIrZhD3A9bj7AtrB9KbH2CxVJv-7-QW5oNg3zE_5jYqrh7wTXd34jycruJD4U8d4am4DSVRLnswcKXSEkh0ZZN7P5VXgsnAxMpApPnnvEqpiZjWcw4nM3k4T-A15XtWLvensQv0lZpR-Qz2a-PGhihySZJVy4kLfo-MolZGJg_ZEgBk4gqL7u_o99THD5EWVANyJFBHIdZiQm_eMjYrNuZvK5-5Z_YPwfg')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85"></div>
+<!-- Live Telemetry Overlays on Hero Image -->
+<div class="absolute bottom-6 left-6 right-6 flex flex-wrap items-center justify-between gap-4 pointer-events-none">
+<div class="flex items-center gap-3 bg-surface-container-lowest/90 backdrop-blur px-4 py-2.5 rounded pointer-events-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<div class="flex flex-col">
+<span class="font-label-technical text-label-technical text-on-surface-variant uppercase">Facility Shown</span>
+<span class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-wide">Silverstone Apex Atelier // Bay 03</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-6 bg-surface-container-lowest/90 backdrop-blur px-5 py-2.5 rounded pointer-events-auto">
+<div>
+<span class="block font-label-technical text-label-technical text-primary-container uppercase">SPEC FORMULA</span>
+<span class="font-body-sm text-body-sm text-on-surface uppercase">Polyaspartic 92% Solids + Amber Hazard Tape</span>
+</div>
+<div class="w-px h-6 bg-outline-variant"></div>
+<div>
+<span class="block font-label-technical text-label-technical text-primary-container uppercase">GLOSS RATING</span>
+<span class="font-body-sm text-body-sm text-on-surface uppercase">94 GU @ 60° ASTM D523</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Telemetry Stat Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+<div class="p-5 rounded bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary-container mb-2">
+<span class="font-label-technical text-label-technical uppercase tracking-wider">MECHANICAL HARDNESS</span>
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface uppercase leading-none mb-1">SHORE D 88+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">4X higher gouge threshold than commercial epoxy</div>
+</div>
+<div class="p-5 rounded bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary-container mb-2">
+<span class="font-label-technical text-label-technical uppercase tracking-wider">RETURN TO SERVICE</span>
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface uppercase leading-none mb-1">1-DAY TURN</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Foot traffic in 4h. Full torque vehicular load in 24h</div>
+</div>
+<div class="p-5 rounded bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary-container mb-2">
+<span class="font-label-technical text-label-technical uppercase tracking-wider">AXLE COMPRESSION</span>
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface uppercase leading-none mb-1">75,000 LBS</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Rated for mobile rolling cranes and aircraft tugs</div>
+</div>
+<div class="p-5 rounded bg-surface-container-low shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary-container mb-2">
+<span class="font-label-technical text-label-technical uppercase tracking-wider">HOT TIRE DE-BOND</span>
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="font-stat-metric text-stat-metric text-on-surface uppercase leading-none mb-1">0% HOT-TIRE PICKUP</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Zero plasticizer migration. Lifetime warranty backing</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: HIGH-PERFORMANCE SURFACE SYSTEMS REPERTOIRE -->
+<section class="py-20 lg:py-28 bg-surface-container">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-primary-container font-label-technical text-label-technical uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+            ENGINEERED SYSTEMS CATALOGUE
+          </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-wide">
+            FOUR RIGOROUS SURFACE PLATFORMS
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            From seamless aliphatic fluid-applied resins to free-floating vented copolymer grids, each architecture is engineered for specific thermal, chemical, and physical stress envelopes.
+          </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-technical text-label-technical text-primary uppercase hover:underline" href="#sample-request">
+          Request Physical Engineering Swatches <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- 4 System Architecture Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- SYSTEM 1 -->
+<div class="group flex flex-col justify-between rounded bg-surface-container-lowest p-6 shadow-md hover:bg-surface-container-high transition-all">
+<div class="space-y-4">
+<div class="relative h-44 rounded overflow-hidden bg-cover bg-center" data-alt="Macro close-up shot of high gloss pure polyaspartic floor with micro vinyl broadcast flake chips in charcoal gray and silver showing pristine optical clear coat reflection." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaXfXIy6YMPh-r7ozrQtDEzhbdqngIjkxgAQWaAtPeF2mCw8YSrsZa0bBa7KQNWCP9E4QLM37bxMg4zfCKGqtaoCcpqeNycmELMSYpTQo8gptJXZVX9sJbhdW_MLnx6v7thNlZZoLm6Sp6Hc1SoCtxaBhi0ByA06oKlx6FcLKGqgcmH7RBSKP_Ay2hyKzgnDHJJpy5tPGh6yTfcYkfT1Vdkmm8btWQGVSUaVj-W3g')">
+<span class="absolute top-2 left-2 px-2 py-1 bg-surface-container-lowest/90 rounded text-primary-container font-label-technical text-label-technical uppercase">SYS // 01</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">CSI 09 67 23 // FLUID-APPLIED</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">ArmorShield™ Polyaspartic</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Dual-layer 100% solids pure aliphatic polyaspartic with full-broadcast vinyl flakes. 100% UV stable, crystal non-yellowing topcoat impervious to hot synthetic motor oil.
+            </p>
+</div>
+<div class="pt-6 mt-6 space-y-3">
+<div class="space-y-1.5 font-label-technical text-label-technical">
+<div class="flex justify-between text-on-surface-variant"><span>Tensile Strength</span><span class="text-on-surface">9,850 PSI</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Taber Abrasion (CS-17)</span><span class="text-primary-container">12 mg loss</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Cure Window</span><span class="text-on-surface">4h Foot / 24h Drive</span></div>
+</div>
+<a class="w-full inline-flex items-center justify-center py-2.5 rounded bg-surface-container text-on-surface font-label-technical text-label-technical uppercase group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors" href="#configurator-section">
+              Configure ArmorShield
+            </a>
+</div>
+</div>
+<!-- SYSTEM 2 -->
+<div class="group flex flex-col justify-between rounded bg-surface-container-lowest p-6 shadow-md hover:bg-surface-container-high transition-all">
+<div class="space-y-4">
+<div class="relative h-44 rounded overflow-hidden bg-cover bg-center" data-alt="Technical product rendering of heavy duty vented interlocking garage tile with perforated diamond geometric drainage grid in matte graphite black with sub-structure supports." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-evE6nfonCVOp0Xz4RtzpH_g2Z_6chS89chdBrCceEAfemdISR9oRxtbnP8cEo3EKQM6ZBSNXsO5aSlGciM3Kui9oqdR4JeL6cXLIg90NjdQOxm2TFxvgZmZw5FyxOrbITcfd4HAwJtnPeAFbhhhYogAah_E9Xb0QLrGg_KpxHwBGctp9yuAdd5X8IjzxLSTIh5yXzrU5ukhYve1do2XEcqfrl8Y6uGDEoi6obck')">
+<span class="absolute top-2 left-2 px-2 py-1 bg-surface-container-lowest/90 rounded text-primary-container font-label-technical text-label-technical uppercase">SYS // 02</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">CSI 09 65 19 // MODULAR TILE</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">Apex-Grid™ Interlocking</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Heavy-gauge polypropylene co-polymer self-draining diamond grid. Suspends debris, prevents standing water under snow melt, and supports 6-ton hydraulic floor jacks.
+            </p>
+</div>
+<div class="pt-6 mt-6 space-y-3">
+<div class="space-y-1.5 font-label-technical text-label-technical">
+<div class="flex justify-between text-on-surface-variant"><span>Rollover Load</span><span class="text-on-surface">75,000 LBS</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Subfloor Drainage</span><span class="text-primary-container">100% Free-Flow</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Install Velocity</span><span class="text-on-surface">500 sq ft / hr</span></div>
+</div>
+<a class="w-full inline-flex items-center justify-center py-2.5 rounded bg-surface-container text-on-surface font-label-technical text-label-technical uppercase group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors" href="#configurator-section">
+              Configure Apex-Grid
+            </a>
+</div>
+</div>
+<!-- SYSTEM 3 -->
+<div class="group flex flex-col justify-between rounded bg-surface-container-lowest p-6 shadow-md hover:bg-surface-container-high transition-all">
+<div class="space-y-4">
+<div class="relative h-44 rounded overflow-hidden bg-cover bg-center" data-alt="Heavy industrial aerospace hangar flooring with dense metallic textured polyurethane screed showing extreme thermal and mechanical durability in dark steel gray." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXHgYqqNOhTeyHKfRiL0VG8jtrGwqxpyG4pdB7ACNwTFQKEOaLwOTMU7xLDvTYAHrixbK0mUU4Tn1rmqeGjZmieBay3rJ8Zu09O53u40kYSCEeCcMsFdI5Kl46Kine6YcDHtZt_MXmdDUKqzK2SAWzSkHwpoocXmxdZrA4StzhXPPYhQtWREy54_KT3kJPhnijbTRjNldFkKaMu7WR2--XJBHX33eoR1JiJ0cjiMA')">
+<span class="absolute top-2 left-2 px-2 py-1 bg-surface-container-lowest/90 rounded text-primary-container font-label-technical text-label-technical uppercase">SYS // 03</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">CSI 09 67 16 // IMPACT SCREED</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">Fortis™ Screed Mortar</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Cast-iron aggregate infused polyurethane screed for dyno testing labs, heavy tooling stations, and aerospace blast zones. Withstands thermal shock cycles up to 250°F.
+            </p>
+</div>
+<div class="pt-6 mt-6 space-y-3">
+<div class="space-y-1.5 font-label-technical text-label-technical">
+<div class="flex justify-between text-on-surface-variant"><span>Impact Energy</span><span class="text-on-surface">&gt; 160 in-lbs</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Thermal Shock</span><span class="text-primary-container">-40°F to +250°F</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Application Thickness</span><span class="text-on-surface">1/4" to 3/8" Screed</span></div>
+</div>
+<a class="w-full inline-flex items-center justify-center py-2.5 rounded bg-surface-container text-on-surface font-label-technical text-label-technical uppercase group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors" href="#configurator-section">
+              Configure Fortis Mortar
+            </a>
+</div>
+</div>
+<!-- SYSTEM 4 -->
+<div class="group flex flex-col justify-between rounded bg-surface-container-lowest p-6 shadow-md hover:bg-surface-container-high transition-all">
+<div class="space-y-4">
+<div class="relative h-44 rounded overflow-hidden bg-cover bg-center" data-alt="Close up view of smooth vulcanized synthetic rubber tile with subtle matte micro grip texture in charcoal black installed in clean automotive assembly bay." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyFthN--29N6XnXGH98Q9xwIdbvMLuGCg7_Wte3UUZn9kgcAM0PePmuyqjJKK4kXPS7M_HyJ2DpMIU5WpF1u7D2FIvbWIGLKXvgavI4Ny6nrso6MlIS7K1YVL98qjQt-D9yL-O6RHAuEnhjE-JE0xz63V3-FnhwAKuF6zWxtMaW6DjlvkiyOqJA2YXmok7jgdkpTDCH7MlN9NOG0SOKC6-KOsZKaJQ8EZL_C6nT_g')">
+<span class="absolute top-2 left-2 px-2 py-1 bg-surface-container-lowest/90 rounded text-primary-container font-label-technical text-label-technical uppercase">SYS // 04</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-technical text-label-technical text-outline uppercase tracking-wider">CSI 09 65 00 // RESILIENT MODULAR</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">CarbonTrack™ Solid Tile</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Solid engineered polymer tile with co-molded vulcanized wear layer. Designed for acoustic isolation in detailing tunnels, engine tear-down cleanrooms, and dyno command desks.
+            </p>
+</div>
+<div class="pt-6 mt-6 space-y-3">
+<div class="space-y-1.5 font-label-technical text-label-technical">
+<div class="flex justify-between text-on-surface-variant"><span>Acoustic Damping</span><span class="text-on-surface">ΔIIC +21 dB</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Wet COF (OSHA)</span><span class="text-primary-container">0.82 Non-Skid</span></div>
+<div class="flex justify-between text-on-surface-variant"><span>Static Load Limit</span><span class="text-on-surface">5,000 PSI</span></div>
+</div>
+<a class="w-full inline-flex items-center justify-center py-2.5 rounded bg-surface-container text-on-surface font-label-technical text-label-technical uppercase group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors" href="#configurator-section">
+              Configure CarbonTrack
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: INTERACTIVE WORKSHOP & HANGAR SURFACE CONFIGURATOR -->
+<section class="py-20 lg:py-28 bg-surface-container-lowest" id="configurator-section">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+<div class="flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 text-primary-container font-label-technical text-label-technical uppercase tracking-widest">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+          DIGITAL SPECIFICATION ENGINE // REV 4.2
+        </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-wide">
+          INTERACTIVE WORKSHOP SURFACE ARCHITECT
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Calibrate engineering criteria in real-time. Instantly simulate cure speed, mechanical thresholds, thermal tolerances, and approximate cost per square foot for commercial bidding.
+        </p>
+</div>
+<!-- Configurator Shell: 2-Column Desktop Setup -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Controls Column -->
+<div class="lg:col-span-7 space-y-8 bg-surface-container-low p-6 lg:p-8 rounded shadow-xl">
+<!-- Step 1: Typology -->
+<div class="space-y-3">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant tracking-wider flex items-center justify-between">
+<span>STEP 01 // FACILITY TYPOLOGY</span>
+<span class="text-primary-container">REQUIRED</span>
+</label>
+<div class="grid grid-cols-2 sm:grid-cols-2 gap-3" id="typology-selector">
+<button class="config-btn active-choice text-left p-3.5 rounded bg-surface-container text-on-surface shadow-[0_0_0_1px_#FFAA00] flex flex-col gap-1 transition-all" data-val="supercar" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-primary-container">Exotic Supercar Bay</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hot-tire immunity, mirror gloss aesthetic</span>
+</button>
+<button class="config-btn text-left p-3.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface flex flex-col gap-1 transition-all" data-val="aviation" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Aviation Hangar</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Skydrol hydraulic resistant, ESD safe</span>
+</button>
+<button class="config-btn text-left p-3.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface flex flex-col gap-1 transition-all" data-val="fleet" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Fleet Motorsport Bay</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Extreme impact, rapid pit crew cleanability</span>
+</button>
+<button class="config-btn text-left p-3.5 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface flex flex-col gap-1 transition-all" data-val="detailing" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Detailing Studio</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Acoustic dampening, self-draining tile</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Foundation -->
+<div class="space-y-3">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant tracking-wider flex items-center justify-between">
+<span>STEP 02 // SURFACE FOUNDATION SYSTEM</span>
+<span class="text-primary-container">MECHANICAL BASE</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="foundation-selector">
+<button class="config-sys active-sys p-3 rounded bg-surface-container text-on-surface shadow-[0_0_0_1px_#FFAA00] flex flex-col text-left transition-all" data-sys="poly" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-primary-container">Polyaspartic 92</span>
+<span class="font-label-technical text-label-technical text-on-surface-variant">1-Day Rapid Seamless</span>
+</button>
+<button class="config-sys p-3 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface flex flex-col text-left transition-all" data-sys="tile" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Modular Tile</span>
+<span class="font-label-technical text-label-technical text-on-surface-variant">Vented Copolymer Grid</span>
+</button>
+<button class="config-sys p-3 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface flex flex-col text-left transition-all" data-sys="hybrid" type="button">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Hybrid Zone</span>
+<span class="font-label-technical text-label-technical text-on-surface-variant">Resin Bay + Tile Field</span>
+</button>
+</div>
+</div>
+<!-- Step 3: Colorway / Finish -->
+<div class="space-y-3">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant tracking-wider flex items-center justify-between">
+<span>STEP 03 // COLORWAY &amp; HAZARD ACCENTS</span>
+<span class="text-primary font-headline-sm text-headline-sm uppercase" id="selected-color-label">Graphite Carbon Flake // Amber Stripe</span>
+</label>
+<div class="grid grid-cols-4 gap-3" id="swatch-picker">
+<button class="swatch-btn h-14 rounded bg-surface-container-highest shadow-[0_0_0_2px_#FFAA00] flex items-center justify-center p-2 relative overflow-hidden" data-color="Graphite Carbon Flake // Amber Stripe" data-price-add="0" type="button">
+<div class="w-full h-full bg-gradient-to-r from-surface-bright via-surface-container to-primary-container rounded"></div>
+</button>
+<button class="swatch-btn h-14 rounded bg-surface-container-highest flex items-center justify-center p-2 relative overflow-hidden" data-color="Stealth Satin Blackout" data-price-add="1.50" type="button">
+<div class="w-full h-full bg-gradient-to-r from-surface-dim to-surface-container rounded"></div>
+</button>
+<button class="swatch-btn h-14 rounded bg-surface-container-highest flex items-center justify-center p-2 relative overflow-hidden" data-color="High-Gloss Titanium Pearl" data-price-add="2.25" type="button">
+<div class="w-full h-full bg-gradient-to-r from-on-surface-variant to-surface-bright rounded"></div>
+</button>
+<button class="swatch-btn h-14 rounded bg-surface-container-highest flex items-center justify-center p-2 relative overflow-hidden" data-color="Racing Cobalt Hex Perimeter" data-price-add="2.75" type="button">
+<div class="w-full h-full bg-gradient-to-r from-secondary-container to-surface-bright rounded"></div>
+</button>
+</div>
+</div>
+<!-- Square Footage Slider -->
+<div class="space-y-2 pt-2">
+<div class="flex justify-between items-center">
+<span class="font-label-technical text-label-technical uppercase text-on-surface-variant">ESTIMATED FACILITY AREA</span>
+<span class="font-stat-metric text-stat-metric text-primary-container" id="sqft-display">2,500 SQ FT</span>
+</div>
+<input class="w-full accent-primary-container h-2 bg-surface-container rounded-lg cursor-pointer" id="sqft-range" max="25000" min="400" step="100" type="range" value="2500"/>
+<div class="flex justify-between text-outline font-label-technical text-label-technical">
+<span>2-Car Bay (400 sq ft)</span>
+<span>Regional Hangar (25,000 sq ft)</span>
+</div>
+</div>
+</div>
+<!-- Live Spec Readout Box -->
+<div class="lg:col-span-5 bg-surface-container p-6 lg:p-8 rounded shadow-2xl space-y-6">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 bg-surface-container-lowest rounded text-primary-container font-label-technical text-label-technical uppercase">
+              OUTPUT TELEMETRY SPEC
+            </span>
+<span class="font-label-technical text-label-technical text-outline uppercase">ENGINEERING SHEET #844</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end pb-3">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">COMPRESSIVE RATING</span>
+<span class="font-stat-metric text-stat-metric text-primary-container uppercase" id="readout-psi">11,200 PSI</span>
+</div>
+<div class="flex justify-between items-end pb-3">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">CURE &amp; RETURN WINDOW</span>
+<span class="font-stat-metric text-stat-metric text-on-surface uppercase" id="readout-cure">24 HOURS</span>
+</div>
+<div class="flex justify-between items-end pb-3">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">CHEMICAL RESISTANCE TIER</span>
+<span class="font-stat-metric text-stat-metric text-on-surface uppercase" id="readout-chem">CLASS 1-A IMMUNE</span>
+</div>
+<div class="flex justify-between items-end pb-3">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface-variant">ESTIMATED INSTALLED BUDGET</span>
+<div class="text-right">
+<span class="font-stat-metric text-stat-metric text-primary-container uppercase" id="readout-price">$7.85 - $9.50</span>
+<span class="block font-label-technical text-label-technical text-outline uppercase">USD PER SQ FT</span>
+</div>
+</div>
+</div>
+<!-- Total Calculation Breakdown Block -->
+<div class="p-4 rounded bg-surface-container-lowest space-y-2">
+<div class="flex justify-between font-label-technical text-label-technical text-on-surface-variant uppercase">
+<span>Gross Project Scope</span>
+<span class="text-on-surface" id="readout-gross-area">2,500 SQ FT</span>
+</div>
+<div class="flex justify-between font-label-technical text-label-technical text-on-surface-variant uppercase">
+<span>Estimated Capital Outlay</span>
+<span class="text-primary-container font-headline-sm text-headline-sm" id="readout-gross-cost">$19,625 - $23,750</span>
+</div>
+<div class="flex items-center gap-2 pt-2 text-on-surface-variant font-label-technical text-label-technical">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Factory Direct Materials + Certified Turnkey Install Available</span>
+</div>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wide hover:brightness-105 transition-all shadow-[0_0_0_1px_#FFAA00,0_4px_16px_rgba(255,170,0,0.15)]" href="#sample-request">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+            Lock Specification &amp; Request Certified Quote
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: EMPIRICAL CHEMICAL & MECHANICAL TORTURE TEST MATRIX -->
+<section class="py-20 lg:py-28 bg-surface-container" id="spec-matrix">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 text-primary-container font-label-technical text-label-technical uppercase tracking-widest">
+<span class="material-symbols-outlined text-[16px]">biotech</span>
+            STANDARDIZED LAB TESTING // ASTM &amp; MIL-SPEC BENCHMARKS
+          </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-wide">
+            EMPIRICAL TORTURE TEST MATRIX
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Independent third-party laboratory evaluations contrasting Vulcan ArmorShield™ against common commercial formulations. Tested in high-temperature immersion protocols.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-technical text-label-technical text-on-surface-variant uppercase">SPEC STATUS:</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary rounded font-label-technical text-label-technical uppercase">
+            CERTIFIED 2025 REV-B
+          </span>
+</div>
+</div>
+<!-- Comparison Matrix Table -->
+<div class="w-full overflow-x-auto rounded shadow-xl">
+<table class="w-full text-left bg-surface-container-lowest">
+<thead class="bg-surface-container-high font-label-technical text-label-technical uppercase text-on-surface">
+<tr>
+<th class="p-4 lg:p-5">TEST PROTOCOL // METRIC</th>
+<th class="p-4 lg:p-5 bg-surface-container-highest text-primary-container">
+<div class="flex items-center gap-2">
+<span class="w-2 h-4 bg-primary-container rounded"></span>
+                  VULCAN ARMORSHIELD™
+                </div>
+</th>
+<th class="p-4 lg:p-5 text-on-surface-variant">STANDARD INDUSTRIAL EPOXY</th>
+<th class="p-4 lg:p-5 text-on-surface-variant">ACRYLIC CONCRETE SEALER</th>
+<th class="p-4 lg:p-5 text-on-surface-variant">DIY RETAIL EPOXY PAINT</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 lg:p-5">
+<div class="font-headline-sm text-headline-sm uppercase text-on-surface">Hot Tire Pickup Resistance</div>
+<div class="font-label-technical text-label-technical text-outline uppercase">ASTM D4541 Elcometer Adhesion</div>
+</td>
+<td class="p-4 lg:p-5 bg-surface-container-highest/60 font-headline-sm text-headline-sm uppercase text-primary">
+                100% IMMUNE // 0 FLAKING
+                <span class="block font-label-technical text-label-technical text-outline normal-case">Cross-linked matrix prevents plasticizer softening</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Fails after 3-6 months
+                <span class="block font-label-technical text-label-technical text-outline">Pulls with Michelin Cup 2 sticky tread</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Softens immediately
+                <span class="block font-label-technical text-label-technical text-outline">Tire rubber welds to substrate</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Total De-lamination
+                <span class="block font-label-technical text-label-technical text-outline">Peels in large sheets within 30 days</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 lg:p-5">
+<div class="font-headline-sm text-headline-sm uppercase text-on-surface">Taber Abrasion Resistance</div>
+<div class="font-label-technical text-label-technical text-outline uppercase">ASTM D4060 (CS-17, 1000g, 1000 cycles)</div>
+</td>
+<td class="p-4 lg:p-5 bg-surface-container-highest/60 font-headline-sm text-headline-sm uppercase text-primary">
+                12 MG LOSS
+                <span class="block font-label-technical text-label-technical text-outline normal-case">Military aerospace specification grade</span>
+</td>
+<td class="p-4 lg:p-5 text-on-surface">
+                45 mg loss
+                <span class="block font-label-technical text-label-technical text-outline">3.75x faster wear profile</span>
+</td>
+<td class="p-4 lg:p-5 text-on-surface-variant">
+                95 mg loss
+                <span class="block font-label-technical text-label-technical text-outline">8x faster wear profile</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                185 mg loss
+                <span class="block font-label-technical text-label-technical text-outline">15x faster degradation rate</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 lg:p-5">
+<div class="font-headline-sm text-headline-sm uppercase text-on-surface">Direct Impact Threshold</div>
+<div class="font-label-technical text-label-technical text-outline uppercase">ASTM D2794 Gardner Falling Ball Impact</div>
+</td>
+<td class="p-4 lg:p-5 bg-surface-container-highest/60 font-headline-sm text-headline-sm uppercase text-primary">
+                160 IN-LBS (MAX TEST)
+                <span class="block font-label-technical text-label-technical text-outline normal-case">No micro-fracture or delamination rings</span>
+</td>
+<td class="p-4 lg:p-5 text-on-surface">
+                50 in-lbs
+                <span class="block font-label-technical text-label-technical text-outline">Spider cracking around drop point</span>
+</td>
+<td class="p-4 lg:p-5 text-on-surface-variant">
+                20 in-lbs
+                <span class="block font-label-technical text-label-technical text-outline">Shatters surface film</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                5 in-lbs
+                <span class="block font-label-technical text-label-technical text-outline">Punctures to bare concrete immediately</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 lg:p-5">
+<div class="font-headline-sm text-headline-sm uppercase text-on-surface">Skydrol &amp; DOT 5 Brake Fluid</div>
+<div class="font-label-technical text-label-technical text-outline uppercase">ASTM D1308 24-Hour Spot Exposure</div>
+</td>
+<td class="p-4 lg:p-5 bg-surface-container-highest/60 font-headline-sm text-headline-sm uppercase text-primary">
+                ZERO ETCHING / ZERO HAZE
+                <span class="block font-label-technical text-label-technical text-outline normal-case">Completely impervious to aviation hydraulic fluids</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Severe Softening &amp; Yellowing
+                <span class="block font-label-technical text-label-technical text-outline">Blisters within 4 hours</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Total Dissolution
+                <span class="block font-label-technical text-label-technical text-outline">Resin chemically destroyed</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Liquefies Coating
+                <span class="block font-label-technical text-label-technical text-outline">Wipes away with shop rag</span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 lg:p-5">
+<div class="font-headline-sm text-headline-sm uppercase text-on-surface">UV Radiation Stability</div>
+<div class="font-label-technical text-label-technical text-outline uppercase">ASTM G154 QUV Accelerated Weathering 2000h</div>
+</td>
+<td class="p-4 lg:p-5 bg-surface-container-highest/60 font-headline-sm text-headline-sm uppercase text-primary">
+                100% NON-YELLOWING
+                <span class="block font-label-technical text-label-technical text-outline normal-case">Pure aliphatic cross-linking chemistry</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Heavy Amber Shift
+                <span class="block font-label-technical text-label-technical text-outline">Aromatic rings break down from UV rays</span>
+</td>
+<td class="p-4 lg:p-5 text-on-surface-variant">
+                Moderate Chalking
+                <span class="block font-label-technical text-label-technical text-outline">Surface dulls and powders</span>
+</td>
+<td class="p-4 lg:p-5 text-error">
+                Severe Discoloration
+                <span class="block font-label-technical text-label-technical text-outline">Chalking and brittleness within 12 mos</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- SECTION 5: COMMISSIONED INSTALLATIONS & COMMERCIAL PROOF -->
+<section class="py-20 lg:py-28 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 text-primary-container font-label-technical text-label-technical uppercase tracking-widest">
+<span class="w-2 h-2 bg-primary-container rounded"></span>
+            COMMISSIONED CASE STUDIES
+          </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-wide">
+            ENTERPRISE COMMISSIONS &amp; MOTORSPORT ATELIERS
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Where multimillion-dollar assets contact the ground. Built for hypercar collections, certified FAA Part 145 repair stations, and racing skunkworks.
+          </p>
+</div>
+<div class="flex items-center gap-2 font-label-technical text-label-technical text-primary-container uppercase">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+          OVER 2,400,000 SQ FT INSTALLED NATIONWIDE
+        </div>
+</div>
+<!-- Mosaic Grid of 4 Architectural Facilities -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="group rounded overflow-hidden bg-surface-container shadow-xl">
+<div class="relative w-full aspect-[16/10] bg-cover bg-center" data-alt="High-end McLaren dealership restoration and delivery workshop with mirror polish polyaspartic flake floor reflecting orange and carbon supercars under clean fluorescent tube illumination." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYcgb0CrtnTUhVxWnyieTUzXxqSicajRJrYZ2opLofYEf5upm0pRnQ9miJtKjdrf9w7rkqPCEX4cEEtKHS_ZfvctqmXL7AjxNSP7NxShnwipycsEJ8UlEvPUblW91Wmg7oPoiE6neopl81xjXQiT0gDr6ckraP-vo_wwF0p5OOGiaDxapY_SjoVStk72CWpJ0xtmTm0cNk3MWKKabdDB4sjQNRJS-yEer_DoUQfoI')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-primary-container font-label-technical text-label-technical uppercase">
+                18,500 SQ FT
+              </span>
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-on-surface font-label-technical text-label-technical uppercase">
+                SCOTTSDALE, AZ
+              </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 space-y-3">
+<span class="font-label-technical text-label-technical text-primary-container uppercase">COMMISSION 01 // OEM DELIVERY ATELIER</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">
+              McLaren Regional Delivery Atelier
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Equipped with Vulcan ArmorShield™ High-Gloss Graphite. Specified with integral coved perimeter bases and OSHA hazard safety lanes for carbon wheel alignment racks.
+            </p>
+<div class="pt-3 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">SYS: Pure Polyaspartic</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Finish: 95 GU Mirror Gloss</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Load: 8 Supercar Bays</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group rounded overflow-hidden bg-surface-container shadow-xl">
+<div class="relative w-full aspect-[16/10] bg-cover bg-center" data-alt="Expansive private Gulfstream private jet hangar with spotless reflective white and light gray ESD safe polyaspartic floor under high bay LED lamps with executive jet parked inside." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRmjYA6txwZ1PcToM1tqSGRCZWpq0cXPsGpfi-igxPveX9cD2fpTpUTCj5ZhsVj1IDFLdl9X11RVPvLLly-A4pUpp2DohffhrJ7OWvt1eYKtaNnS9l77JMGBU-tavZZWISkAKzFcWoDTdA3gZIIG4UWn6zmr0yHpPE8hZg-6Z6BFXA91fpOP--QpuOoem0DJPXZQV7fYJYGKtyQwgvoZSOweMAoHnEQ-q5YWD1S4c')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-primary-container font-label-technical text-label-technical uppercase">
+                42,000 SQ FT
+              </span>
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-on-surface font-label-technical text-label-technical uppercase">
+                TETERBORO AIRPORT, NJ
+              </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 space-y-3">
+<span class="font-label-technical text-label-technical text-primary-container uppercase">COMMISSION 02 // AVIATION MAINTENANCE</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">
+              Gulfstream Private Hangar 4, Teterboro
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Ultra-durable ESD-Safe Aircraft ArmorShield™ formulation immune to Skydrol immersion. Certified non-sparking static dissipation grounding for jet fueling and heavy wing tug maneuvers.
+            </p>
+<div class="pt-3 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">SYS: Aviation Polyaspartic ESD</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Grounding: &lt; 1.0 x 10^6 Ω</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Capacity: Dual G650ER</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group rounded overflow-hidden bg-surface-container shadow-xl">
+<div class="relative w-full aspect-[16/10] bg-cover bg-center" data-alt="High tech dynamometer testing room with extreme performance race car strapped down over dark metallic industrial screed floor with red glowing exhaust vents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0jOTL-U_jV-PEZn64WH22j5ZC-dNDY5-qsChOBcchrRERZPo-GpppVY-vlsCP-6nzN3F4ZjP_3frKfoKOIOjtXLX5fmdC1oGmvaf6wJ0b4yq6ZwOSA3DPDK5nJxxaiT7EEKOl0F69tPhXUC1CdpRfSc7HRyiiST3I6baOSZqjlH7ImlYzxZp9pb259hXK9RcC8QgATKPT8gUo5F9eLaWNFePn35A_MrEyQ4yiQuM')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-primary-container font-label-technical text-label-technical uppercase">
+                6,200 SQ FT
+              </span>
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-on-surface font-label-technical text-label-technical uppercase">
+                SEALY, TX
+              </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 space-y-3">
+<span class="font-label-technical text-label-technical text-primary-container uppercase">COMMISSION 03 // MOTORSPORT R&amp;D</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">
+              Hennessey Performance Dyno Cell
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Vulcan Fortis™ Metal-Infused Polyurethane Screed engineered to handle 2,000+ HP chassis dyno vibrations, extreme heat cycling off twin-turbo exhausts, and caustic race fuels.
+            </p>
+<div class="pt-3 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">SYS: Fortis Heavy Mortar Screed</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Heat Limit: 250°F Direct Thermal</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Vibration Damped</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group rounded overflow-hidden bg-surface-container shadow-xl">
+<div class="relative w-full aspect-[16/10] bg-cover bg-center" data-alt="Exclusive private supercar vault in Miami with carbon black and hazard yellow modular vented interlocking tile floor displaying exotic hypercars in air-conditioned showcase." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfohsX_pW3mQE4-N_ZJ9gF9aY5eY2nMDiRuatLkasIbJuN_oiOppDBCpc_neO-ePpZy0BGLWpis_d0r-zE_4Xe7lKdpNserurq4HFTfImeFVZBxiMGLN1KeosG3rlcC9sAVwQQ5_gl94IXLHiF5PWYXV5eK-_wN69zUOpOWWEFEsTUbMO9dgTvLGV7-g3CimD9R3WF0tNuz6_xhjveVwuz1cOu9U4J5kFLs8Ipjp4')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-primary-container font-label-technical text-label-technical uppercase">
+                12,000 SQ FT
+              </span>
+<span class="px-3 py-1 bg-surface-container-lowest/90 backdrop-blur rounded text-on-surface font-label-technical text-label-technical uppercase">
+                MIAMI, FL
+              </span>
+</div>
+</div>
+<div class="p-6 lg:p-8 space-y-3">
+<span class="font-label-technical text-label-technical text-primary-container uppercase">COMMISSION 04 // PRIVATE COLLECTOR VAULT</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-wide">
+              Miami Supercar Vault &amp; Detail Bay
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Hybrid installation combining Vulcan Apex-Grid™ Carbon Diamond tiles with embedded custom amber perimeter demarcation. Handles frequent vehicle repositioning and moisture drainage.
+            </p>
+<div class="pt-3 flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">SYS: Apex-Grid Modular Vented</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Roll Load: 75,000 LBS Rated</span>
+<span class="px-2.5 py-1 bg-surface-container-low rounded text-outline font-label-technical text-label-technical uppercase">Sub-slab Condensation Safe</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: SPECIFIER SAMPLE TRUNK REQUEST -->
+<section class="py-20 lg:py-28 bg-surface-container" id="sample-request">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Text & Spec Brief -->
+<div class="lg:col-span-5 space-y-6">
+<div class="inline-flex items-center gap-2 text-primary-container font-label-technical text-label-technical uppercase tracking-widest">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+            DIRECT TO SPECIFIER DESK
+          </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-wide">
+            REQUEST HEAVY-DUTY ARCHITECTURAL SAMPLE TRUNK
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Directly dispatched to verified general contractors, shop designers, architectural specifiers, and hangar facilities. Includes physical cured polyaspartic pucks, interlocking tile corner locks, and ASTM test certificates.
+          </p>
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3 p-3 rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_box</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-bold">6x Cured Resin Swatches:</span> High-gloss, satin, and heavy flake formulations
+              </div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_box</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-bold">2x Modular Interlocking Segments:</span> Apex-Grid vented &amp; CarbonTrack solid
+              </div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_box</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-bold">Full CSI 3-Part Specs:</span> USB key with CAD details and LEED documentation
+              </div>
+</div>
+</div>
+</div>
+<!-- Professional Form Panel -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 lg:p-10 rounded shadow-2xl space-y-6">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-6 bg-primary-container rounded"></div>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wide">SAMPLE TRUNK DISPATCH MANIFEST</span>
+</div>
+<span class="font-label-technical text-label-technical text-primary uppercase">COMPLIMENTARY // EXPEDITED</span>
+</div>
+<form class="space-y-4" id="spec-trunk-form" onsubmit="event.preventDefault(); document.getElementById('form-success-banner').classList.remove('hidden');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant">Specifier / Principal Name *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low rounded text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container" placeholder="e.g. Marcus Vance, AIA" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant">Architecture Firm / Facility *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low rounded text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container" placeholder="e.g. Apex Hangar Dynamics" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant">Project Scope (Approx Sq Ft) *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low rounded text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container" placeholder="e.g. 15,000 sq ft" required="" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant">Primary Application *</label>
+<select class="w-full px-4 py-3 bg-surface-container-low rounded text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container">
+<option>Commercial Supercar Workshop / Dealership</option>
+<option>FAA Part 145 Aircraft Flight Hangar</option>
+<option>Private Automotive Collector Estate (3+ Bays)</option>
+<option>Industrial Manufacturing / Heavy Torque Cell</option>
+</select>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-technical text-label-technical uppercase text-on-surface-variant">Delivery Address (Physical Street Address) *</label>
+<input class="w-full px-4 py-3 bg-surface-container-low rounded text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary-container" placeholder="Street Address, Suite / Bay, City, State, ZIP" required="" type="text"/>
+</div>
+<div class="space-y-2 pt-2">
+<span class="font-label-technical text-label-technical uppercase text-on-surface-variant block">Select Specific Swatch Packets:</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded bg-surface-container-low cursor-pointer">
+<input checked="" class="accent-primary-container w-4 h-4" type="checkbox"/>
+<span class="font-label-technical text-label-technical uppercase text-on-surface">Pure Polyaspartic</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-surface-container-low cursor-pointer">
+<input checked="" class="accent-primary-container w-4 h-4" type="checkbox"/>
+<span class="font-label-technical text-label-technical uppercase text-on-surface">Interlocking Tiles</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded bg-surface-container-low cursor-pointer">
+<input checked="" class="accent-primary-container w-4 h-4" type="checkbox"/>
+<span class="font-label-technical text-label-technical uppercase text-on-surface">Chemical Test Card</span>
+</label>
+</div>
+</div>
+<button class="w-full mt-4 inline-flex items-center justify-center gap-3 px-6 py-4 rounded bg-primary-container text-on-primary-container font-headline-sm text-headline-sm uppercase tracking-wide hover:brightness-105 transition-all shadow-[0_0_0_1px_#FFAA00,0_4px_16px_rgba(255,170,0,0.2)]" type="submit">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+              Dispatch Free Heavy-Duty Sample Trunk
+            </button>
+<!-- Success Confirmation Hidden -->
+<div class="hidden p-4 rounded bg-surface-container-high text-primary-container flex items-center gap-3" id="form-success-banner">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<div>
+<span class="font-headline-sm text-headline-sm uppercase block">Sample Trunk Queued For Dispatch</span>
+<span class="font-body-sm text-body-sm text-on-surface">Order #VPA-88241 assigned. Tracking credentials transmitted within 2 hours.</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Script for Configurator Telemetry Logic -->
+<script>
+    (function initConfigurator() {
+      const typologyData = {
+        supercar: { psi: "11,200 PSI", cure: "24 HOURS", chem: "CLASS 1-A IMMUNE", basePriceMin: 7.85, basePriceMax: 9.50 },
+        aviation: { psi: "14,800 PSI", cure: "18 HOURS", chem: "SKYDROL IMMUNE", basePriceMin: 9.40, basePriceMax: 12.20 },
+        fleet:    { psi: "16,500 PSI", cure: "24 HOURS", chem: "SEVERE OIL/ACID", basePriceMin: 8.50, basePriceMax: 10.75 },
+        detailing:{ psi: "9,600 PSI",  cure: "4 HOURS",  chem: "ACID/FOAM PROOF", basePriceMin: 6.20, basePriceMax: 7.90 }
+      };
+
+      const systemMultipliers = {
+        poly: 1.0,
+        tile: 0.85,
+        hybrid: 1.15
+      };
+
+      let currentTypology = "supercar";
+      let currentSys = "poly";
+      let colorAdder = 0;
+
+      const sqftRange = document.getElementById("sqft-range");
+      const sqftDisplay = document.getElementById("sqft-display");
+      const readoutGrossArea = document.getElementById("readout-gross-area");
+      const readoutGrossCost = document.getElementById("readout-gross-cost");
+      const readoutPrice = document.getElementById("readout-price");
+      const readoutPsi = document.getElementById("readout-psi");
+      const readoutCure = document.getElementById("readout-cure");
+      const readoutChem = document.getElementById("readout-chem");
+      const selectedColorLabel = document.getElementById("selected-color-label");
+
+      function updateReadouts() {
+        const area = parseInt(sqftRange.value, 10);
+        sqftDisplay.textContent = area.toLocaleString() + " SQ FT";
+        readoutGrossArea.textContent = area.toLocaleString() + " SQ FT";
+
+        const typo = typologyData[currentTypology];
+        const sysMult = systemMultipliers[currentSys];
+
+        const minPerSqFt = (typo.basePriceMin * sysMult + colorAdder).toFixed(2);
+        const maxPerSqFt = (typo.basePriceMax * sysMult + colorAdder).toFixed(2);
+
+        readoutPrice.textContent = `$${minPerSqFt} - $${maxPerSqFt}`;
+        readoutPsi.textContent = currentSys === 'tile' ? "75,000 LBS ROLL" : typo.psi;
+        readoutCure.textContent = currentSys === 'tile' ? "INSTANT (0 HOURS)" : typo.cure;
+        readoutChem.textContent = typo.chem;
+
+        const grossMin = Math.round(area * parseFloat(minPerSqFt)).toLocaleString();
+        const grossMax = Math.round(area * parseFloat(maxPerSqFt)).toLocaleString();
+        readoutGrossCost.textContent = `$${grossMin} - $${grossMax}`;
+      }
+
+      // Typology buttons
+      document.querySelectorAll(".config-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".config-btn").forEach(b => {
+            b.classList.remove("shadow-[0_0_0_1px_#FFAA00]", "bg-surface-container");
+            b.classList.add("bg-surface-container-high", "text-on-surface-variant");
+            const head = b.querySelector(".font-headline-sm");
+            if (head) {
+              head.classList.remove("text-primary-container");
+              head.classList.add("text-on-surface");
+            }
+          });
+          btn.classList.add("shadow-[0_0_0_1px_#FFAA00]", "bg-surface-container");
+          btn.classList.remove("bg-surface-container-high", "text-on-surface-variant");
+          const head = btn.querySelector(".font-headline-sm");
+          if (head) {
+            head.classList.add("text-primary-container");
+            head.classList.remove("text-on-surface");
+          }
+          currentTypology = btn.getAttribute("data-val");
+          updateReadouts();
+        });
+      });
+
+      // System buttons
+      document.querySelectorAll(".config-sys").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".config-sys").forEach(b => {
+            b.classList.remove("shadow-[0_0_0_1px_#FFAA00]", "bg-surface-container");
+            b.classList.add("bg-surface-container-high");
+            const head = b.querySelector(".font-headline-sm");
+            if (head) {
+              head.classList.remove("text-primary-container");
+              head.classList.add("text-on-surface");
+            }
+          });
+          btn.classList.add("shadow-[0_0_0_1px_#FFAA00]", "bg-surface-container");
+          btn.classList.remove("bg-surface-container-high");
+          const head = btn.querySelector(".font-headline-sm");
+          if (head) {
+            head.classList.add("text-primary-container");
+            head.classList.remove("text-on-surface");
+          }
+          currentSys = btn.getAttribute("data-sys");
+          updateReadouts();
+        });
+      });
+
+      // Swatches
+      document.querySelectorAll(".swatch-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".swatch-btn").forEach(b => b.classList.remove("shadow-[0_0_0_2px_#FFAA00]"));
+          btn.classList.add("shadow-[0_0_0_2px_#FFAA00]");
+          selectedColorLabel.textContent = btn.getAttribute("data-color");
+          colorAdder = parseFloat(btn.getAttribute("data-price-add"));
+          updateReadouts();
+        });
+      });
+
+      sqftRange.addEventListener("input", updateReadouts);
+      updateReadouts();
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant pt-16 pb-12 shadow-[0_-1px_0_0_rgba(255,255,255,0.05)]"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12"><div class="space-y-4"><div class="flex items-center gap-2"><div class="w-2 h-5 bg-primary-container rounded"></div><span class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">VULCAN PRO ARMOR</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Extreme-duty polyaspartic resurfacing and modular interlocking armor systems engineered for aerospace, racing hangars, and precision industrial facilities.</p><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container-low text-primary font-label-technical text-label-technical"><span class="material-symbols-outlined text-[16px]">verified</span>HEAVY-DUTY SPEC APPROVED</div></div><div class="space-y-3"><h3 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">CSI &amp; MasterFormat</h3><ul class="space-y-2 font-label-technical text-label-technical"><li class="flex items-center justify-between py-1 bg-surface-container-low px-2 rounded"><span class="text-on-surface">CSI 09 67 00</span><span class="text-outline">Fluid-Applied Flooring</span></li><li class="flex items-center justify-between py-1 bg-surface-container-low px-2 rounded"><span class="text-on-surface">CSI 09 67 23</span><span class="text-outline">Resinous Matrix</span></li><li class="flex items-center justify-between py-1 bg-surface-container-low px-2 rounded"><span class="text-on-surface">CSI 09 65 19</span><span class="text-outline">Interlocking Tile</span></li><li class="flex items-center justify-between py-1 bg-surface-container-low px-2 rounded"><span class="text-on-surface">CSI 09 96 00</span><span class="text-outline">High-Performance Coatings</span></li></ul></div><div class="space-y-3"><h3 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Compliance &amp; Certs</h3><ul class="space-y-2 font-label-technical text-label-technical"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span><span>ASTM D4060 (Taber Abrasion &lt; 22mg)</span></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span><span>ASTM D4541 (&gt; 420 PSI Substrate Failure)</span></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span><span>OSHA / ADA Non-Skid Wet COF &gt; 0.65</span></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-container text-[16px]">check_circle</span><span>MIL-PRF-24613 Type I &amp; II Heavy Wheel</span></li></ul></div><div class="space-y-3"><h3 class="font-headline-sm text-headline-sm uppercase tracking-wide text-on-surface">Studio Contact</h3><div class="space-y-2 font-body-sm text-body-sm"><div class="flex items-start gap-2"><span class="material-symbols-outlined text-on-surface text-[18px]">factory</span><span>Hangar 14, Specifier Bay, Heavy Armor Division, OH 44135</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-on-surface text-[18px]">call</span><span>+1 (888) 885-ARMOR</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-on-surface text-[18px]">mail</span><span>specifications@vulcanproarmor.com</span></div><div class="pt-2"><span class="font-label-technical text-label-technical text-primary-container uppercase">Direct Specifier Desk: M-F 0600 - 1800 EST</span></div></div></div></div><div class="pt-8 mt-4 flex flex-col md:flex-row items-center justify-between gap-4 font-label-technical text-label-technical"><p>© 2025 Vulcan Pro Armor Flooring Systems. MasterFormat CSI Division 09. All Rights Reserved.</p><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" data-path="specifier-data" href="#">LEED v4 Credits</a><a class="hover:text-on-surface transition-colors" data-path="warranty" href="#">Life-Cycle Assessment</a><a class="hover:text-on-surface transition-colors" data-path="warranty" href="#">Specification Terms</a></div></div></div></footer></body></html>
