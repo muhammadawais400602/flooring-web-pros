@@ -1,0 +1,20 @@
+/* Flooring WebPros — light animation layer for portfolio designs */
+.wa-reveal { opacity: 0; transform: translate3d(0, 28px, 0); transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1); transition-delay: var(--wa-d, 0ms); }
+.wa-reveal.wa-in { opacity: 1; transform: none; }
+.wa-hero-img { animation: waZoom 2.6s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes waZoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+.wa-lift { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease !important; }
+.wa-lift:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(40,25,10,.14); }
+.wa-zoomwrap { overflow: hidden; }
+.wa-zoomwrap img { transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.wa-zoomwrap:hover img { transform: scale(1.05); }
+a, button { transition-property: color, background-color, border-color, transform, box-shadow; }
+.wa-back { position: fixed; left: 16px; bottom: 16px; z-index: 9999; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #1c1814; color: #fff; font: 600 14px/1 system-ui, sans-serif; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+.wa-back:hover { background: #c2551f; }
+html.wa-static .wa-reveal { opacity: 1; transform: none; transition: none; }
+html.wa-static .wa-hero-img { animation: none; }
+html.wa-embed .wa-back { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .wa-reveal { opacity: 1; transform: none; transition: none; }
+  .wa-hero-img, .wa-zoomwrap img, .wa-lift { animation: none; transition: none !important; }
+}

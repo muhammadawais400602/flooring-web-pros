@@ -116,7 +116,7 @@
       fm.showModal(); fm.scrollTop = 0;
     };
     document.querySelectorAll('.feat-open, .feat-open-2').forEach((b) => b.addEventListener('click', () => openFull('/images/portfolio/silvan-hardwood.webp', 'Silvan Hardwood full homepage design')));
-    document.querySelectorAll('.work-open').forEach((b) => b.addEventListener('click', () => openFull(b.dataset.src, b.dataset.alt)));
+    document.querySelectorAll('.work-open:not([data-live])').forEach((b) => b.addEventListener('click', () => openFull(b.dataset.src, b.dataset.alt)));
     fm.querySelector('.pf-close').addEventListener('click', () => fm.close());
     fm.addEventListener('click', (e) => { if (e.target === fm) fm.close(); });
   }
@@ -125,14 +125,58 @@
   const workCards = [...document.querySelectorAll('.work-card')];
   const sizeWork = () => workCards.forEach((c) => {
     const sc = c.querySelector('.work-screen'), img = sc.querySelector('img');
+    if (!img) return;
     const dist = Math.max(0, img.offsetHeight - sc.clientHeight);
     c.style.setProperty('--scroll', dist + 'px');
     c.style.setProperty('--dur', Math.max(6, dist / 110).toFixed(1) + 's');
   });
-  workCards.forEach((c) => { const img = c.querySelector('img'); if (!img.complete) img.addEventListener('load', sizeWork); });
+  workCards.forEach((c) => { const img = c.querySelector('img'); if (img && !img.complete) img.addEventListener('load', sizeWork); });
   addEventListener('resize', sizeWork); addEventListener('load', sizeWork); sizeWork();
   if (noHover && !reduce) {
     const wio = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('auto', e.isIntersecting)), { threshold: .4 });
     workCards.forEach((c) => wio.observe(c));
+  }
+
+  /* ---------- Live HTML design cards: scaled iframe preview + full-screen viewer ---------- */
+  const liveCards = [...document.querySelectorAll('.work-live')];
+  const sizeLive = (c) => {
+    const sc = c.querySelector('.work-screen'), fr = c.querySelector('.live-frame'), ifr = fr.querySelector('iframe');
+    let fh = 6000;
+    try { fh = ifr.contentDocument.documentElement.scrollHeight || fh; } catch {}
+    const k = sc.clientWidth / 1440;
+    fr.style.setProperty('--k', k.toFixed(5));
+    fr.style.setProperty('--fh', fh + 'px');
+    const dist = Math.max(0, fh * k - sc.clientHeight);
+    c.style.setProperty('--scroll', dist.toFixed(0) + 'px');
+    c.style.setProperty('--dur', Math.max(6, dist / 110).toFixed(1) + 's');
+    fr.style.setProperty('--scroll', dist.toFixed(0) + 'px');
+  };
+  const lio = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return;
+    lio.unobserve(e.target);
+    const ifr = e.target.querySelector('iframe');
+    ifr.addEventListener('load', () => { sizeLive(e.target); setTimeout(() => sizeLive(e.target), 1500); });
+    ifr.src = ifr.dataset.src;
+  }), { rootMargin: '400px 0px' });
+  liveCards.forEach((c) => { sizeLive(c); lio.observe(c); });
+  addEventListener('resize', () => liveCards.forEach(sizeLive));
+  if (noHover && !reduce) {
+    const lao = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('auto', e.isIntersecting)), { threshold: .4 });
+    liveCards.forEach((c) => lao.observe(c));
+  }
+  const lm = document.querySelector('.live-modal');
+  if (lm) {
+    const lmFrame = lm.querySelector('iframe'), lmViews = [...lm.querySelectorAll('.lm-views button')];
+    document.querySelectorAll('.work-open[data-live]').forEach((b) => b.addEventListener('click', () => {
+      lm.querySelector('.lm-title').textContent = b.dataset.alt;
+      lm.querySelector('.lm-new').href = b.dataset.live;
+      lmFrame.src = b.dataset.live + '?embed';
+      lmViews.forEach((x, i) => x.classList.toggle('on', i === 0)); lmFrame.style.width = '100%';
+      lm.showModal();
+    }));
+    lmViews.forEach((v) => v.addEventListener('click', () => { lmViews.forEach((x) => x.classList.toggle('on', x === v)); lmFrame.style.width = v.dataset.w; }));
+    lm.querySelector('.lm-close').addEventListener('click', () => lm.close());
+    lm.addEventListener('click', (e) => { if (e.target === lm) lm.close(); });
+    lm.addEventListener('close', () => { lmFrame.src = 'about:blank'; });
   }
 })();
