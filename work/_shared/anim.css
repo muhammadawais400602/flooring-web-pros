@@ -18,3 +18,43 @@ html.wa-embed .wa-back { display: none; }
   .wa-reveal { opacity: 1; transform: none; transition: none; }
   .wa-hero-img, .wa-zoomwrap img, .wa-lift { animation: none; transition: none !important; }
 }
+
+/* ---- Phone fixes shared by every hosted design ---- */
+@media (max-width: 640px) {
+  /* Desktop-size display headlines: scale to the screen and never overflow it */
+  h1 { font-size: clamp(32px, 9.6vw, 46px) !important; line-height: 1.06 !important; letter-spacing: -0.01em !important; }
+  h2 { font-size: clamp(24px, 7.2vw, 34px) !important; line-height: 1.12 !important; }
+  h1, h2, h3 { overflow-wrap: break-word; word-break: normal; hyphens: auto; max-width: 100%; }
+  /* Fixed screen-height heroes: let them grow with their content */
+  .h-screen, [class*=" h-["][class*="vh]"], [class^="h-["][class*="vh]"] { height: auto !important; min-height: 100svh; }
+  /* Nothing wider than the screen */
+  img, video, iframe, table { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  /* Headers: brand text may wrap so logo + avatar always fit */
+  header > div { gap: 12px !important; }
+  header > div > div:first-child, header > div > a:first-child { min-width: 0; flex: 1 1 auto; }
+  header span, header a { white-space: normal !important; }
+  header [class*="tracking-"] { letter-spacing: 0.04em !important; }
+  header img { flex: none; }
+  /* Footer link rows wrap instead of running off-screen */
+  footer .flex { flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  header > div { padding-left: 16px !important; padding-right: 16px !important; max-width: 100%; }
+}
+/* Icon font fallback: never let an icon's text name widen the layout */
+.material-symbols-outlined, .material-icons { display: inline-block; max-width: 1.25em; overflow: hidden; white-space: nowrap; vertical-align: middle; }
+@media (max-width: 640px) { header > div * { min-width: 0; } header > div > :first-child { overflow: hidden; } }
+@media (max-width: 640px) {
+  /* Grid cells may shrink below their longest word; text wraps instead of widening the page */
+  .grid > * { min-width: 0; }
+  /* Desktop page margins (3rem+) are too wide on phones */
+  .px-margin, .px-margin-desktop { padding-left: 20px !important; padding-right: 20px !important; }
+}
+@media (max-width: 640px) {
+  /* Display-size numbers/stats inside grid cards: scale down to the card */
+  .grid [class*="text-display"], .grid [class*="text-headline-xl"], .grid [class*="text-headline-lg"] { font-size: clamp(22px, 7vw, 32px) !important; line-height: 1.1 !important; }
+  .grid > * { overflow-wrap: anywhere; }
+}
+@media (max-width: 640px) { .wa-back { left: 10px; bottom: 10px; padding: 8px 12px; font-size: 12px; opacity: .92; } }

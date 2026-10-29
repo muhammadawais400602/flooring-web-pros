@@ -100,8 +100,10 @@ s = re.sub(r'<footer\b.*?</footer>', clean_footer, s, count=1, flags=re.S)
 title = f'<title>{brand} — design by Flooring WebPros</title>'
 s = re.sub(r'<title>.*?</title>', '', s, flags=re.S)
 s = s.replace('<meta charset="utf-8"/>', '<meta charset="utf-8"/>' + title, 1)
-s = s.replace('</head>', '<link rel="stylesheet" href="style.css"/><link rel="stylesheet" href="/work/_shared/anim.css"/>'
+s = s.replace('</head>', '<link rel="stylesheet" href="style.css"/><script src="/work/_shared/preview.js"></script><link rel="stylesheet" href="/work/_shared/anim.css"/>'
               '<meta name="robots" content="noindex"/><script src="/work/_shared/anim.js" defer></script></head>', 1)
 out = root / 'work' / slug; out.mkdir(parents=True, exist_ok=True)
+if (out / 'fixes.css').exists():   # hand-written per-design fixes survive rebuilds
+    s = s.replace('<link rel="stylesheet" href="/work/_shared/anim.css"/>', '<link rel="stylesheet" href="/work/_shared/anim.css"/><link rel="stylesheet" href="fixes.css"/>', 1)
 (out / 'index.html').write_text(s)
 print('wrote', out / 'index.html'); [print('  removed', r) for r in REPORT]

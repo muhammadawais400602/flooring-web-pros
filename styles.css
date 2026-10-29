@@ -1466,7 +1466,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 /* Portfolio: live HTML design cards */
 .work-screen.live { position: relative; background: #fbf8f3; }
 .live-frame { position: absolute; left: 0; top: 0; width: 1440px; transform-origin: 0 0; transform: scale(var(--k, .2)); }
-.live-frame iframe { display: block; width: 1440px; height: var(--fh, 6000px); border: 0; pointer-events: none; background: #fbf8f3; }
+.live-frame iframe { display: block; width: 1440px; height: var(--fh, 900px); border: 0; pointer-events: none; background: #fbf8f3; }
 .work-live .work-screen.live .live-frame { transition: transform 1s cubic-bezier(.5,0,.3,1); }
 .work-live .work-open:hover .live-frame, .work-live .work-open:focus-visible .live-frame { transform: translateY(calc(-1 * var(--scroll, 0px))) scale(var(--k, .2)); transition: transform var(--dur, 9s) linear; }
 .work-live.auto .live-frame { animation: liveScroll var(--dur, 12s) ease-in-out infinite alternate; }

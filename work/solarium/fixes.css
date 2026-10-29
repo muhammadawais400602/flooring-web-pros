@@ -1,0 +1,7 @@
+/* Solarium — phones: hero text is absolutely pinned to the bottom of a fixed-height
+   photo box; let the box grow with the text and use the photo as its background. */
+@media (max-width: 640px) {
+  main > div > section:first-child > div:first-child { height: auto !important; min-height: 100svh; max-height: none !important; display: flex; flex-direction: column; justify-content: flex-end; }
+  main > div > section:first-child > div:first-child > img { position: absolute; inset: 0; }
+  main > div > section:first-child > div:first-child > div.absolute.inset-x-0.bottom-0 { position: relative; padding-top: 112px; }
+}
