@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Section Ideas | Flooring WebPros</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/images/brand/flooringwebpros-mark.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#1c1814" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* ---------- page chrome (preview page only) ---------- */
+    .pi-bar { position: sticky; top: 0; z-index: 50; background: rgba(28,24,20,.92); backdrop-filter: blur(10px); color: #f3ece1; }
+    .pi-bar .wrap { display: flex; align-items: center; gap: 16px; height: 60px; }
+    .pi-bar a.home { font-weight: 800; text-decoration: none; margin-right: auto; font-size: 15px; }
+    .pi-bar nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+    .pi-bar nav::-webkit-scrollbar { display: none; }
+    .pi-bar nav a { white-space: nowrap; }
+    @media (max-width: 767px) { .pi-bar a.home { display: none; } }
+    .pi-bar nav a { text-decoration: none; font-size: 13px; font-weight: 700; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); }
+    .pi-bar nav a:hover { background: #f3ece1; color: var(--ink); }
+    .pi-intro { padding: clamp(56px, 8vw, 96px) 0 32px; text-align: center; }
+    .pi-intro h1 { font-size: clamp(36px, 6vw, 68px); font-stretch: 85%; font-weight: 900; letter-spacing: -.03em; }
+    .pi-intro p { max-width: 680px; margin: 16px auto 0; color: var(--ink-2); }
+    .pi-label { background: var(--accent); color: #fff; padding: 22px 0; }
+    .pi-label .wrap { display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+    .pi-label b { font-size: clamp(22px, 3vw, 30px); font-stretch: 85%; font-weight: 900; letter-spacing: -.02em; }
+    .pi-label span { opacity: .9; font-size: 15px; max-width: 640px; }
+    .pi-label .num { font-family: var(--f-serif); font-style: italic; font-size: 40px; line-height: 1; font-weight: 400; }
+    .pi-end { padding: 28px 0; text-align: center; color: var(--ink-3); font-size: 14px; border-bottom: 1px solid var(--line); }
+
+    .shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .chrome-bar { display: flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; background: #ece5da; border-bottom: 1px solid #d9cfc0; }
+    .chrome-bar i { width: 9px; height: 9px; border-radius: 50%; background: #cbbfae; }
+    .chrome-bar span { margin-left: 8px; font-size: 11px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* ---------- 1. Horizontal pinned film strip ---------- */
+    .hs { position: relative; background: var(--dark); color: #f3ece1; }
+    .hs-sticky { position: sticky; top: 60px; height: calc(100vh - 60px); overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+    .hs-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: clamp(24px, 4vh, 48px); }
+    .hs-head h2 { font-size: clamp(32px, 4.6vw, 58px); font-stretch: 85%; font-weight: 900; letter-spacing: -.03em; }
+    .hs-count { font-family: var(--f-serif); font-style: italic; font-size: clamp(36px, 5vw, 64px); line-height: 1; color: var(--oak-light); white-space: nowrap; }
+    .hs-count small { font-size: .45em; color: #a89a88; }
+    .hs-track { display: flex; gap: clamp(20px, 3vw, 40px); padding-left: max(16px, calc((100vw - var(--wrap)) / 2)); padding-right: 30vw; will-change: transform; perspective: 1400px; }
+    .hs-card { flex: 0 0 auto; width: min(560px, 70vw); text-decoration: none; color: inherit; transform-style: preserve-3d; transition: filter .3s; }
+    .hs-card .frame { border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 30px 60px -20px rgba(0,0,0,.6); aspect-ratio: 16 / 10.6; display: flex; flex-direction: column; }
+    .hs-card .frame .shot-wrap { flex: 1; overflow: hidden; }
+    .hs-card .meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 14px; }
+    .hs-card .meta b { font-size: 18px; display: block; }
+    .hs-card .meta span { color: #a89a88; }
+    .hs-card .pill { align-self: start; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); background: var(--oak-light); padding: 5px 10px; border-radius: 999px; white-space: nowrap; }
+    .hs-progress { height: 3px; background: rgba(255,255,255,.12); margin-top: clamp(24px, 4vh, 44px); border-radius: 3px; overflow: hidden; }
+    .hs-progress i { display: block; height: 100%; width: 0; background: var(--accent); }
+    @media (max-width: 767px) {
+      .hs { height: auto !important; padding: 56px 0; }
+      .hs-sticky { position: static; height: auto; }
+      .hs-track { overflow-x: auto; scroll-snap-type: x mandatory; padding-right: 16px; transform: none !important; scrollbar-width: none; }
+      .hs-track::-webkit-scrollbar { display: none; }
+      .hs-card { scroll-snap-align: center; width: 82vw; transform: none !important; }
+      .hs-progress { display: none; }
+    }
+
+    /* ---------- 2. Sticky laptop + phone that swap sites ---------- */
+    .ds { position: relative; --bg: #1c1814; background: var(--bg); transition: background-color .7s ease; color: #fff; }
+    .ds-sticky { position: sticky; top: 60px; height: calc(100vh - 60px); display: flex; align-items: center; overflow: hidden; }
+    .ds-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(24px, 5vw, 72px); align-items: center; }
+    .ds-num { font-family: var(--f-serif); font-style: italic; font-size: clamp(64px, 9vw, 120px); line-height: .9; opacity: .9; }
+    .ds-cat { font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; opacity: .75; margin: 18px 0 8px; }
+    .ds-name { font-size: clamp(28px, 3.4vw, 46px); font-stretch: 85%; font-weight: 900; letter-spacing: -.02em; }
+    .ds-loc { opacity: .8; margin-top: 10px; }
+    .ds-text > * { transition: opacity .35s, transform .35s; }
+    .ds-text.swap > * { opacity: 0; transform: translateY(14px); }
+    .ds-cats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; padding: 0; list-style: none; }
+    .ds-cats li { font-size: 12px; font-weight: 700; padding: 6px 11px; border-radius: 999px; border: 1px solid rgba(255,255,255,.3); opacity: .55; transition: all .3s; }
+    .ds-cats li.on { background: #fff; color: var(--ink); opacity: 1; border-color: #fff; }
+    .ds-devices { position: relative; padding-bottom: 20px; }
+    .pi-laptop { position: relative; }
+    .pi-laptop-lid { background: #111; border-radius: 16px 16px 0 0; padding: 2.2% 2.2% 0; box-shadow: 0 40px 80px -30px rgba(0,0,0,.7); }
+    .pi-laptop-screen, .pi-phone-screen { position: relative; overflow: hidden; background: #000; }
+    .pi-laptop-screen { aspect-ratio: 16 / 10; }
+    .pi-laptop-base { height: 16px; background: linear-gradient(#d7d2ca, #a8a29a); border-radius: 0 0 14px 14px; margin: 0 -5%; }
+    .layer { position: absolute; inset: 0; clip-path: inset(100% 0 0 0); transition: clip-path .7s cubic-bezier(.7,0,.2,1); }
+    .layer.on { clip-path: inset(0 0 0 0); z-index: 2; }
+    .layer.was { clip-path: inset(0 0 0 0); z-index: 1; }
+    .pi-phone { position: absolute; right: -4%; bottom: -2%; width: 23%; background: #111; border-radius: 22px; padding: 7px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.7); }
+    .pi-phone-screen { aspect-ratio: 390 / 844; border-radius: 16px; }
+    .pi-phone .layer { transition-delay: .12s; }
+    @media (max-width: 860px) {
+      .ds-grid { grid-template-columns: 1fr; gap: 20px; }
+      .ds-num { font-size: 56px; }
+      .ds-cats { display: none; }
+      .ds-devices { width: 92%; }
+    }
+
+    /* ---------- 3. Deck of cards ---------- */
+    .deck { position: relative; height: 360vh; background: var(--cream); }
+    .deck-sticky { position: sticky; top: 60px; height: calc(100vh - 60px); overflow: hidden; }
+    .deck-head { position: absolute; left: 0; right: 0; top: clamp(20px, 4vh, 40px); text-align: center; z-index: 30; pointer-events: none; }
+    .deck-head h2 { font-size: clamp(30px, 4.4vw, 54px); font-stretch: 85%; font-weight: 900; letter-spacing: -.03em; }
+    .deck-hint { margin-top: 8px; color: var(--ink-3); font-size: 14px; transition: opacity .3s; }
+    .deck-card { position: absolute; left: 0; top: 0; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 18px 40px -16px rgba(28,24,20,.45); text-decoration: none; color: var(--ink); will-change: transform; display: flex; flex-direction: column; border: 6px solid #fff; }
+    .deck-card .shot-wrap { flex: 1; overflow: hidden; border-radius: 4px; }
+    .deck-card .cap { font-size: 12px; font-weight: 800; padding: 6px 2px 0; display: flex; justify-content: space-between; gap: 8px; white-space: nowrap; overflow: hidden; }
+    .deck-card .cap span { color: var(--oak-deep); font-weight: 700; }
+    .deck-card:hover { box-shadow: 0 24px 50px -14px rgba(28,24,20,.6); }
+
+    /* ---------- 4. Dual marquee ---------- */
+    .mq { background: var(--paper); padding: clamp(64px, 9vw, 112px) 0; overflow: hidden; }
+    .mq-row { display: flex; gap: 24px; width: max-content; will-change: transform; padding: 12px 0; }
+    .mq-row + .mq-row { margin-top: 12px; }
+    .mq-card { flex: 0 0 auto; width: clamp(260px, 30vw, 420px); text-decoration: none; color: var(--ink); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+    .mq-card .frame { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #fff; aspect-ratio: 16 / 10.6; display: flex; flex-direction: column; box-shadow: 0 14px 30px -18px rgba(28,24,20,.4); }
+    .mq-card .frame .shot-wrap { flex: 1; overflow: hidden; }
+    .mq-card .cap { margin-top: 10px; font-size: 14px; display: flex; justify-content: space-between; }
+    .mq-card .cap span { color: var(--oak-deep); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+    .mq-card:hover { transform: scale(1.06) rotate(-1deg); position: relative; z-index: 2; }
+    .mq-row:hover .mq-card:not(:hover) { opacity: .55; }
+    .mq-card { transition: transform .35s cubic-bezier(.2,.8,.2,1), opacity .3s; }
+
+    /* ---------- 5. Scroll through a live site ---------- */
+    .sc { position: relative; background: linear-gradient(180deg, var(--paper), var(--cream)); }
+    .sc-sticky { position: sticky; top: 60px; height: calc(100vh - 60px); display: flex; align-items: center; overflow: hidden; }
+    .sc-grid { display: grid; grid-template-columns: 300px 1fr; gap: clamp(24px, 4vw, 64px); align-items: center; }
+    .sc-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 4px; }
+    .sc-list li { padding: 12px 0; border-top: 1px solid var(--line); opacity: .45; transition: opacity .3s; }
+    .sc-list li.on { opacity: 1; }
+    .sc-list b { display: block; font-size: 17px; }
+    .sc-list small { color: var(--ink-3); }
+    .sc-list .bar { height: 3px; background: var(--line); margin-top: 8px; border-radius: 3px; overflow: hidden; }
+    .sc-list .bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+    .sc-head h2 { font-size: clamp(30px, 3.6vw, 46px); font-stretch: 85%; font-weight: 900; letter-spacing: -.03em; }
+    .sc-laptop .pi-laptop-screen { aspect-ratio: 16 / 10; background: #fff; }
+    .sc-layer { position: absolute; inset: 0; opacity: 0; transform: scale(1.04); transition: opacity .5s, transform .6s; }
+    .sc-layer.on { opacity: 1; transform: none; }
+    .sc-layer img { width: 100%; height: auto; display: block; will-change: transform; }
+    .sc-tag { position: absolute; left: 16px; bottom: 16px; z-index: 3; background: var(--ink); color: #fff; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 999px; display: inline-flex; gap: 6px; align-items: center; text-decoration: none; }
+    .sc-tag .material-symbols-outlined { font-size: 18px; }
+    @media (max-width: 860px) {
+      .sc-grid { grid-template-columns: 1fr; gap: 16px; }
+      .sc-list { display: none; }
+      .sc-head h2 { font-size: 28px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .layer, .sc-layer, .ds { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="pi-bar">
+    <div class="wrap">
+      <a class="home" href="/">← Flooring WebPros</a>
+      <nav aria-label="Options">
+        <a href="#o1">1 · Film strip</a>
+        <a href="#o2">2 · Device swap</a>
+        <a href="#o3">3 · Card deck</a>
+        <a href="#o4">4 · Marquee</a>
+        <a href="#o5">5 · Scroll-through</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="pi-intro wrap">
+    <p class="eyebrow">Internal preview · not linked from the site</p>
+    <h1>5 Ways to Show the <em>Portfolio</em></h1>
+    <p>Scroll slowly through each one. Every card uses a real screenshot of one of our 16 flooring designs and opens the live design when clicked. Try it on your phone too.</p>
+  </header>
+
+  <!-- ============ 1 ============ -->
+  <div class="pi-label" id="o1"><div class="wrap"><span class="num">01</span><b>Horizontal Film Strip</b><span>The section pins while you scroll down, and the designs glide sideways. Cards tilt into focus at the center. On phones it becomes a swipe carousel.</span></div></div>
+  <section class="hs" data-hs>
+    <div class="hs-sticky">
+      <div class="wrap hs-head">
+        <div><p class="eyebrow eyebrow-light">Our work</p><h2>16 Flooring Sites. <em>Zero</em> Templates.</h2></div>
+        <div class="hs-count"><span data-hs-n>01</span> <small>/ 16</small></div>
+      </div>
+      <div class="hs-track" data-hs-track></div>
+      <div class="wrap"><div class="hs-progress"><i data-hs-bar></i></div></div>
+    </div>
+  </section>
+  <p class="pi-end">End of option 1</p>
+
+  <!-- ============ 2 ============ -->
+  <div class="pi-label" id="o2"><div class="wrap"><span class="num">02</span><b>Device Swap</b><span>A laptop and phone stay put while each scroll step wipes in the next client's site. The background color shifts to match each brand.</span></div></div>
+  <section class="ds" data-ds>
+    <div class="ds-sticky">
+      <div class="wrap ds-grid">
+        <div class="ds-text" data-ds-text>
+          <div class="ds-num" data-ds-num>01</div>
+          <p class="ds-cat" data-ds-cat></p>
+          <h2 class="ds-name" data-ds-name></h2>
+          <p class="ds-loc" data-ds-loc></p>
+          <ul class="ds-cats" data-ds-cats></ul>
+        </div>
+        <div class="ds-devices">
+          <div class="pi-laptop">
+            <div class="pi-laptop-lid"><div class="pi-laptop-screen" data-ds-lap></div></div>
+            <div class="pi-laptop-base"></div>
+          </div>
+          <div class="pi-phone"><div class="pi-phone-screen" data-ds-phone></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p class="pi-end">End of option 2</p>
+
+  <!-- ============ 3 ============ -->
+  <div class="pi-label" id="o3"><div class="wrap"><span class="num">03</span><b>Deal the Deck</b><span>The designs start as a messy pile of photos. As you scroll, they fly out one by one and snap into a neat grid.</span></div></div>
+  <section class="deck" data-deck>
+    <div class="deck-sticky" data-deck-stage>
+      <div class="deck-head">
+        <p class="eyebrow">Recent builds</p>
+        <h2>Every Floor Type. <em>Every</em> Style.</h2>
+        <p class="deck-hint" data-deck-hint>Keep scrolling to deal the deck ↓</p>
+      </div>
+    </div>
+  </section>
+  <p class="pi-end">End of option 3</p>
+
+  <!-- ============ 4 ============ -->
+  <div class="pi-label" id="o4"><div class="wrap"><span class="num">04</span><b>Two-Way Marquee</b><span>Two rows drift in opposite directions on their own. Scrolling speeds them up, and hovering a row pauses it and enlarges the card.</span></div></div>
+  <section class="mq" data-mq>
+    <div class="wrap section-head">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Built for Hardwood, Carpet, Tile, LVP, <em>&amp; more</em></h2>
+    </div>
+    <div class="mq-row" data-mq-row="1"></div>
+    <div class="mq-row" data-mq-row="-1"></div>
+  </section>
+  <p class="pi-end">End of option 4</p>
+
+  <!-- ============ 5 ============ -->
+  <div class="pi-label" id="o5"><div class="wrap"><span class="num">05</span><b>Scroll Through a Live Site</b><span>One big laptop. Scrolling the page scrolls the design inside the screen from header to footer, then switches to the next client.</span></div></div>
+  <section class="sc" data-sc>
+    <div class="sc-sticky">
+      <div class="wrap sc-grid">
+        <div>
+          <div class="sc-head"><p class="eyebrow">Take a tour</p><h2>Scroll a <em>Real</em> Site We Built</h2></div>
+          <ul class="sc-list" data-sc-list></ul>
+        </div>
+        <div class="sc-laptop pi-laptop">
+          <div class="pi-laptop-lid"><div class="pi-laptop-screen" data-sc-screen></div></div>
+          <div class="pi-laptop-base"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <p class="pi-end">That's all 5. Pick a favorite (or a mix) and it goes on the homepage under Services.</p>
+
+  <script>
+  (() => {
+    const SITES = [
+      ['timber-grain', 'Timber & Grain Co.', 'Hardwood', 'Copenhagen, Portland & Stockholm', '#5c4630'],
+      ['boreal-acoustics', 'Boreal Acoustics', 'Carpet', 'Copenhagen', '#3f4b52'],
+      ['artisan-stone', 'Artisan Stone & Tile Guild', 'Tile & Stone', 'Florence', '#7a4a2c'],
+      ['urbanedge', 'UrbanEdge Flooring', 'LVP & Laminate', 'Hybrid rigid-core lab', '#24394a'],
+      ['vulcan-pro-armor', 'Vulcan Pro Armor', 'Epoxy', 'Workshop & industrial coatings', '#2a2416'],
+      ['heritage-revival', 'Heritage Revival Hardwood', 'Refinishing', 'Pennsylvania', '#57321f'],
+      ['solarium', 'Solarium Deck & Marine', 'Showroom', 'Miami', '#1f3446'],
+      ['apex-commercial', 'Apex Commercial Flooring', 'Commercial', 'Enterprise systems', '#22304a'],
+      ['prestige-parquet', 'Prestige Parquet', 'Hardwood', 'Paris', '#4e3b26'],
+      ['kyoto-tatami', 'Kyoto Sukiya & Tatami Works', 'Carpet', 'Kyoto', '#3a4630'],
+      ['terrazzo-veneziano', 'Atelier Terrazzo Veneziano', 'Tile & Stone', 'Venice', '#6e3434'],
+      ['ecoplank', 'EcoPlank Studio', 'LVP & Laminate', 'Copenhagen', '#3c5434'],
+      ['nordic-epoxy', 'Nordic Epoxy Works', 'Epoxy', 'Stockholm', '#2f3a44'],
+      ['komorebi', 'Komorebi Charred Timber', 'Refinishing', 'Japan', '#26201c'],
+      ['soleil-terra', 'Soleil Terra', 'Showroom', 'Marrakesh', '#80432a'],
+      ['vanguard-athletic', 'Vanguard Athletic Surfaces', 'Commercial', 'Sports & gym flooring', '#5a1f1a'],
+    ].map(([slug, name, cat, loc, color]) => ({ slug, name, cat, loc, color, url: `/work/${slug}/` }));
+
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    const img = (s, v = '', lazy = true) => `<img class="shot" src="/images/work/${s.slug}${v}.webp" alt="" ${lazy ? 'loading="lazy"' : ''} decoding="async">`;
+    const bar = s => `<div class="chrome-bar" aria-hidden="true"><i></i><i></i><i></i><span>${esc(s.name)}</span></div>`;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+    const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const progressOf = el => { const r = el.getBoundingClientRect(); const span = r.height - innerHeight; return span > 0 ? clamp(-r.top / span) : 0; };
+    const inView = el => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
+    const updaters = [];
+
+    /* ---- 1. film strip ---- */
+    {
+      const sec = document.querySelector('[data-hs]'), track = sec.querySelector('[data-hs-track]');
+      track.innerHTML = SITES.map((s, i) => `
+        <a class="hs-card" href="${s.url}" target="_blank" rel="noopener">
+          <div class="frame">${bar(s)}<div class="shot-wrap">${img(s)}</div></div>
+          <div class="meta"><div><b>${esc(s.name)}</b><span>${esc(s.loc)}</span></div><span class="pill">${esc(s.cat)}</span></div>
+        </a>`).join('');
+      const cards = [...track.children], n = sec.querySelector('[data-hs-n]'), barEl = sec.querySelector('[data-hs-bar]');
+      const mobile = matchMedia('(max-width: 767px)');
+      const size = () => { sec.style.height = mobile.matches ? '' : `${innerHeight + (track.scrollWidth - innerWidth) * 0.9}px`; };
+      size(); addEventListener('resize', size); addEventListener('load', size);
+      updaters.push(() => {
+        if (mobile.matches || !inView(sec)) return;
+        const p = progressOf(sec), max = track.scrollWidth - innerWidth;
+        track.style.transform = `translate3d(${-p * max}px,0,0)`;
+        barEl.style.width = `${p * 100}%`;
+        let best = 0, bestD = 1e9;
+        cards.forEach((c, i) => {
+          const r = c.getBoundingClientRect(), d = (r.left + r.width / 2 - innerWidth / 2) / innerWidth;
+          if (Math.abs(d) < bestD) { bestD = Math.abs(d); best = i; }
+          if (reduce) return;
+          const a = clamp(Math.abs(d), 0, 1);
+          c.style.transform = `rotateY(${clamp(-d * 28, -28, 28)}deg) scale(${1 - a * .14}) translateY(${a * 30}px)`;
+          c.style.filter = `brightness(${1 - a * .45})`;
+        });
+        n.textContent = String(best + 1).padStart(2, '0');
+      });
+    }
+
+    /* ---- 2. device swap ---- */
+    {
+      const sec = document.querySelector('[data-ds]');
+      const list = [0, 1, 2, 3, 4, 5, 6, 7].map(i => SITES[i]); // one per category
+      const lap = sec.querySelector('[data-ds-lap]'), ph = sec.querySelector('[data-ds-phone]');
+      lap.innerHTML = list.map((s, i) => `<a class="layer" href="${s.url}" target="_blank" rel="noopener" aria-label="Open ${esc(s.name)}">${img(s, '', i > 1)}</a>`).join('');
+      ph.innerHTML = list.map((s, i) => `<div class="layer">${img(s, '-m', i > 1)}</div>`).join('');
+      sec.querySelector('[data-ds-cats]').innerHTML = list.map(s => `<li>${esc(s.cat)}</li>`).join('');
+      sec.style.height = `calc(100vh + ${list.length * 70}vh)`;
+      const t = sec.querySelector('[data-ds-text]'), cats = [...sec.querySelectorAll('.ds-cats li')];
+      const lapL = [...lap.children], phL = [...ph.children];
+      let cur = -1;
+      const show = i => {
+        [lapL, phL].forEach(L => L.forEach((el, j) => { el.classList.toggle('was', j === cur); el.classList.toggle('on', j === i); }));
+        cats.forEach((c, j) => c.classList.toggle('on', j === i));
+        const s = list[i];
+        sec.style.setProperty('--bg', s.color);
+        t.classList.add('swap');
+        setTimeout(() => {
+          sec.querySelector('[data-ds-num]').textContent = String(i + 1).padStart(2, '0');
+          sec.querySelector('[data-ds-cat]').textContent = s.cat;
+          sec.querySelector('[data-ds-name]').textContent = s.name;
+          sec.querySelector('[data-ds-loc]').textContent = s.loc;
+          t.classList.remove('swap');
+        }, cur < 0 ? 0 : 220);
+        cur = i;
+      };
+      show(0);
+      updaters.push(() => {
+        if (!inView(sec)) return;
+        const i = Math.min(list.length - 1, Math.floor(progressOf(sec) * list.length));
+        if (i !== cur) show(i);
+      });
+    }
+
+    /* ---- 3. deck ---- */
+    {
+      const sec = document.querySelector('[data-deck]'), stage = sec.querySelector('[data-deck-stage]'), hint = sec.querySelector('[data-deck-hint]');
+      let cards = [], layout = [];
+      const build = () => {
+        cards.forEach(c => c.remove());
+        const mob = innerWidth < 768, cols = mob ? 2 : 4, rows = 3, list = SITES.slice(0, cols * rows);
+        const W = stage.clientWidth, H = stage.clientHeight;
+        const top = mob ? 150 : 170, gap = mob ? 10 : 18, side = mob ? 16 : Math.max(32, (W - 1200) / 2);
+        const availW = W - side * 2, availH = H - top - 24;
+        let cw = (availW - gap * (cols - 1)) / cols, ch = cw * 0.68;
+        if (ch * rows + gap * (rows - 1) > availH) { ch = (availH - gap * (rows - 1)) / rows; cw = ch / 0.68; }
+        const gridW = cw * cols + gap * (cols - 1), x0 = (W - gridW) / 2;
+        let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+        layout = list.map((s, i) => ({
+          gx: x0 + (i % cols) * (cw + gap), gy: top + Math.floor(i / cols) * (ch + gap),
+          px: W / 2 - cw / 2 + (rnd() - .5) * cw * .35, py: H / 2 - ch / 2 + 40 + (rnd() - .5) * ch * .3,
+          pr: (rnd() - .5) * 40, lift: (rnd() - .5) * 2,
+        }));
+        cards = list.map((s, i) => {
+          const a = document.createElement('a');
+          a.className = 'deck-card'; a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
+          a.style.width = `${cw}px`; a.style.height = `${ch}px`; a.style.zIndex = list.length - i;
+          a.innerHTML = `<div class="shot-wrap">${img(s)}</div><div class="cap">${esc(s.name)}<span>${esc(s.cat)}</span></div>`;
+          stage.appendChild(a); return a;
+        });
+      };
+      build(); let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { build(); tick(true); }, 150); });
+      updaters.push(() => {
+        if (!inView(sec)) return;
+        const p = reduce ? 1 : progressOf(sec), n = cards.length;
+        hint.style.opacity = p > .08 ? 0 : 1;
+        cards.forEach((c, i) => {
+          const L = layout[i], start = (i / n) * .72 + .04, t = ease(clamp((p - start) / .24));
+          const x = L.px + (L.gx - L.px) * t, y = L.py + (L.gy - L.py) * t - Math.sin(t * Math.PI) * 90;
+          const r = L.pr * (1 - t) + Math.sin(t * Math.PI) * 8 * L.lift, s = 1 + Math.sin(t * Math.PI) * .12;
+          c.style.transform = `translate3d(${x}px,${y}px,0) rotate(${r}deg) scale(${s})`;
+          c.style.zIndex = t > 0 && t < 1 ? 100 : (t >= 1 ? 50 : n - i);
+        });
+      });
+    }
+
+    /* ---- 4. marquee ---- */
+    {
+      const sec = document.querySelector('[data-mq]');
+      const rows = [...sec.querySelectorAll('[data-mq-row]')];
+      const halves = [SITES.slice(0, 8), SITES.slice(8)];
+      const state = rows.map((row, k) => {
+        const list = halves[k];
+        const html = list.map(s => `<a class="mq-card" href="${s.url}" target="_blank" rel="noopener"><div class="frame">${bar(s)}<div class="shot-wrap">${img(s)}</div></div><div class="cap"><b>${esc(s.name)}</b><span>${esc(s.cat)}</span></div></a>`).join('');
+        row.innerHTML = html + html;
+        const st = { row, dir: +row.dataset.mqRow, x: 0, hover: false, speed: 1 };
+        row.addEventListener('mouseenter', () => st.hover = true);
+        row.addEventListener('mouseleave', () => st.hover = false);
+        return st;
+      });
+      let lastY = scrollY, boost = 0, last = performance.now();
+      updaters.push(now => {
+        const dy = scrollY - lastY; lastY = scrollY;
+        boost = boost * .9 + Math.abs(dy) * .35;
+        const dt = Math.min(64, now - last); last = now;
+        if (!inView(sec)) return;
+        state.forEach(st => {
+          const target = st.hover ? 0 : (reduce ? 0 : 1);
+          st.speed += (target - st.speed) * .08;
+          const half = st.row.scrollWidth / 2;
+          st.x -= st.dir * (0.04 * dt * st.speed + boost * st.speed);
+          st.x = ((st.x % half) - half) % half;
+          st.row.style.transform = `translate3d(${st.x}px,0,0)`;
+        });
+      });
+    }
+
+    /* ---- 5. scroll-through ---- */
+    {
+      const sec = document.querySelector('[data-sc]');
+      const list = ['timber-grain', 'vulcan-pro-armor', 'kyoto-tatami', 'solarium', 'terrazzo-veneziano'].map(k => SITES.find(s => s.slug === k));
+      const screen = sec.querySelector('[data-sc-screen]');
+      screen.innerHTML = list.map((s, i) => `<div class="sc-layer"><img src="/images/work/${s.slug}-full.webp" alt="" ${i ? 'loading="lazy"' : ''} decoding="async"></div>`).join('') +
+        `<a class="sc-tag" data-sc-tag target="_blank" rel="noopener" href="#"><span class="material-symbols-outlined" aria-hidden="true">open_in_new</span><span data-sc-tagtext></span></a>`;
+      sec.querySelector('[data-sc-list]').innerHTML = list.map(s => `<li><b>${esc(s.name)}</b><small>${esc(s.cat)} · ${esc(s.loc)}</small><div class="bar"><i></i></div></li>`).join('');
+      sec.style.height = `calc(100vh + ${list.length * 130}vh)`;
+      const layers = [...screen.querySelectorAll('.sc-layer')], items = [...sec.querySelectorAll('[data-sc-list] li')];
+      const tag = sec.querySelector('[data-sc-tag]'), tagText = sec.querySelector('[data-sc-tagtext]');
+      let cur = -1;
+      updaters.push(() => {
+        if (!inView(sec)) return;
+        const p = progressOf(sec) * list.length, i = Math.min(list.length - 1, Math.floor(p)), local = clamp((p - i) * 1.2 - .05);
+        if (i !== cur) {
+          layers.forEach((l, j) => l.classList.toggle('on', j === i));
+          items.forEach((l, j) => l.classList.toggle('on', j === i));
+          tag.href = list[i].url; tagText.textContent = `Open ${list[i].name}`;
+          cur = i;
+        }
+        items.forEach((l, j) => l.querySelector('.bar i').style.width = `${j < i ? 100 : j > i ? 0 : local * 100}%`);
+        const im = layers[i].firstElementChild, h = screen.clientWidth * (im.naturalHeight ? im.naturalHeight / im.naturalWidth : 2.9167);
+        im.style.transform = `translate3d(0,${-ease(local) * Math.max(0, h - screen.clientHeight)}px,0)`;
+      });
+    }
+
+    function tick(now) { updaters.forEach(u => u(typeof now === 'number' ? now : performance.now())); }
+    (function loop(now) { tick(now); requestAnimationFrame(loop); })(performance.now());
+  })();
+  </script>
+</body>
+</html>
