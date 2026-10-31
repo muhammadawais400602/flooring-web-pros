@@ -33,3 +33,10 @@ ffmpeg -i source/oak-walkthrough.mp4 -vf "select='not(mod(n\,2))',scale=1280:-2"
 ffmpeg -i source/oak-walkthrough.mp4 -vf "select='not(mod(n\,2))',crop=ih*0.75:ih,scale=600:-2" -vsync vfr -c:v libwebp -quality 60 frames-m/f%03d.webp
 ```
 Keep 132 frames or update `FRAMES` in `main.js`.
+
+## Inner pages, blog and policies
+Inner pages are generated: edit `src/pages/*.html` (and `src/layout.html` for the shared header/footer), then run `python3 scripts/build.py`.
+
+**Add a blog post:** create `src/blog/<slug>.html` starting with a meta line like the existing posts (`title`, `h1`, `description`, `excerpt`, `date`, `category`, `cover`), write the article with `<h2 id="...">` headings (they become the table of contents), then run the build. The post appears at `/blog/<slug>`, on the blog index and in `sitemap.xml` automatically.
+
+Policy pages: `src/pages/privacy-policy.html`, `terms.html`, `refund-policy.html`. Have them reviewed by a lawyer before relying on them.
