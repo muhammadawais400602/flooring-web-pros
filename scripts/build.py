@@ -10,6 +10,7 @@ Each source file starts with a JSON meta comment:
 Blog articles also need: "date" (YYYY-MM-DD), "category", "cover" (image path), "excerpt".
 In src/pages, {{posts}} is replaced with the article cards and a <!--toc--> marker
 with a table of contents built from the page's <h2 id="..."> headings.
+styles.css is inlined into every page (and the homepage) at build time.
 Run: python3 scripts/build.py
 """
 import json, re, pathlib, html, datetime
@@ -24,7 +25,20 @@ FALLBACK = {"/services": "services", "/who-we-serve": "who", "/portfolio": "port
 ORG = {"@type": "Organization", "name": "Flooring WebPros", "url": SITE + "/",
        "logo": SITE + "/images/brand/favicon-512.png"}
 
-layout = (ROOT / "src/layout.html").read_text()
+CSS_START = "<!-- build:inline-css styles.css"
+CSS_END = "<!-- /build:inline-css -->"
+
+
+def inline_css(html_text):
+    """Fill the build:inline-css block with styles.css so pages render without waiting for a stylesheet request."""
+    css = (ROOT / "styles.css").read_text().strip()
+    a = html_text.index(CSS_START)
+    a = html_text.index("-->", a) + 3
+    b = html_text.index(CSS_END, a)
+    return html_text[:a] + "\n  <style>\n" + css + "\n  </style>\n  " + html_text[b:]
+
+
+layout = inline_css((ROOT / "src/layout.html").read_text())
 
 
 def read(path):
@@ -160,6 +174,11 @@ for page in sorted((ROOT / "src/pages").glob("*.html")):
                           "blogPost": [{"@type": "BlogPosting", "headline": p["h1"], "url": SITE + p["path"], "datePublished": p["date"]} for p in posts]}
     render(meta, body, ROOT / page.name)
     page_paths.append(meta["path"])
+
+# ---------- Homepage (hand-written): refresh its inlined CSS ----------
+home = ROOT / "index.html"
+home.write_text(inline_css(home.read_text()))
+print("inlined styles.css into index.html")
 
 # ---------- Sitemap ----------
 paths = ["/"] + page_paths + [p["path"] for p in posts]

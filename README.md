@@ -40,3 +40,10 @@ Inner pages are generated: edit `src/pages/*.html` (and `src/layout.html` for th
 **Add a blog post:** create `src/blog/<slug>.html` starting with a meta line like the existing posts (`title`, `h1`, `description`, `excerpt`, `date`, `category`, `cover`), write the article with `<h2 id="...">` headings (they become the table of contents), then run the build. The post appears at `/blog/<slug>`, on the blog index and in `sitemap.xml` automatically.
 
 Policy pages: `src/pages/privacy-policy.html`, `terms.html`, `refund-policy.html`. Have them reviewed by a lawyer before relying on them.
+
+## Performance (keep PageSpeed 95+ on mobile)
+- **`styles.css` is inlined into every page** by `python3 scripts/build.py` (including `index.html`, between the `build:inline-css` markers). After editing `styles.css`, always run the build.
+- **Fonts are self-hosted** in `/fonts`. The Material Symbols file is subset to the icons the site uses. If you add a new icon, re-download the subset with the new name added to `icon_names=` (Google Fonts CSS2 API, `display=block`) and replace `fonts/material-symbols-subset.woff2`.
+- **Below-the-fold media on the homepage** use `data-src` / `data-srcset` / `data-lazy-bg` (loaded by `main.js` about a screen before they're visible). Use the same attributes for new images there.
+- **Hero frames** download after first scroll/touch or 3s after load; frame 1 is shown by CSS until then.
+- Portfolio screenshots have `-480.webp` versions for `srcset`.
