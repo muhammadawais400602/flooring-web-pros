@@ -17,6 +17,18 @@
   mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
+  /* ---------- Lazy media: images and CSS backgrounds below the fold load about a screen before they're needed ---------- */
+  const lazyIO = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    if (el.dataset.srcset) el.srcset = el.dataset.srcset;
+    if (el.dataset.src) el.src = el.dataset.src;
+    if (el.dataset.lazyBg) el.style.setProperty('--img', `url('${el.dataset.lazyBg}')`);
+    lazyIO.unobserve(el);
+  }), { rootMargin: '900px 0px' });
+  const lazyObserve = (root) => root.querySelectorAll('[data-src], [data-lazy-bg]').forEach((el) => lazyIO.observe(el));
+  lazyObserve(document);
+
   /* ---------- Portfolio marquee: two rows drift opposite ways, scroll speeds them up ---------- */
   const mq = document.querySelector('.mq');
   if (mq) {
@@ -28,6 +40,7 @@
         clone.inert = true;
         clone.querySelectorAll('button').forEach((b) => b.tabIndex = -1);
         row.appendChild(clone);
+        lazyObserve(clone);
         const st = { row, dir: +row.dataset.dir || 1, x: 0, speed: 1, hold: false };
         row.addEventListener('mouseenter', () => { st.hold = true; });
         row.addEventListener('mouseleave', () => { st.hold = false; });
@@ -82,7 +95,8 @@
      hero is on screen and something changed. */
   const hero = document.querySelector('.hero');
   const canvas = document.querySelector('.hero-canvas');
-  const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
+  // Created on first draw: an opaque context would cover the CSS first-frame poster until frames are decoded
+  let ctx = null;
   const stages = [...document.querySelectorAll('.stage')];
   const bar = document.querySelector('.hero-progress span');
   const FRAMES = 132;
@@ -142,6 +156,7 @@
       const w = a.width * s, h = a.height * s;
       rect = [(cw - w) / 2, (ch - h) / 2, w, h];
     }
+    if (!ctx) ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
     ctx.globalAlpha = 1;
     ctx.drawImage(a, rect[0], rect[1], rect[2], rect[3]);
     const b = f > 0.02 && i + 1 < FRAMES ? frames[i + 1] : null;
@@ -167,10 +182,23 @@
       el.classList.toggle('on', o > 0.02);
     });
     bar.style.transform = `scaleX(${p.toFixed(4)})`;
+    document.documentElement.classList.add('hero-ready');
   };
 
   if (!reduceMotion) {
-    decode(0).then(() => { resize(); draw(); preload(); });
+    // The 132 frames download after the page has rendered: on the visitor's first scroll/touch,
+    // or 3s after load, whichever comes first. Until then the canvas shows frame 1 via CSS.
+    let framesStarted = false;
+    const startFrames = () => {
+      if (framesStarted) return;
+      framesStarted = true;
+      INTENT.forEach((t) => removeEventListener(t, startFrames));
+      decode(0).then(() => { resize(); draw(); preload(); });
+    };
+    const INTENT = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'];
+    INTENT.forEach((t) => addEventListener(t, startFrames, { passive: true }));
+    const afterLoad = () => setTimeout(startFrames, 3000);
+    if (document.readyState === 'complete') afterLoad(); else addEventListener('load', afterLoad, { once: true });
     addEventListener('resize', resize);
     let heroVisible = true, running = false, last = performance.now();
     new IntersectionObserver((e) => { heroVisible = e[0].isIntersecting; if (heroVisible) kick(); }).observe(hero);
@@ -201,14 +229,19 @@
     const cards = [...tradeSection.querySelectorAll('.trade[data-bg]')];
     const layers = new Map();
     cards.forEach((card) => {
-      const url = card.dataset.bg;
-      card.style.setProperty('--bg', `url('${url}')`);
       const layer = document.createElement('div');
       layer.className = 'trade-bg-layer';
-      layer.style.backgroundImage = `url('${url}')`;
       bgWrap.appendChild(layer);
       layers.set(card, layer);
     });
+    // Load the trade photos only when the section gets close, so they don't compete with the hero
+    const loadTradePhotos = () => cards.forEach((card) => {
+      const url = card.dataset.bg;
+      card.style.setProperty('--bg', `url('${url}')`);
+      layers.get(card).style.backgroundImage = `url('${url}')`;
+    });
+    const tio = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { loadTradePhotos(); tio.disconnect(); } }, { rootMargin: '1200px 0px' });
+    tio.observe(tradeSection);
     let hideTimer;
     const stackMq = matchMedia('(max-width: 559px)');
     const show = (card) => {
