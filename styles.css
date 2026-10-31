@@ -1591,3 +1591,16 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
   .post-card-feat .post-card-title { font-size: 34px; font-stretch: 88%; }
   .post-card-feat .post-card-excerpt { font-size: 17px; }
 }
+
+/* Real portfolio screenshots inside mock browsers/phones */
+.build-open { display: block; color: inherit; text-decoration: none; }
+.build-open:hover .browser { transform: translateY(-4px); }
+.build-open .browser { transition: transform .3s; }
+.browser-view.real { background-position: top center; padding: 0; }
+.browser-view.real::before { display: none; }
+.mini-phone.real { background-position: top center; }
+.story-screen.real { padding: 0; background: #fbf8f3; }
+.story-screen.real::before { display: none; }
+.story-screen.real img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.pf-shot { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.vs-new .pf-shot { position: absolute; inset: 0; }

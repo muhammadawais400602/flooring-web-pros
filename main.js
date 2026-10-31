@@ -63,6 +63,7 @@
     document.addEventListener('click', (e) => {
       const b = e.target.closest('[data-live]');
       if (!b) return;
+      e.preventDefault();
       lm.querySelector('.lm-title').textContent = b.dataset.alt;
       lmFrame.src = b.dataset.live + '?embed';
       lmViews.forEach((x, i) => x.classList.toggle('on', i === 0)); lmFrame.style.width = '100%';
@@ -304,7 +305,7 @@
   }, { threshold: 0.6 });
   document.querySelectorAll('[data-count]').forEach((el) => countIo.observe(el));
 
-  /* ---------- Cost estimator demo ---------- */
+  /* ---------- Cost estimator example ---------- */
   const size = document.getElementById('est-size');
   const sizeOut = document.getElementById('est-size-out');
   const price = document.getElementById('est-price');
