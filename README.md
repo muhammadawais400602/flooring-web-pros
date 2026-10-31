@@ -21,7 +21,7 @@ python3 -m http.server 8080   # http://localhost:8080
 Live at https://www.flooringwebpros.com. Vercel deploys on every push to `main`; pull requests get preview links. Project settings: Framework Preset **Other**, Root Directory `./`, no build command, no output directory.
 
 ## Before launch
-- Replace `(XXX) XXX-XXXX`, `tel:+10000000000` and `mailto:hello@example.com` in `index.html`.
+- Contact: WhatsApp +1 (860) 255-1879 (`wa.me/18602551879` links in `index.html` and `src/layout.html`), email info@flooringwebpros.com.
 - Lead form: set `data-endpoint` on `<form class="lead-form">` (Formspree, CRM webhook, etc.). Empty = success message only, nothing sent.
 - Verify stats (150+, 8+ years, 40+ countries), prices and competitor ranges.
 - Portfolio cards are labeled "Demo Design"; swap for real builds. Swap "Our Promise" for real testimonials later.
