@@ -226,16 +226,17 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 .trade { transition: transform .25s, box-shadow .25s, opacity .3s; }
 .trade.active { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(0,0,0,.35); }
 .trade[data-bg] .swatch { background: var(--bg) center/cover no-repeat; }
-/* Phones: cards stack on scroll; covered cards shrink and darken (driven by main.js) */
+/* Phones: cards stack on scroll two at a time; covered cards shrink and darken (driven by main.js) */
 @media (max-width: 559px) {
-  .trade-grid > .trade { position: sticky; top: calc(var(--header-h) + 14px + var(--i, 0) * 10px); transform-origin: 50% 0; box-shadow: 0 -8px 30px rgba(0,0,0,.18); transition: box-shadow .25s, opacity .7s ease; }
+  .trade-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .trade-grid > .trade { position: sticky; top: calc(var(--header-h) + 14px + var(--r, 0) * 10px); transform-origin: 50% 0; box-shadow: 0 -8px 30px rgba(0,0,0,.18); transition: box-shadow .25s, opacity .7s ease; }
   .trade-grid > .trade.reveal.in, .trade-grid > .trade.active, .trade-grid > .trade:hover { transform: scale(var(--s, 1)); filter: brightness(var(--b, 1)); }
   .trade-section.has-bg .trade:not(.active) { opacity: 1; }
-  /* 20% narrower on each side so more of the background photo shows */
-  .trade-grid > .trade { width: 60%; justify-self: center; padding: 10px 10px 16px; }
-  .trade-grid > .trade .swatch { height: 96px; }
-  .trade-grid > .trade h3 { font-size: 16px; margin: 12px 4px 6px; }
-  .trade-grid > .trade p { font-size: 13px; margin: 0 4px; }
+  /* Two cards per row; each row stacks over the one above */
+  .trade-grid > .trade { padding: 8px 8px 14px; }
+  .trade-grid > .trade .swatch { height: 84px; }
+  .trade-grid > .trade h3 { font-size: 15px; margin: 10px 4px 5px; }
+  .trade-grid > .trade p { font-size: 12.5px; line-height: 1.45; margin: 0 4px; }
 }
 @media (prefers-reduced-motion: reduce) { .trade-bg-layer, .trade-bg-layer.on { transform: none; transition: opacity .2s; } }
 .sw-carpet { background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18) 1px, transparent 1.5px) 0 0/5px 5px, radial-gradient(circle at 70% 60%, rgba(0,0,0,.15) 1px, transparent 1.5px) 0 0/4px 4px, #8d8f84; }

@@ -230,7 +230,8 @@
 
     /* Phones: stacked cards. Background follows the card on top; covered cards shrink and darken. */
     const allCards = [...tradeSection.querySelectorAll('.trade')];
-    allCards.forEach((c, i) => c.style.setProperty('--i', i));
+    const COLS = 2; // phones show two cards per row
+    allCards.forEach((c, i) => c.style.setProperty('--r', Math.floor(i / COLS)));
     let stackQueued = false, stackActive = null;
     const updateStack = () => {
       stackQueued = false;
@@ -244,7 +245,8 @@
       const stick = allCards.map((c) => parseFloat(getComputedStyle(c).top) || 0);
       allCards.forEach((c, i) => {
         let depth = 0;
-        for (let j = i + 1; j < allCards.length; j++) depth += clamp(1 - (rects[j].top - stick[j]) / rects[i].height);
+        // only cards in the same column slide over this one
+        for (let j = i + COLS; j < allCards.length; j += COLS) depth += clamp(1 - (rects[j].top - stick[j]) / rects[i].height);
         c.style.setProperty('--s', Math.max(0.82, 1 - depth * 0.05).toFixed(4));
         c.style.setProperty('--b', Math.max(0.55, 1 - depth * 0.15).toFixed(4));
       });
