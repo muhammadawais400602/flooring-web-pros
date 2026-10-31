@@ -378,7 +378,7 @@
         if (!res.ok || String(data.success) === 'false') throw new Error(data.message || String(res.status));
       }
       status.classList.add('ok');
-      status.textContent = "Got it! We'll reach out by phone or WhatsApp within 1 business day to start your free mockup.";
+      status.textContent = "Got it! We'll message you on WhatsApp within 1 business day.";
       form.reset();
     } catch {
       status.classList.add('err');

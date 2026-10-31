@@ -424,6 +424,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .field.invalid input, .field.invalid select { border-color: #c0392b; }
 .lead-form .btn-block, .form-note, .form-status { grid-column: 1 / -1; }
 .form-note { text-align: center; font-size: 14px; color: var(--ink-3); }
+.form-note a { color: var(--accent); font-weight: 700; white-space: nowrap; }
 .form-status { text-align: center; font-weight: 700; font-size: 15px; }
 .form-status:empty { display: none; }
 .lead-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
