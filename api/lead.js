@@ -4,7 +4,7 @@
 //
 // Vercel environment variables:
 //   SMTP_PASS  (required) password of the mailbox below
-//   SMTP_USER  (optional) default lead@flooringwebpros.com
+//   SMTP_USER  (optional) default info@flooringwebpros.com
 //   LEAD_TO    (optional) where leads go, default = SMTP_USER
 //   SMTP_HOST / SMTP_PORT (optional) default smtp.hostinger.com / 465
 const nodemailer = require('nodemailer');
@@ -44,7 +44,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ success: false, message: 'Please fill in all required fields with a valid email.' });
   }
 
-  const user = process.env.SMTP_USER || 'lead@flooringwebpros.com';
+  const user = process.env.SMTP_USER || 'info@flooringwebpros.com';
   const pass = process.env.SMTP_PASS;
   if (!pass) {
     console.error('[lead] SMTP_PASS is not set in Vercel environment variables');
