@@ -1505,3 +1505,10 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 /* No JS or reduced motion: plain swipeable rows */
 .no-js .mq-row, .mq.static .mq-row { width: auto; overflow-x: auto; scroll-snap-type: x mandatory; padding-inline: 16px; scrollbar-width: thin; }
 .no-js .mq-card, .mq.static .mq-card { scroll-snap-align: start; }
+
+/* WhatsApp contact links */
+.wa-ico { width: 1.15em; height: 1.15em; flex: none; display: inline-block; vertical-align: -0.2em; }
+.btn .wa-ico { width: 20px; height: 20px; }
+.header-phone .wa-ico { width: 18px; height: 18px; color: #25d366; }
+.talk a .wa-ico { width: 22px; height: 22px; margin-right: 6px; }
+.btn-wa .wa-ico { width: 22px; height: 22px; }
