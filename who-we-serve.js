@@ -53,7 +53,7 @@
     const i = steps.indexOf(step);
     steps.forEach((s) => s.classList.toggle('on', s === step));
     rail.forEach((r, k) => { r.classList.toggle('on', k === i); r.classList.toggle('done', k < i); });
-    countEl.textContent = String(i + 1).padStart(2, '0');
+    if (countEl) countEl.textContent = String(i + 1).padStart(2, '0');
     nameEl.textContent = step.dataset.name;
     urlEl.textContent = next.querySelector('.ss-nav b').textContent.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '') + '.com';
     searchEl.style.opacity = 0;
