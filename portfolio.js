@@ -18,6 +18,7 @@
   /* ---------- How far each mini site can scroll ---------- */
   const setScroll = (root) => root.querySelectorAll('.pf-screen').forEach((sc) => {
     const ms = sc.querySelector('.ms');
+    if (!ms) return; // screens showing a real screenshot have nothing to scroll
     const host = sc.closest('.pf-card, .fan-card, .pf-m-laptop, .pf-m-phone') || sc;
     host.style.setProperty('--scroll', Math.max(0, ms.offsetHeight - sc.clientHeight) + 'px');
   });

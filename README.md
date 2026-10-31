@@ -24,7 +24,7 @@ Live at https://www.flooringwebpros.com. Vercel deploys on every push to `main`;
 - Contact: WhatsApp +1 (860) 255-1879 (`wa.me/18602551879` links in `index.html` and `src/layout.html`), email info@flooringwebpros.com.
 - Lead form: set `data-endpoint` on `<form class="lead-form">` (Formspree, CRM webhook, etc.). Empty = success message only, nothing sent.
 - Verify stats (150+, 8+ years, 40+ countries), prices and competitor ranges.
-- Portfolio cards are labeled "Demo Design"; swap for real builds. Swap "Our Promise" for real testimonials later.
+- Swap "Our Promise" for real testimonials later.
 - Footer links About, Blog, Privacy Policy, Terms point to `#` (pages not built yet).
 
 ## Regenerate frames

@@ -11,7 +11,7 @@ const nodemailer = require('nodemailer');
 const reply = require('../lib/mockup-reply.js');
 
 const FIELDS = {
-  name: 'Name', business: 'Business', phone: 'Phone', email: 'Email',
+  name: 'Name', business: 'Business', phone: 'Phone / WhatsApp', email: 'Email',
   city: 'City / Service Area', trade: 'Trade', website: 'Current website',
 };
 const REQUIRED = ['name', 'business', 'phone', 'email', 'city', 'trade'];
@@ -19,6 +19,12 @@ const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/;
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const clean = (v, max) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim().slice(0, max);
+// wa.me link for the lead's WhatsApp number; 10-digit numbers are assumed to be US/Canada (+1).
+const waLink = (num) => {
+  let d = String(num).replace(/\D/g, '');
+  if (d.length === 10) d = '1' + d;
+  return d.length >= 8 && d.length <= 15 ? `https://wa.me/${d}` : '';
+};
 const fill = (tpl, vars) => tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => vars[k] ?? '');
 
 function readBody(req) {
@@ -60,7 +66,7 @@ module.exports = async function handler(req, res) {
   // 1) Lead notification — this one must succeed.
   const rows = Object.entries(FIELDS).map(([k, label]) =>
     `<tr><td style="padding:8px 14px;border:1px solid #e4dacb;background:#f3ece1;font:700 14px Arial,sans-serif;color:#1c1814;white-space:nowrap">${label}</td>` +
-    `<td style="padding:8px 14px;border:1px solid #e4dacb;font:14px Arial,sans-serif;color:#1c1814">${esc(lead[k] || '—')}</td></tr>`).join('');
+    `<td style="padding:8px 14px;border:1px solid #e4dacb;font:14px Arial,sans-serif;color:#1c1814">${k === 'phone' && waLink(lead.phone) ? `<a href="${waLink(lead.phone)}" style="color:#c2551f">${esc(lead.phone)}</a> (tap to WhatsApp)` : esc(lead[k] || '—')}</td></tr>`).join('');
   try {
     await transporter.sendMail({
       from: { name: 'Flooring WebPros Website', address: user },
