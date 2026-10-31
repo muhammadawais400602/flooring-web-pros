@@ -17,6 +17,63 @@
   mobileNav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
+  /* ---------- Portfolio marquee: two rows drift opposite ways, scroll speeds them up ---------- */
+  const mq = document.querySelector('.mq');
+  if (mq) {
+    if (reduceMotion) mq.classList.add('static');
+    else {
+      const rows = [...mq.querySelectorAll('.mq-row')].map((row) => {
+        const clone = row.firstElementChild.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.inert = true;
+        clone.querySelectorAll('button').forEach((b) => b.tabIndex = -1);
+        row.appendChild(clone);
+        const st = { row, dir: +row.dataset.dir || 1, x: 0, speed: 1, hold: false };
+        row.addEventListener('mouseenter', () => { st.hold = true; });
+        row.addEventListener('mouseleave', () => { st.hold = false; });
+        row.addEventListener('focusin', () => { st.hold = true; });
+        row.addEventListener('focusout', () => { st.hold = false; });
+        return st;
+      });
+      let visible = false, raf = 0, last = 0, lastY = scrollY, boost = 0;
+      const step = (now) => {
+        const dt = last ? Math.min(64, now - last) : 16; last = now;
+        boost = boost * 0.9 + Math.min(60, Math.abs(scrollY - lastY)) * 0.3; lastY = scrollY;
+        rows.forEach((st) => {
+          st.speed += ((st.hold ? 0 : 1) - st.speed) * 0.08;
+          const w = st.row.firstElementChild.offsetWidth;
+          if (!w) return;
+          st.x -= st.dir * (0.04 * dt + boost) * st.speed;
+          st.x = ((st.x % w) - w) % w;
+          st.row.style.transform = `translate3d(${st.x}px,0,0)`;
+        });
+        raf = visible ? requestAnimationFrame(step) : 0;
+      };
+      new IntersectionObserver(([e]) => {
+        visible = e.isIntersecting;
+        if (visible && !raf) { last = 0; raf = requestAnimationFrame(step); }
+      }).observe(mq);
+    }
+  }
+
+  /* ---------- Live design popup (same as /portfolio) ---------- */
+  const lm = document.querySelector('.live-modal');
+  if (lm) {
+    const lmFrame = lm.querySelector('iframe'), lmViews = [...lm.querySelectorAll('.lm-views button')];
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-live]');
+      if (!b) return;
+      lm.querySelector('.lm-title').textContent = b.dataset.alt;
+      lmFrame.src = b.dataset.live + '?embed';
+      lmViews.forEach((x, i) => x.classList.toggle('on', i === 0)); lmFrame.style.width = '100%';
+      lm.showModal();
+    });
+    lmViews.forEach((v) => v.addEventListener('click', () => { lmViews.forEach((x) => x.classList.toggle('on', x === v)); lmFrame.style.width = v.dataset.w; }));
+    lm.querySelector('.lm-close').addEventListener('click', () => lm.close());
+    lm.addEventListener('click', (e) => { if (e.target === lm) lm.close(); });
+    lm.addEventListener('close', () => { lmFrame.src = 'about:blank'; });
+  }
+
   /* ---------- Hero: scroll-scrubbed image sequence on canvas ----------
      Smoothness: frames are pre-decoded off the main thread (createImageBitmap),
      neighbouring frames are cross-faded for sub-frame motion, the canvas never
