@@ -1,8 +1,8 @@
 /* Flooring WebPros — Pricing page */
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const money = (n) => '$' + Math.round(n).toLocaleString('en-US');
-  const cents = (n) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const money = (n) => String(Math.round(n));
+  const cents = (n) => String(Math.round(n));
   const tween = (from, to, dur, fn) => {
     if (reduce) return fn(to);
     const t0 = performance.now();
@@ -23,8 +23,8 @@
   let view = 'monthly';
   const render = (animate) => prices.forEach((p) => {
     const big = p.querySelector('.pr-big'), sub = p.querySelector('.pr-sub');
-    const m = +p.dataset.month, year = Math.round(12 * m * 100) / 100;
-    const from = parseFloat(big.textContent.replace(/[^\d.]/g, '')) || 0;
+    const m = +p.dataset.month, year = 12 * m;
+    const from = parseFloat(big.textContent.replace(/[^\d]/g, '')) || 0;
     const to = view === 'monthly' ? m : year;
     if (animate) tween(from, to, 700, (v) => (big.textContent = cents(v))); else big.textContent = cents(to);
     sub.textContent = view === 'monthly' ? 'per month' : `per year (${cents(m)} × 12)`;
@@ -42,7 +42,7 @@
   const job = document.getElementById('job');
   const jobOut = document.getElementById('job-out');
   const pbtns = [...document.querySelectorAll('.calc-plans button')];
-  let cost = 719.88, shownX = 0;
+  let cost = 720, shownX = 0;
   const calc = () => {
     const v = +job.value, x = v / cost;
     jobOut.textContent = money(v);

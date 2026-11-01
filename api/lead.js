@@ -15,10 +15,37 @@ const FIELDS = {
   city: 'City / Service Area', trade: 'Trade', website: 'Current website',
 };
 const REQUIRED = ['name', 'business', 'phone', 'email', 'city', 'trade'];
-const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/;
+const TRADES = new Set(['Hardwood', 'Carpet', 'Tile & Stone', 'LVP/Laminate', 'Epoxy/Concrete', 'Refinishing', 'Showroom/Retail', 'Commercial', 'Other']);
+const EMAIL_RE = /^[^\s@<>"(),;:\\[\]]+@[^\s@<>"(),;:\\[\]]+\.[^\s@<>"(),;:\\[\]]{2,}$/;
+const MAX_BODY = 8 * 1024; // bytes; the real form sends well under 1 KB
+
+// Only our own pages may post here (plus this project's Vercel preview deployments)
+const ALLOWED_HOSTS = new Set(['www.flooringwebpros.com', 'flooringwebpros.com']);
+const allowedOrigin = (value) => {
+  try {
+    const { protocol, hostname } = new URL(value);
+    if (protocol !== 'https:' && hostname !== 'localhost') return false;
+    return ALLOWED_HOSTS.has(hostname) || hostname === 'localhost' ||
+      (hostname.endsWith('.vercel.app') && hostname.startsWith('flooring-web-pros'));
+  } catch { return false; }
+};
+
+// Best-effort rate limits (per warm serverless instance): stop scripted floods and
+// stop the form being used to send our auto-reply to someone repeatedly.
+const hits = new Map();
+const limited = (key, max, windowMs) => {
+  const now = Date.now();
+  const list = (hits.get(key) || []).filter((t) => now - t < windowMs);
+  list.push(now);
+  hits.set(key, list);
+  if (hits.size > 5000) for (const [k, v] of hits) if (now - v[v.length - 1] > 3600e3) hits.delete(k);
+  return list.length > max;
+};
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const clean = (v, max) => String(v ?? '').replace(/[\r\n]+/g, ' ').trim().slice(0, max);
+// Single line, no control characters, trimmed and length-capped
+// eslint-disable-next-line no-control-regex
+const clean = (v, max) => String(v ?? '').replace(/[\u0000-\u001F\u007F\u2028\u2029]+/g, ' ').replace(/\s{2,}/g, ' ').trim().slice(0, max);
 // wa.me link for the lead's WhatsApp number; 10-digit numbers are assumed to be US/Canada (+1).
 const waLink = (num) => {
   let d = String(num).replace(/\D/g, '');
@@ -33,22 +60,35 @@ function readBody(req) {
   return {};
 }
 
+const fail = (res, status, message) => res.status(status).json({ success: false, message });
+
 module.exports = async function handler(req, res) {
+  res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).json({ success: false, message: 'Method not allowed' });
+    return fail(res, 405, 'Method not allowed');
+  }
+  const origin = req.headers.origin || req.headers.referer || '';
+  if (!allowedOrigin(origin)) return fail(res, 403, 'Forbidden');
+  if (!String(req.headers['content-type'] || '').toLowerCase().startsWith('application/json')) {
+    return fail(res, 415, 'Unsupported content type');
   }
 
   const body = readBody(req);
+  if (JSON.stringify(body).length > MAX_BODY) return fail(res, 413, 'Too large');
   // Honeypot: real visitors never fill this hidden field. Pretend success for bots.
   if (body._honey) return res.status(200).json({ success: true });
+
+  const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '').split(',')[0].trim();
+  if (limited(`ip:${ip}`, 5, 10 * 60e3)) return fail(res, 429, 'Too many requests. Please try again in a few minutes.');
 
   const lead = {};
   for (const k of Object.keys(FIELDS)) lead[k] = clean(body[k], k === 'website' ? 300 : 120);
   const missing = REQUIRED.filter((k) => !lead[k]);
-  if (missing.length || !EMAIL_RE.test(lead.email)) {
-    return res.status(400).json({ success: false, message: 'Please fill in all required fields with a valid email.' });
+  if (missing.length || lead.email.length > 254 || !EMAIL_RE.test(lead.email) || !TRADES.has(lead.trade)) {
+    return fail(res, 400, 'Please fill in all required fields with a valid email.');
   }
+  if (lead.website && !/^https?:\/\//i.test(lead.website)) lead.website = `https://${lead.website}`;
 
   const user = process.env.SMTP_USER || 'info@flooringwebpros.com';
   const pass = process.env.SMTP_PASS;
@@ -83,8 +123,9 @@ module.exports = async function handler(req, res) {
   }
 
   // 2) Auto-reply to the visitor — a failure here must not lose the lead.
+  //    Capped per address so the form can't be used to flood someone's inbox.
   const first = lead.name.split(/\s+/)[0];
-  try {
+  if (!limited(`to:${lead.email.toLowerCase()}`, 2, 60 * 60e3)) try {
     await transporter.sendMail({
       from: { name: 'Flooring WebPros', address: user },
       to: { name: lead.name, address: lead.email },

@@ -1,2 +1,5 @@
 source/
 README.md
+src/
+scripts/
+*.md
