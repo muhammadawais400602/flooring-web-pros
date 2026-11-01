@@ -413,6 +413,8 @@
       }
       status.classList.add('ok');
       status.textContent = "Got it! We'll message you on WhatsApp within 1 business day.";
+      // For analytics (analytics.js): only the trade is shared, never contact details
+      document.dispatchEvent(new CustomEvent('lead:submitted', { detail: { trade: form.elements.trade ? form.elements.trade.value : '' } }));
       form.reset();
     } catch {
       status.classList.add('err');
