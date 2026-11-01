@@ -1622,6 +1622,15 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .wa-ico { width: 1.15em; height: 1.15em; flex: none; display: inline-block; vertical-align: -0.2em; }
 .btn .wa-ico { width: 20px; height: 20px; }
 .header-phone .wa-ico { width: 22px; height: 22px; color: #25d366; }
+/* Header WhatsApp button: soft green pulse ring + small wiggle every few seconds */
+.header-phone { position: relative; }
+.header-phone::before, .header-phone::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25d366; opacity: 0; pointer-events: none; animation: waRing 3.2s ease-out infinite; }
+.header-phone::after { animation-delay: .45s; }
+.header-phone .wa-ico { animation: waWiggle 3.2s ease-in-out infinite; transform-origin: 50% 60%; }
+.header-phone:hover::before, .header-phone:hover::after, .header-phone:hover .wa-ico { animation-play-state: paused; }
+@keyframes waRing { 0% { transform: scale(1); opacity: .7; } 45%, 100% { transform: scale(1.75); opacity: 0; } }
+@keyframes waWiggle { 0%, 62%, 100% { transform: rotate(0); } 66% { transform: rotate(-14deg); } 70% { transform: rotate(12deg); } 74% { transform: rotate(-8deg); } 78% { transform: rotate(4deg); } 82% { transform: rotate(0); } }
+@media (prefers-reduced-motion: reduce) { .header-phone::before, .header-phone::after, .header-phone .wa-ico { animation: none; } }
 .talk a .wa-ico { width: 22px; height: 22px; margin-right: 6px; }
 .btn-wa .wa-ico { width: 22px; height: 22px; }
 
