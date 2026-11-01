@@ -18,7 +18,7 @@ import json, re, pathlib, html, datetime
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://www.flooringwebpros.com"
 NAV = [("/services", "Services"), ("/who-we-serve", "Who We Serve"), ("/portfolio", "Portfolio"),
-       ("/pricing", "Pricing"), ("/how-it-works", "How It Works"), ("/faq", "FAQ")]
+       ("/pricing", "Pricing"), ("/how-it-works", "How It Works"), ("/about", "About"), ("/faq", "FAQ")]
 
 FALLBACK = {"/services": "services", "/who-we-serve": "who", "/portfolio": "portfolio",
             "/pricing": "pricing", "/how-it-works": "how", "/faq": "faq"}
