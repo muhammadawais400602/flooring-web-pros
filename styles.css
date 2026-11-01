@@ -1745,3 +1745,5 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .section-dark .promise { background: var(--dark-2); border: 1px solid rgba(255,255,255,.08); }
 .section-dark .promise h3 { color: #fff; }
 .section-dark .promise p { color: #cfc4b5; }
+.footer-wa { display: inline-flex !important; align-items: center; gap: 8px; }
+.footer-wa .wa-ico { width: 20px; height: 20px; color: #25d366; }
