@@ -46,3 +46,11 @@ Policy pages: `src/pages/privacy-policy.html`, `terms.html`, `refund-policy.html
 - **Below-the-fold media on the homepage** use `data-src` / `data-srcset` / `data-lazy-bg` (loaded by `main.js` about a screen before they're visible). Use the same attributes for new images there.
 - **Hero frames** download after first scroll/touch or 3s after load; frame 1 is shown by CSS until then.
 - Portfolio screenshots have `-480.webp` versions for `srcset`.
+- The build minifies the inlined CSS (comments and whitespace only).
+
+## Security
+- **Content-Security-Policy** is set by a `<meta>` tag in `index.html` and `src/layout.html`: scripts only from this site and Google Tag Manager, no inline scripts. Adding a third-party script means adding its domain there. The `/work` portfolio designs are separate pages and don't use it.
+- **Headers** (`vercel.json`): `X-Frame-Options: SAMEORIGIN`, `Permissions-Policy`, `Cross-Origin-Opener-Policy`, `nosniff`, `Referrer-Policy`; HSTS is added by Vercel. `/api/*` is never cached.
+- **`/api/lead`** only accepts JSON posts from flooringwebpros.com (or this project's Vercel previews), validates every field (the trade must be one of the form's options), strips control characters, caps the body at 8 KB, rate-limits to 5 posts per IP per 10 minutes and sends the auto-reply at most twice an hour to the same address. Rate limits are per serverless instance (best effort).
+- `src/`, `scripts/` and Markdown files are not deployed (`.vercelignore`).
+- Keep `nodemailer` current: run `npm audit` occasionally.

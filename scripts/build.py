@@ -29,9 +29,32 @@ CSS_START = "<!-- build:inline-css styles.css"
 CSS_END = "<!-- /build:inline-css -->"
 
 
+def minify_css(css):
+    """Conservative minifier: drop comments and collapse whitespace, leaving quoted strings untouched."""
+    out, i, n = [], 0, len(css)
+    while i < n:
+        c = css[i]
+        if c in "\"'":
+            j = i + 1
+            while j < n and css[j] != c:
+                j += 2 if css[j] == "\\" else 1
+            out.append(css[i:j + 1]); i = j + 1
+        elif css.startswith("/*", i):
+            j = css.find("*/", i + 2); i = n if j == -1 else j + 2
+        elif c.isspace():
+            while i < n and css[i].isspace(): i += 1
+            out.append(" ")
+        else:
+            out.append(c); i += 1
+    css = "".join(out)
+    # tighten around braces and semicolons only (never around ':' or operators, which can change meaning)
+    css = re.sub(r"\s*([{};])\s*", r"\1", css)
+    return css.replace(";}", "}").strip()
+
+
 def inline_css(html_text):
-    """Fill the build:inline-css block with styles.css so pages render without waiting for a stylesheet request."""
-    css = (ROOT / "styles.css").read_text().strip()
+    """Fill the build:inline-css block with styles.css (minified) so pages render without waiting for a stylesheet request."""
+    css = minify_css((ROOT / "styles.css").read_text())
     a = html_text.index(CSS_START)
     a = html_text.index("-->", a) + 3
     b = html_text.index(CSS_END, a)
@@ -131,7 +154,7 @@ for p in posts:
           {toc(p["body"])}
           <div class="aside-card">
             <p class="aside-title">Built for flooring pros</p>
-            <p>Websites, local SEO and Google Business Profile management from $59.99/month.</p>
+            <p>Websites, local SEO and Google Business Profile management from 60/month.</p>
             <a class="btn btn-accent btn-sm" href="/pricing">See Plans</a>
           </div>
         </aside>
