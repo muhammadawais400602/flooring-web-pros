@@ -89,95 +89,48 @@
   }
 
   /* ---------- Hero: scroll-scrubbed image sequence on canvas ----------
-     All 264 frames of the source video (24 fps) as AVIF, with the older 132-frame
-     WebP set as fallback. Frames are kept compressed in memory; only the frames
-     around the current scroll position are decoded (off the main thread, via
-     createImageBitmap) and far-away ones are released, so memory stays small and
-     scrubbing stays smooth on phones. Neighbouring frames are cross-faded for
-     sub-frame motion, and the loop only runs while the hero is on screen. */
+     Smoothness: frames are pre-decoded off the main thread (createImageBitmap),
+     neighbouring frames are cross-faded for sub-frame motion, the canvas never
+     renders above the frames' own resolution, and the loop only runs while the
+     hero is on screen and something changed. */
   const hero = document.querySelector('.hero');
   const canvas = document.querySelector('.hero-canvas');
   // Created on first draw: an opaque context would cover the CSS first-frame poster until frames are decoded
   let ctx = null;
   const stages = [...document.querySelectorAll('.stage')];
   const bar = document.querySelector('.hero-progress span');
+  const FRAMES = 132;
   const portrait = matchMedia('(max-aspect-ratio: 1/1)').matches;
-  const pad = (i) => String(i + 1).padStart(3, '0');
-  const SETS = {
-    avif: { n: 264, src: (i) => `/${portrait ? 'frames-m-avif' : 'frames-avif'}/a${pad(i)}.avif` },
-    webp: { n: 132, src: (i) => `/${portrait ? 'frames-m' : 'frames'}/f${pad(i)}.webp` },
-  };
-  let set = SETS.avif, FRAMES = set.n;
+  const dir = portrait ? 'frames-m' : 'frames';
   const SRC_W = portrait ? 600 : 1280;
-  const AHEAD = portrait ? 18 : 22, BEHIND = portrait ? 6 : 8, PARALLEL = 3;
-  const blobs = [];               // compressed frames (small)
-  const bitmaps = new Map();      // decoded frames near the current position
-  const decoding = new Set();
-  let dirn = 1, kick = () => {};
+  const src = (i) => `${dir}/f${String(i + 1).padStart(3, '0')}.webp`;
+  const frames = new Array(FRAMES).fill(null);   // decoded, ready-to-draw bitmaps
   let current = 0, target = 0, drawnAt = -1, lastP = -1, rect = null, needsDraw = true;
 
-  const toBitmap = (blob) => ('createImageBitmap' in window
-    ? createImageBitmap(blob)
-    : new Promise((res, rej) => { const img = new Image(); img.onload = () => res(img); img.onerror = rej; img.src = URL.createObjectURL(blob); }));
-  const release = (bm) => { if (bm && bm.close) bm.close(); };
-
-  // How far a frame is from where the visitor is heading (frames behind count more)
-  const cost = (i, c) => { const d = (i - c) * dirn; return d >= 0 ? d : -d * 2.5; };
-
-  const schedule = () => {
-    if (!blobs.length) return;
-    const c = Math.round(current);
-    const want = [];
-    for (let i = Math.max(0, c - (dirn > 0 ? BEHIND : AHEAD)); i <= Math.min(FRAMES - 1, c + (dirn > 0 ? AHEAD : BEHIND)); i++) want.push(i);
-    want.sort((x, y) => cost(x, c) - cost(y, c));
-    for (const i of want) {
-      if (decoding.size >= PARALLEL) break;
-      if (bitmaps.has(i) || decoding.has(i) || !blobs[i]) continue;
-      decoding.add(i);
-      toBitmap(blobs[i])
-        .then((bm) => { bitmaps.set(i, bm); needsDraw = true; kick(); })
-        .catch(() => {})
-        .finally(() => { decoding.delete(i); schedule(); });
-    }
-    // Release decoded frames far from the current position
-    bitmaps.forEach((bm, i) => {
-      const d = (i - c) * dirn;
-      if (d > AHEAD + 4 || -d > BEHIND + 4) { release(bm); bitmaps.delete(i); }
-    });
+  const decode = async (i) => {
+    try {
+      if ('createImageBitmap' in window) {
+        const blob = await (await fetch(src(i))).blob();
+        frames[i] = await createImageBitmap(blob);
+      } else {
+        const img = new Image(); img.src = src(i); await img.decode(); frames[i] = img;
+      }
+    } catch { /* leave empty; nearest frame is used */ }
+    needsDraw = true;
   };
 
-  // Download every frame (compressed), coarse first, so any scroll position has a nearby frame quickly
-  const fetchAll = async () => {
+  // Coarse first (every 8th frame), then fill gaps, 6 at a time
+  const preload = async () => {
     const order = [], seen = new Set();
-    for (const step of [16, 8, 4, 2, 1]) for (let i = 0; i < FRAMES; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
+    for (const step of [8, 4, 2, 1]) for (let i = 0; i < FRAMES; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
     let k = 0;
-    const worker = async () => {
-      while (k < order.length) {
-        const i = order[k++];
-        if (blobs[i]) continue;
-        try { blobs[i] = await (await fetch(set.src(i))).blob(); schedule(); } catch { /* nearest frame is used */ }
-      }
-    };
+    const worker = async () => { while (k < order.length) await decode(order[k++]); };
     await Promise.all(Array.from({ length: 6 }, worker));
   };
 
-  // Use AVIF when the browser can decode it, otherwise the WebP set
-  const pickSet = async () => {
-    try {
-      const blob = await (await fetch(SETS.avif.src(0))).blob();
-      const bm = await toBitmap(blob);
-      if (!bm || !bm.width) throw new Error('avif');
-      blobs[0] = blob; bitmaps.set(0, bm);
-    } catch {
-      set = SETS.webp; FRAMES = set.n; blobs.length = 0; bitmaps.clear();
-      try { blobs[0] = await (await fetch(set.src(0))).blob(); bitmaps.set(0, await toBitmap(blobs[0])); } catch { /* poster stays */ }
-    }
-    current = target = heroProgress() * (FRAMES - 1);
-  };
-
-  const nearest = (i) => {
-    for (let d = 1; d < FRAMES; d++) {
-      const a = bitmaps.get(i - d * dirn), b = bitmaps.get(i + d * dirn);
+  const nearest = (i, dirn) => {
+    for (let d = 0; d < FRAMES; d++) {
+      const a = frames[i - d * dirn], b = frames[i + d * dirn];
       if (a) return a; if (b) return b;
     }
     return null;
@@ -195,7 +148,7 @@
 
   const draw = () => {
     const i = Math.floor(current), f = current - i;
-    const a = bitmaps.get(i) || nearest(i);
+    const a = frames[i] || nearest(i, -1);
     if (!a) return;
     const cw = canvas.width, ch = canvas.height;
     if (!rect) {
@@ -206,7 +159,7 @@
     if (!ctx) ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
     ctx.globalAlpha = 1;
     ctx.drawImage(a, rect[0], rect[1], rect[2], rect[3]);
-    const b = f > 0.02 && i + 1 < FRAMES && bitmaps.get(i) ? bitmaps.get(i + 1) : null;
+    const b = f > 0.02 && i + 1 < FRAMES ? frames[i + 1] : null;
     if (b) { ctx.globalAlpha = f; ctx.drawImage(b, rect[0], rect[1], rect[2], rect[3]); ctx.globalAlpha = 1; }
     drawnAt = current;
   };
@@ -233,14 +186,14 @@
   };
 
   if (!reduceMotion) {
-    // Frames download once the page has rendered: on the visitor's first scroll/touch,
+    // The 132 frames download after the page has rendered: on the visitor's first scroll/touch,
     // or 3s after load, whichever comes first. Until then the canvas shows frame 1 via CSS.
     let framesStarted = false;
     const startFrames = () => {
       if (framesStarted) return;
       framesStarted = true;
       INTENT.forEach((t) => removeEventListener(t, startFrames));
-      pickSet().then(() => { resize(); draw(); fetchAll(); });
+      decode(0).then(() => { resize(); draw(); preload(); });
     };
     const INTENT = ['scroll', 'wheel', 'touchstart', 'pointerdown', 'keydown'];
     INTENT.forEach((t) => addEventListener(t, startFrames, { passive: true }));
@@ -252,18 +205,16 @@
     const tick = (now) => {
       const dt = Math.min(64, now - last); last = now;
       const p = heroProgress();
-      const nt = p * (FRAMES - 1);
-      if (Math.abs(nt - target) > 0.01) dirn = nt > target ? 1 : -1;
-      target = nt;
+      target = p * (FRAMES - 1);
       // Frame-rate independent easing: same feel at 60Hz and 120Hz
       current += (target - current) * (1 - Math.exp(-dt / 90));
       if (Math.abs(target - current) < 0.01) current = target;
-      if (needsDraw || Math.abs(current - drawnAt) > 0.004) { draw(); needsDraw = false; schedule(); }
+      if (needsDraw || Math.abs(current - drawnAt) > 0.004) { draw(); needsDraw = false; }
       if (Math.abs(p - lastP) > 0.0002) { updateStages(p); lastP = p; }
       if (heroVisible && (current !== target || needsDraw)) requestAnimationFrame(tick);
       else running = false;
     };
-    kick = () => { if (!running && heroVisible) { running = true; last = performance.now(); requestAnimationFrame(tick); } };
+    const kick = () => { if (!running && heroVisible) { running = true; last = performance.now(); requestAnimationFrame(tick); } };
     addEventListener('scroll', kick, { passive: true });
     addEventListener('resize', kick);
     // keep drawing as new frames finish decoding

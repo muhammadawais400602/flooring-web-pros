@@ -31,17 +31,7 @@ Live at https://www.flooringwebpros.com. Vercel deploys on every push to `main`;
 ffmpeg -i source/oak-walkthrough.mp4 -vf "select='not(mod(n\,2))',scale=1280:-2" -vsync vfr -c:v libwebp -quality 62 frames/f%03d.webp
 ffmpeg -i source/oak-walkthrough.mp4 -vf "select='not(mod(n\,2))',crop=ih*0.75:ih,scale=600:-2" -vsync vfr -c:v libwebp -quality 60 frames-m/f%03d.webp
 ```
-Keep 132 frames (these are the fallback set and the hero poster `f001.webp`).
-
-The hero normally plays the AVIF set: all 264 frames (24 fps) in `frames-avif/` (desktop) and `frames-m-avif/` (phones):
-```bash
-mkdir -p /tmp/fr/d /tmp/fr/m frames-avif frames-m-avif
-ffmpeg -i source/oak-walkthrough.mp4 -vf "scale=1280:-2" /tmp/fr/d/p%03d.png
-ffmpeg -i source/oak-walkthrough.mp4 -vf "crop=ih*0.75:ih,scale=600:-2" /tmp/fr/m/p%03d.png
-for s in d m; do ls /tmp/fr/$s/p*.png | xargs -P 4 -I{} sh -c 'n=$(basename {} .png | tr -d p); ffmpeg -loglevel error -y -i {} -c:v libaom-av1 -still-picture 1 -crf 44 -cpu-used 6 /tmp/fr/'$s'/a$n.avif'; done
-cp /tmp/fr/d/a*.avif frames-avif/ && cp /tmp/fr/m/a*.avif frames-m-avif/
-```
-`main.js` keeps the frames compressed in memory and decodes only those near the scroll position, so adding frames doesn't raise memory use.
+Keep 132 frames or update `FRAMES` in `main.js`.
 
 ## Inner pages, blog and policies
 Inner pages are generated: edit `src/pages/*.html` (and `src/layout.html` for the shared header/footer), then run `python3 scripts/build.py`.
