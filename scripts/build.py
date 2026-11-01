@@ -77,6 +77,8 @@ def render(meta, body, out_path):
         if not (ROOT / "src/pages" / f"{path[1:]}.html").exists():
             out = re.sub(rf'href="{re.escape(path)}(#[^"]*)?"', f'href="/#{anchor}"', out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    if meta.get("noindex"):
+        out = out.replace("</head>", '  <meta name="robots" content="noindex" />\n</head>', 1)
     out_path.write_text(out)
     print("built", out_path.relative_to(ROOT))
 
@@ -173,7 +175,8 @@ for page in sorted((ROOT / "src/pages").glob("*.html")):
                           "url": SITE + "/blog", "publisher": ORG,
                           "blogPost": [{"@type": "BlogPosting", "headline": p["h1"], "url": SITE + p["path"], "datePublished": p["date"]} for p in posts]}
     render(meta, body, ROOT / page.name)
-    page_paths.append(meta["path"])
+    if not meta.get("noindex"):
+        page_paths.append(meta["path"])
 
 # ---------- Homepage (hand-written): refresh its inlined CSS ----------
 home = ROOT / "index.html"
