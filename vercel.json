@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/(frames|frames-m)/(.*)",
+      "source": "/(frames|frames-m|frames-avif|frames-m-avif)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
