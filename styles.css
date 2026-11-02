@@ -1682,3 +1682,10 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .nf-links .card { text-decoration: none; color: inherit; transition: transform .25s, box-shadow .25s; }
 .nf-links .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(60,40,20,.12); }
 @media (prefers-reduced-motion: reduce) { .nf-gap { animation: none; } }
+
+/* Blog: quick answer box + FAQ */
+.prose .quick-answer { background: var(--cream); border: 1px solid var(--line); border-left: 4px solid var(--oak); border-radius: 0 14px 14px 0; padding: 18px 22px; margin-bottom: 30px; }
+.prose .quick-answer .qa-label { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--oak-deep); margin-bottom: 6px; }
+.prose .quick-answer p:last-child { color: var(--ink); font-size: 17px; }
+.prose .post-faq h3 { font-size: 19px; margin-top: 26px; }
+.prose .post-faq p { margin-top: 8px; }

@@ -186,11 +186,27 @@ def render(meta, body, out_path):
     print("built", out_path.relative_to(ROOT))
 
 
+def quick_answer(p):
+    """'Quick answer' box: a short, direct answer at the top of a post (the part AI search tends to quote)."""
+    if not p.get("summary"):
+        return ""
+    return (f'          <div class="quick-answer"><p class="qa-label">Quick answer</p>'
+            f'<p>{html.escape(p["summary"])}</p></div>\n')
+
+
+def faq_html(p):
+    """FAQ section at the end of a post; the same Q&As go into FAQPage structured data."""
+    if not p.get("faq"):
+        return ""
+    items = "".join(f'<h3>{html.escape(q)}</h3><p>{a}</p>' for q, a in p["faq"])
+    return f'          <h2 id="faq">Frequently asked questions</h2>\n          <div class="post-faq">{items}</div>'
+
+
 # ---------- Blog articles ----------
 posts = []
 for f in sorted((ROOT / "src/blog").glob("*.html")):
     meta, body = read(f)
-    words = len(re.sub(r"<[^>]+>", " ", body).split())
+    words = len(re.sub(r"<[^>]+>", " ", body + meta.get("summary", "") + " ".join(q + a for q, a in meta.get("faq", []))).split())
     meta.update(slug=f.stem, path=f"/blog/{f.stem}", body=body, minutes=max(1, round(words / 220)))
     posts.append(meta)
 posts.sort(key=lambda p: p["date"], reverse=True)
@@ -216,14 +232,15 @@ for p in posts:
         <p class="post-cat">{e(p["category"])}</p>
         <h1>{e(p["h1"])}</h1>
         <p class="lede">{e(p["excerpt"])}</p>
-        <p class="post-meta">By Flooring WebPros · <time datetime="{p["date"]}">{nice_date(p["date"])}</time> · {p["minutes"]} min read</p>
+        <p class="post-meta">By Flooring WebPros Team · <time datetime="{p["date"]}">{nice_date(p["date"])}</time>{f' · Updated <time datetime="{p["updated"]}">{nice_date(p["updated"])}</time>' if p.get("updated") and p["updated"] != p["date"] else ""} · {p["minutes"]} min read</p>
       </div>
     </section>
 
     <section class="section post-section">
       <div class="wrap post-layout">
         <article class="prose">
-{p["body"].rstrip()}
+{quick_answer(p)}{p["body"].rstrip()}
+{faq_html(p)}
           <div class="post-cta">
             <h2 class="post-cta-title">Want this done for you?</h2>
             <p>We build websites and run local SEO for flooring businesses only. Send us a message and we'll tell you honestly what would help your business most.</p>
@@ -249,7 +266,10 @@ for p in posts:
         </div>
       </div>
     </section>'''
-    p["schema"] = {"@context": "https://schema.org", "@graph": [
+    faq_node = ([{"@type": "FAQPage", "@id": SITE + p["path"] + "#faq", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}}
+        for q, a in p["faq"]]}] if p.get("faq") else [])
+    p["schema"] = {"@context": "https://schema.org", "@graph": faq_node + [
         {"@type": "BlogPosting", "headline": p["h1"], "description": p["description"],
          "image": SITE + p["cover"], "datePublished": p["date"], "dateModified": p.get("updated", p["date"]),
          "author": ORG, "publisher": ORG, "mainEntityOfPage": SITE + p["path"], "articleSection": p["category"]},
