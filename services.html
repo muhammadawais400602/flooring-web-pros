@@ -25,48 +25,254 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Flooring WebPros services",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Custom Flooring Websites"
+      "@type": "Organization",
+      "@id": "https://www.flooringwebpros.com/#organization",
+      "name": "Flooring WebPros",
+      "alternateName": [
+        "FlooringWebPros",
+        "Flooring Web Pros"
+      ],
+      "url": "https://www.flooringwebpros.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.flooringwebpros.com/images/brand/favicon-512.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.flooringwebpros.com/frames/f132.webp",
+      "description": "Flooring WebPros builds fast, mobile-first websites and runs local SEO, Google Business Profile and AI search optimization only for flooring businesses in the United States.",
+      "slogan": "Websites built only for flooring businesses.",
+      "email": "info@flooringwebpros.com",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+1-860-255-1879",
+        "email": "info@flooringwebpros.com",
+        "url": "https://wa.me/18602551879",
+        "availableLanguage": "English",
+        "areaServed": "US"
+      },
+      "knowsAbout": [
+        "Flooring website design",
+        "Local SEO for flooring contractors",
+        "Google Business Profile optimization",
+        "AI search optimization",
+        "Hardwood flooring marketing",
+        "Carpet installer marketing",
+        "LVP and laminate flooring marketing",
+        "Tile and stone marketing",
+        "Epoxy flooring marketing",
+        "Floor refinishing marketing",
+        "Flooring showroom marketing",
+        "Commercial flooring marketing"
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Local SEO"
+      "@type": "WebSite",
+      "@id": "https://www.flooringwebpros.com/#website",
+      "url": "https://www.flooringwebpros.com/",
+      "name": "Flooring WebPros",
+      "description": "Websites, local SEO and AI search visibility built only for flooring businesses.",
+      "publisher": {
+        "@id": "https://www.flooringwebpros.com/#organization"
+      },
+      "inLanguage": "en-US"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Google Business Profile Optimization"
+      "@type": "WebPage",
+      "@id": "https://www.flooringwebpros.com/services#webpage",
+      "url": "https://www.flooringwebpros.com/services",
+      "name": "Flooring Website Design, SEO & Marketing Services",
+      "description": "Websites, local SEO, Google Business Profile, lead capture, galleries, reviews, Google Ads and hosting — built only for flooring contractors, installers and stores.",
+      "isPartOf": {
+        "@id": "https://www.flooringwebpros.com/#website"
+      },
+      "about": {
+        "@id": "https://www.flooringwebpros.com/#organization"
+      },
+      "inLanguage": "en-US"
     },
     {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "Estimate & Lead Capture"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.flooringwebpros.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.flooringwebpros.com/services"
+        }
+      ]
     },
     {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Project Galleries & Before/After"
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "name": "Review Generation"
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "name": "Google Ads & Landing Pages"
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "name": "Hosting, Security & Care"
+      "@type": "ItemList",
+      "@id": "https://www.flooringwebpros.com/services#list",
+      "name": "Flooring WebPros services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#websites",
+            "name": "Custom Flooring Websites",
+            "serviceType": "Website design",
+            "description": "Mobile-first, fast websites designed around a flooring business's services, area and best work.",
+            "url": "https://www.flooringwebpros.com/services#websites",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#local-seo",
+            "name": "Local SEO",
+            "serviceType": "Search engine optimization",
+            "description": "Ranking flooring businesses for service and city searches like hardwood floor installation in their area.",
+            "url": "https://www.flooringwebpros.com/services#local-seo",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#google-business",
+            "name": "Google Business Profile Optimization",
+            "serviceType": "Local search optimization",
+            "description": "Setup, cleanup and management of a flooring business's Google Business Profile to show up in the Map Pack.",
+            "url": "https://www.flooringwebpros.com/services#google-business",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#lead-capture",
+            "name": "Estimate & Lead Capture",
+            "serviceType": "Conversion optimization",
+            "description": "Estimate request forms and WhatsApp contact buttons that turn visitors into estimate requests.",
+            "url": "https://www.flooringwebpros.com/services#lead-capture",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#galleries",
+            "name": "Project Galleries & Before/After",
+            "serviceType": "Web development",
+            "description": "Filterable project galleries and drag-to-compare before/after sliders.",
+            "url": "https://www.flooringwebpros.com/services#galleries",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#reviews",
+            "name": "Review Generation",
+            "serviceType": "Reputation management",
+            "description": "Automated text and email review requests for happy flooring customers (add-on).",
+            "url": "https://www.flooringwebpros.com/services#reviews",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#google-ads",
+            "name": "Google Ads & Landing Pages",
+            "serviceType": "Pay-per-click advertising",
+            "description": "Paid search landing pages built to convert for flooring businesses (add-on).",
+            "url": "https://www.flooringwebpros.com/services#google-ads",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "@id": "https://www.flooringwebpros.com/services#care",
+            "name": "Hosting, Security & Care",
+            "serviceType": "Website maintenance",
+            "description": "Hosting, SSL, backups, security updates and edits handled for you.",
+            "url": "https://www.flooringwebpros.com/services#care",
+            "provider": {
+              "@id": "https://www.flooringwebpros.com/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            }
+          }
+        }
+      ]
     }
   ]
 }
