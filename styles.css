@@ -1540,6 +1540,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 
 .post-section { padding-top: clamp(40px, 6vw, 72px); }
 .post-layout { display: grid; gap: 32px; }
+.post-layout > * { min-width: 0; } /* let wide tables scroll inside .table-scroll instead of widening the page */
 @media (min-width: 1000px) { .post-layout { grid-template-columns: minmax(0, 1fr) 290px; gap: 72px; align-items: start; } }
 .post-aside { display: grid; gap: 18px; }
 @media (min-width: 1000px) { .post-aside { position: sticky; top: calc(var(--header-h) + 28px); } }
