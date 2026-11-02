@@ -345,7 +345,7 @@
   const chips = [...document.querySelectorAll('.chips button')];
   const toast = document.querySelector('.lead-toast');
   const toastText = toast.querySelector('.lead-text');
-  const money = (n) => '$' + (Math.round(n / 10) * 10).toLocaleString('en-US');
+  const money = (n) => String(Math.round(n / 10) * 10);
   let active = chips[0];
   const updateEstimate = () => {
     const sq = +size.value;

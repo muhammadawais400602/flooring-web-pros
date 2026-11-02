@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
   <title>{{title}}</title>
   <meta name="description" content="{{description}}" />
   <link rel="canonical" href="{{site}}{{path}}" />
@@ -20,8 +21,7 @@
   <style></style>
   <!-- /build:inline-css -->
 {{schema}}
-  <!-- Vercel Web Analytics + Speed Insights (cookieless, first-party, loaded after the page) -->
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); }; window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
+  <!-- Vercel Web Analytics + Speed Insights (cookieless, first-party, deferred) -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
   <script defer src="/analytics.js"></script>

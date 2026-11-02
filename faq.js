@@ -31,11 +31,12 @@
 
   /* Search + topic filter */
   let cat = 'all';
-  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // Highlight search words in plain text: split on the words first, then escape every
+  // piece, so the visitor's input never touches HTML markup.
   const mark = (text, words) => {
-    let out = esc(text);
-    words.forEach((w) => { out = out.replace(new RegExp(`(${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi'), '<mark>$1</mark>'); });
-    return out;
+    const re = new RegExp(`(${words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+    return text.split(re).map((part, i) => (i % 2 ? `<mark>${esc(part)}</mark>` : esc(part))).join('');
   };
   const apply = () => {
     const words = input.value.trim().toLowerCase().split(/\s+/).filter((w) => w.length > 1);
