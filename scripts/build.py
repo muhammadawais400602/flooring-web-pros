@@ -291,8 +291,26 @@ page_paths = []
 for page in sorted((ROOT / "src/pages").glob("*.html")):
     meta, body = read(page)
     body = body.replace("{{posts}}", post_html)
+    if "<!--quick-->" in body:
+        body = body.replace("<!--quick-->", quick_answer(meta))
+    if "<!--faq-->" in body:
+        body = body.replace("<!--faq-->", faq_html(meta))
     if "<!--toc-->" in body:
         body = body.replace("<!--toc-->", toc(body))
+    if meta.get("faq") and meta["path"] != "/faq":
+        faq_node = {"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}}
+            for q, a in meta["faq"]]}
+        extra = meta.get("schema") or {}
+        meta["schema"] = {"@graph": list(extra.get("@graph", [extra] if extra else [])) + [faq_node]}
+    if meta.get("service"):   # money pages: a Service node for the page's offer
+        sv = meta["service"]
+        node = {"@type": "Service", "@id": SITE + meta["path"] + "#service", "name": sv["name"], "serviceType": sv["type"],
+                "description": meta["description"], "url": SITE + meta["path"], "provider": ORG,
+                "areaServed": {"@type": "Country", "name": "United States"},
+                "offers": [{"@id": f"{SITE}/pricing#{pl[0]}"} for pl in PLANS]}
+        extra = meta.get("schema") or {}
+        meta["schema"] = {"@graph": [node] + list(extra.get("@graph", [extra] if extra else []))}
     if meta["path"] == "/pricing":
         meta["schema"] = {"@type": "OfferCatalog", "@id": SITE + "/pricing#plans", "name": "Flooring WebPros plans",
                           "url": SITE + "/pricing", "itemListElement": [offer(*pl) for pl in PLANS]}
@@ -339,6 +357,8 @@ print("refreshed index.html (inlined CSS + structured data)")
 # ---------- llms.txt: a plain-language map of the site for AI assistants ----------
 plan_lines = "\n".join(f"- {nm}: {price} USD/month. {desc}" for _, nm, price, desc in PLANS)
 page_lines = "\n".join(f"- [{label}]({SITE}{path})" for path, label in NAV)
+GUIDE_PAGES = [m for m in (read(f)[0] for f in sorted((ROOT / "src/pages").glob("*.html"))) if m.get("service") or m.get("guide")]
+guide_lines = "\n".join(f"- [{m['h1']}]({SITE}{m['path']}): {m['description']}" for m in GUIDE_PAGES)
 post_lines = "\n".join(f"- [{p['h1']}]({SITE}{p['path']}): {p['excerpt']}" for p in posts)
 (ROOT / "llms.txt").write_text(f"""# Flooring WebPros
 
@@ -354,6 +374,9 @@ post_lines = "\n".join(f"- [{p['h1']}]({SITE}{p['path']}): {p['excerpt']}" for p
 - [Home]({SITE}/)
 {page_lines}
 - [Blog]({SITE}/blog)
+
+## Flooring website guides
+{guide_lines}
 
 ## Blog
 {post_lines}

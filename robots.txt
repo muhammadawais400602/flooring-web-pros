@@ -1,6 +1,7 @@
 # Search engines and AI assistants are welcome to crawl and cite this site.
 User-agent: *
 Allow: /
+Disallow: /api/
 
 # AI search / assistant crawlers (explicitly allowed)
 User-agent: GPTBot
@@ -15,5 +16,6 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: Bingbot
 Allow: /
+Disallow: /api/
 
 Sitemap: https://www.flooringwebpros.com/sitemap.xml
