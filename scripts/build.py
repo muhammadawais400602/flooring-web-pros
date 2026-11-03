@@ -393,8 +393,27 @@ post_lines = "\n".join(f"- [{p['h1']}]({SITE}{p['path']}): {p['excerpt']}" for p
 print("built llms.txt")
 
 # ---------- Sitemap ----------
-paths = ["/"] + page_paths + [p["path"] for p in posts]
+import subprocess
+
+
+def last_changed(*files):
+    """Date (YYYY-MM-DD) the newest of these source files was last committed; today if uncommitted/unknown."""
+    dates = []
+    for f in files:
+        try:
+            out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", str(f)], cwd=ROOT,
+                                 capture_output=True, text=True, timeout=10).stdout.strip()
+        except Exception:
+            out = ""
+        dates.append(out or datetime.date.today().isoformat())
+    return max(dates)
+
+
+shared = [ROOT / "src/layout.html", ROOT / "styles.css"]
+entries = [(SITE + "/", last_changed(ROOT / "index.html"))]
+entries += [(SITE + path, last_changed(ROOT / "src/pages" / f"{path.strip('/')}.html", *shared)) for path in page_paths]
+entries += [(SITE + p["path"], max(p.get("updated", p["date"]), last_changed(ROOT / "src/blog" / f"{p['slug']}.html"))) for p in posts]
 (ROOT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    + "".join(f"  <url><loc>{SITE}{p}</loc></url>\n" for p in paths) + "</urlset>\n")
+    + "".join(f"  <url><loc>{loc}</loc><lastmod>{mod}</lastmod></url>\n" for loc, mod in entries) + "</urlset>\n")
 print("built sitemap.xml")
