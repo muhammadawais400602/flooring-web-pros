@@ -1690,3 +1690,4 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 0 0 22px
 .prose .quick-answer p:last-child { color: var(--ink); font-size: 17px; }
 .prose .post-faq h3 { font-size: 19px; margin-top: 26px; }
 .prose .post-faq p { margin-top: 8px; }
+.footer-ig .ig-ico { width: 18px; height: 18px; color: #e9cfa9; }
