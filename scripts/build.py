@@ -29,6 +29,8 @@ FALLBACK = {"/services": "services", "/who-we-serve": "who", "/portfolio": "port
 ORG_ID, WEBSITE_ID = SITE + "/#organization", SITE + "/#website"
 ORG = {"@id": ORG_ID}
 WHATSAPP = "https://wa.me/18602551879"
+# Official social profiles (shown in the footer and in Organization.sameAs)
+SOCIAL = ["https://www.instagram.com/flooringwebpro/"]
 ORG_NODE = {
     "@type": "Organization", "@id": ORG_ID, "name": "Flooring WebPros",
     "alternateName": ["FlooringWebPros", "Flooring Web Pros"], "url": SITE + "/",
@@ -38,6 +40,7 @@ ORG_NODE = {
                    "and AI search optimization only for flooring businesses in the United States.",
     "slogan": "Websites built only for flooring businesses.",
     "email": "info@flooringwebpros.com",
+    "sameAs": SOCIAL,
     "areaServed": {"@type": "Country", "name": "United States"},
     "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "telephone": "+1-860-255-1879",
                      "email": "info@flooringwebpros.com", "url": WHATSAPP, "availableLanguage": "English",
